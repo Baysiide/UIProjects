@@ -31,9 +31,10 @@ class RagnarokClass:
                            
         if search_type[0] == "finviz":
             url = "www.blank.org"
+            str = "bg color"
             response = requests.get(url)
             html = response.content
-            indexNum = html.index("BG color")
+            indexNum = html.index(str)
 
             
             await self.bot.say(indexNum)
