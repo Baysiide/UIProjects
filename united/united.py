@@ -59,12 +59,14 @@ class UnitedInvestors:
             if search_valid == "finviz":
                 await self.bot.say("Please enter a ticker symbol")
             else:
-                uri = "http://finviz.com/quote.ashx?t="
-                quary = str(ctx.message.content
-                            [len(ctx.prefix + ctx.command.name) + 6:].lower())
-                encode = urllib.parse.quote_plus(quary, encoding='utf-8',
-                                                 errors='replace')
-                uir = uri + encode
+                url = 'http://www.finviz.com'
+                response = requests.get(url)
+                html = response.content
+
+                soup = BeautifulSoup(html)
+                table = soup.find('tbody', attrs={'class': 'stripe'})
+                await self.bot.say (table.prettify())
+                
                 await self.bot.say(uir)
         # Start of generic search
         else:
