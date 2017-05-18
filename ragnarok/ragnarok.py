@@ -51,13 +51,18 @@ class RagnarokClass:
                     floatString = html[floatIndexStart+3:floatIndexEnd] 
                     if floatString == "-":
                         await self.bot.say(encode[1:].upper() + " does not have listed float data on Finviz.")
+                    elif floatString[0] == "<":
+                        exIndex = floatString.find(">")
+                        endIndex = floatString.find("</s")
+                        floatString = floatString[exIndex+1:endIndex]
+                        await self.bot.say(encode[1:].upper() + " has a float of " + floatString + ".")
                     else:
-                        await self.bot.say(encode[1:].upper() + " has a float of " + floatString + " shares")
+                        await self.bot.say(encode[1:].upper() + " has a float of " + floatString + " shares.")
           #End of Float
         #Start of institutional ownership
         elif search_type[0] == "insti":
             if search_valid == "insti":
-                await self.bot.say("Please add the the ticker symbol for data")
+                await self.bot.say("Please add the the ticker symbol for data.")
             else:
                 quary = str(ctx.message.content
                             [len(ctx.prefix+ctx.command.name)+6:].lower())
@@ -68,7 +73,7 @@ class RagnarokClass:
                 test = "Inst Own"
                 response = requests.get(url)
                 if response.status_code == 404:
-                     await self.bot.say("Stock not found. Please try again")
+                     await self.bot.say("Stock not found. Please try again.")
                 else:
                     html = response.text
                     indexstring = html.find(test)
@@ -77,8 +82,13 @@ class RagnarokClass:
                     floatString = html[floatIndexStart+3:floatIndexEnd] 
                     if floatString == "-":
                         await self.bot.say(encode[1:].upper() + " does not have listed institutional ownership data on Finviz.")
+                    elif floatString[0] == "<":
+                        exIndex = floatString.find(">")
+                        endIndex = floatString.find("</s")
+                        floatString = floatString[exIndex+1:endIndex]
+                        await self.bot.say(encode[1:].upper() + " has an institutional ownership of " + floatString + ".")
                     else:
-                        await self.bot.say(encode[1:].upper() + " has an institutional ownership of " + floatString)
+                        await self.bot.say(encode[1:].upper() + " has an institutional ownership of " + floatString + ".")
                         #End of institutional Ownership
         #Start of short float
         elif search_type[0] == "short":
@@ -107,9 +117,9 @@ class RagnarokClass:
                         exIndex = floatString.find(">")
                         endIndex = floatString.find("</s")
                         floatString = floatString[exIndex+1:endIndex]
-                        await self.bot.say(encode[1:].upper() + " has a short float of " + floatString)
+                        await self.bot.say(encode[1:].upper() + " has a short float of " + floatString + ".")
                     else:
-                        await self.bot.say(encode[1:].upper() + " has a short float of " + floatString)
+                        await self.bot.say(encode[1:].upper() + " has a short float of " + floatString + ".")
                         #End of short float
         #Start of help
         elif search_type[0] == "help":
