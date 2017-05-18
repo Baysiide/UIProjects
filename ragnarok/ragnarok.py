@@ -33,9 +33,8 @@ class RagnarokClass:
             url = "http://http://finviz.com/quote.ashx?t=cetx"
             response = requests.get(url)
             html = response.content
-            
-            soup = BeautifulSoup(html)
-            indexNum = soup.find("Shs float")
+            str = "Shs float";
+            indexNum = html.find(str)
 
             
             await self.bot.say(indexNum)
