@@ -70,18 +70,18 @@ class RagnarokClass:
                 else:
                     html = response.text
                     indexstring = html.find(test)
-                    floatIndexStart = html.find("<b>", indexstring)
-                    floatIndexEnd = html.find("</b>", indexstring)
-                    floatString = html[floatIndexStart+3:floatIndexEnd] 
+                    instIndexStart = html.find("<b>", indexstring)
+                    instIndexxEnd = html.find("</b>", indexstring)
+                    instString = html[instIndexStart+3:instIndexEnd] 
 
-                    await self.bot.say(encode[1:].upper() + " has an institutional ownership of " + floatString)
+                    await self.bot.say(encode[1:].upper() + " has an institutional ownership of " + instString)
                         #End of institutional Ownership
         #Start of help
         elif search_type[0] == "help":
             if search_valid == "help":
                 await self.bot.say("List of working commands--")
                 await self.bot.say("~ragnarok float <ticker symbol> :: Checks Finviz for float")
-                await self.bot.say("~ragnarok inst <ticker symbol> :: Checks Finviz for institutional ownership")
+                #await self.bot.say("~ragnarok inst <ticker symbol> :: Checks Finviz for institutional ownership")
         else:
             await self.bot.say('Unrecognized command. For options, type ~ragnarok help')
         
