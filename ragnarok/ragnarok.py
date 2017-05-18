@@ -50,7 +50,7 @@ class RagnarokClass:
                     floatIndexEnd = html.find("</b>", indexstring)
                     floatString = html[floatIndexStart+3:floatIndexEnd] 
                     if floatString == "-":
-                        await self.bot.say(encode[1:].upper() + " does not have listed float data on Finviz.)
+                        await self.bot.say(encode[1:].upper() + " does not have listed float data on Finviz.")
                     else:
                         await self.bot.say(encode[1:].upper() + " has a float of " + floatString + " shares")
           #End of Float
@@ -76,7 +76,7 @@ class RagnarokClass:
                     floatIndexEnd = html.find("</b>", indexstring)
                     floatString = html[floatIndexStart+3:floatIndexEnd] 
                     if floatString == "-":
-                        await self.bot.say(encode[1:].upper() + " does not have listed institutional ownership data on Finviz.)
+                        await self.bot.say(encode[1:].upper() + " does not have listed institutional ownership data on Finviz.")
                     else:
                         await self.bot.say(encode[1:].upper() + " has an institutional ownership of " + floatString)
                         #End of institutional Ownership
@@ -102,7 +102,7 @@ class RagnarokClass:
                     floatIndexEnd = html.find("</b>", indexstring)
                     floatString = html[floatIndexStart+3:floatIndexEnd] 
                     if floatString == "-":
-                        await self.bot.say(encode[1:].upper() + " does not have listed short float data on Finviz.)
+                        await self.bot.say(encode[1:].upper() + " does not have listed short float data on Finviz.")
                     else:
                         await self.bot.say(encode[1:].upper() + " has a short float of " + floatString)
                         #End of short float
