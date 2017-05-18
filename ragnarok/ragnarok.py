@@ -37,13 +37,13 @@ class RagnarokClass:
             indexstring = html.find(test)
             floatIndexStart = html.find("<b>", indexstring)
             floatIndexEnd = html.find("</b>", indexstring)
-            #html = substr(html, floatIndexStart + 4, floatIndexEnd) 
+            floatString = html[floatIndexStart+4:floatIndexEnd] 
             
             
             await self.bot.say(indexstring)
             await self.bot.say(floatIndexStart)
             await self.bot.say(floatIndexEnd)
-            #await self.bot.say(html)
+            await self.bot.say(floatString)
         
         else:
             await self.bot.say('Say Finviz dummy')
