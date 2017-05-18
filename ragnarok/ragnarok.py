@@ -103,7 +103,7 @@ class RagnarokClass:
                     floatString = html[floatIndexStart+3:floatIndexEnd] 
                     if floatString == "-":
                         await self.bot.say(encode[1:].upper() + " does not have listed short float data on Finviz.")
-                    elif floatString[1] == "<":
+                    elif floatString[0] == "<":
                         exIndex = floatString.find(">")
                         endIndex = floatString.find("</b>")
                         floatString = floatString[exIndex+1:endIndex]
