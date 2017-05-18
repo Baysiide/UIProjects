@@ -32,9 +32,9 @@ class RagnarokClass:
         if search_type[0] == "finviz":
             url = "http://www.blank.org/"
             test = "bla"
-            #response = requests.get(url)
-            #html = response.content
-            indexstring = url.find(test)
+            response = requests.get(url)
+            html = response.content
+            indexstring = html.find(test)
             
             
             await self.bot.say(indexstring)
