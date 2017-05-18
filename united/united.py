@@ -13,7 +13,7 @@ class AdvancedGoogle:
     @commands.command(name="united", pass_context=True)
     @commands.cooldown(5, 60, commands.BucketType.user)
     async def _united(self, ctx, text):
-        """Lick my balls"""
+        """Lick both of my balls"""
         search_type = ctx.message.content[len(ctx.prefix+ctx.command.name)+1:].lower().split(" ")
         option = {
             'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:40.0) Gecko/20100101 Firefox/40.1'
