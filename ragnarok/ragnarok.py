@@ -34,7 +34,7 @@ class RagnarokClass:
             response = requests.get(url)
             html = response.content
             str = "Stock Quote"
-            indexNum = html.find(str)
+            indexNum = html.index(str)
 
             
             await self.bot.say(indexNum)
