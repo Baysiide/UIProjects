@@ -30,16 +30,16 @@ class RagnarokClass:
                            [len(ctx.prefix+ctx.command.name)+1:].lower())
                            
         if search_type[0] == "finviz":
-        url = "http://www.finviz.com/"
-        response = requests.get(url)
-        html = response.content
+            url = "http://www.finviz.com/"
+            response = requests.get(url)
+            html = response.content
 
         #soup = BeautifulSoup(html)
         #table = soup.find('tbody', attrs={'class': 'stripe'})
-        await self.bot.say(html)
+            await self.bot.say(html)
         
         else:
-        await self.bot.say('Say Finviz dummy)
+            await self.bot.say('Say Finviz dummy)
         
 
 def setup(bot):
