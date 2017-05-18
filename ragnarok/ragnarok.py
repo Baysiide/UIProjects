@@ -35,10 +35,10 @@ class RagnarokClass:
             else:
                 quary = str(ctx.message.content
                             [len(ctx.prefix+ctx.command.name)+6:].lower())
-                #encode = urllib.parse.quote_plus(quary, encoding='utf-8',
-                #                                 errors='replace')
+                encode = urllib.parse.quote_plus(quary, encoding='utf-8',
+                                                 errors='replace')
                 
-                url = "http://www.finviz.com/quote.ashx?t=" + quary
+                url = "http://www.finviz.com/quote.ashx?t=" + encode
                 test = "Shs Float"
                 response = requests.get(url)
                 if response.status_code == 404:
@@ -50,7 +50,7 @@ class RagnarokClass:
                     floatIndexEnd = html.find("</b>", indexstring)
                     floatString = html[floatIndexStart+3:floatIndexEnd] 
 
-                    await self.bot.say(quary.upper() " has a float of " floatString + " shares")
+                    await self.bot.say(quary.upper() + " has a float of " floatString + " shares")
           #End of Float
         #Start of help
         elif search_type[0] == "help":
