@@ -49,8 +49,10 @@ class RagnarokClass:
                     floatIndexStart = html.find("<b>", indexstring)
                     floatIndexEnd = html.find("</b>", indexstring)
                     floatString = html[floatIndexStart+3:floatIndexEnd] 
-
-                    await self.bot.say(encode[1:].upper() + " has a float of " + floatString + " shares")
+                    if floatString == "-":
+                        await self.bot.say(encode[1:].upper() + " does not have listed float data on Finviz.)
+                    else:
+                        await self.bot.say(encode[1:].upper() + " has a float of " + floatString + " shares")
           #End of Float
         #Start of institutional ownership
         elif search_type[0] == "insti":
@@ -73,8 +75,10 @@ class RagnarokClass:
                     floatIndexStart = html.find("<b>", indexstring)
                     floatIndexEnd = html.find("</b>", indexstring)
                     floatString = html[floatIndexStart+3:floatIndexEnd] 
-
-                    await self.bot.say(encode[1:].upper() + " has an institutional ownership of " + floatString)
+                    if floatString == "-":
+                        await self.bot.say(encode[1:].upper() + " does not have listed institutional ownership data on Finviz.)
+                    else:
+                        await self.bot.say(encode[1:].upper() + " has an institutional ownership of " + floatString)
                         #End of institutional Ownership
         #Start of short float
         elif search_type[0] == "short":
@@ -97,8 +101,10 @@ class RagnarokClass:
                     floatIndexStart = html.find("<b>", indexstring)
                     floatIndexEnd = html.find("</b>", indexstring)
                     floatString = html[floatIndexStart+3:floatIndexEnd] 
-
-                    await self.bot.say(encode[1:].upper() + " has a short float of " + floatString)
+                    if floatString == "-":
+                        await self.bot.say(encode[1:].upper() + " does not have listed short float data on Finviz.)
+                    else:
+                        await self.bot.say(encode[1:].upper() + " has a short float of " + floatString)
                         #End of short float
         #Start of help
         elif search_type[0] == "help":
