@@ -34,7 +34,7 @@ class RagnarokClass:
             test = "bla"
             response = requests.get(url)
             html = response.content
-            indexstring = html.find(test)
+            #indexstring = html.find(test)
             
             
             await self.bot.say(html)
