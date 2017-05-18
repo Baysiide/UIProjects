@@ -105,7 +105,7 @@ class RagnarokClass:
                         await self.bot.say(encode[1:].upper() + " does not have listed short float data on Finviz.")
                     elif floatString[0] == "<":
                         exIndex = floatString.find(">")
-                        endIndex = floatString.find("</b>")
+                        endIndex = floatString.find("</s")
                         floatString = floatString[exIndex+1:endIndex]
                         await self.bot.say(encode[1:].upper() + " has a short float of " + floatString)
                     else:
