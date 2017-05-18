@@ -35,9 +35,11 @@ class RagnarokClass:
             response = requests.get(url)
             html = response.text
             indexstring = html.find(test)
+            floatString = html.find("<b>", indexstring)
             
             
             await self.bot.say(indexstring)
+            await self.bot.say(floatString)
         
         else:
             await self.bot.say('Say Finviz dummy')
