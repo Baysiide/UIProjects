@@ -55,7 +55,7 @@ class RagnarokClass:
         #Start of help
         elif search_type[0] == "help":
             if search_valid == "help":
-               await self.bot.say("List of working commands--")
+                await self.bot.say("List of working commands--")
                 await self.bot.say("~ragnarok float <ticker symbol> :: Checks Finviz for float")
         else:
             await self.bot.say('Unrecognized command. For options, type ~ragnarok help')
