@@ -53,8 +53,8 @@ class RagnarokClass:
                     await self.bot.say(encode[1:].upper() + " has a float of " + floatString + " shares")
           #End of Float
         #Start of institutional ownership
-        elif search_type[0] == "inst":
-            if search_valid == "inst":
+        elif search_type[0] == "insti":
+            if search_valid == "insti":
                 await self.bot.say("Please add the the ticker symbol for data")
             else:
                 quary = str(ctx.message.content
@@ -74,7 +74,7 @@ class RagnarokClass:
                     floatIndexEnd = html.find("</b>", indexstring)
                     floatString = html[floatIndexStart+3:floatIndexEnd] 
 
-                    await self.bot.say(encode[1:].upper() + " has a float of " + floatString + " shares")
+                    await self.bot.say(encode[1:].upper() + " has an institutional ownership of " + floatString)
                         #End of institutional Ownership
         #Start of help
         elif search_type[0] == "help":
