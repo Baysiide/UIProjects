@@ -39,7 +39,7 @@ class RagnarokClass:
             await self.bot.say(html)
         
         else:
-            await self.bot.say('Say Finviz dummy)
+            await self.bot.say('Say Finviz dummy')
         
 
 def setup(bot):
