@@ -31,7 +31,6 @@ class RagnarokClass:
                            
         if search_type[0] == "finviz":
             url = "www.blank.org"
-            str = "bg color"
             response = requests.get(url)
             html = response.content
             
