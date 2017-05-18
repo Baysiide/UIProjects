@@ -15,7 +15,7 @@ class RagnarokClass:
     @commands.command(name="ragnarok", pass_context=True)
     @commands.cooldown(10, 60, commands.BucketType.user)
     async def _ragnarok(self, ctx, text):
-        """Compilation #2 of commands for United Investors"""
+        """Compilation #2 of commands for United Investors. Type '~ragnarok help' for a list of commands"""
         search_type = ctx.message.content[len(ctx.prefix+ctx.command.name)+1:].lower().split(" ")
         option = {
             'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:40.0) Gecko/20100101 Firefox/40.1'
