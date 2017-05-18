@@ -28,7 +28,7 @@ class RagnarokClass:
             ]
         search_valid = str(ctx.message.content
                            [len(ctx.prefix+ctx.command.name)+1:].lower())
-                           
+        #Start of float calculations                   
         if search_type[0] == "float":
             if search_valid == "float":
                 await self.bot.say("Please actually search something")
@@ -49,15 +49,14 @@ class RagnarokClass:
                     floatIndexStart = html.find("<b>", indexstring)
                     floatIndexEnd = html.find("</b>", indexstring)
                     floatString = html[floatIndexStart+3:floatIndexEnd] 
-            
-            
-                    await self.bot.say(indexstring)
-                    await self.bot.say(floatIndexStart)
-                    await self.bot.say(floatIndexEnd)
-                    await self.bot.say(floatString + " shares")
-        
+
+                    await self.bot.say(quary " has a float of " floatString + " shares")
+          #End of Float
+        #Start of help
+        elif search_type[0] == "help":
+               await self.bot.say("List of working commands: \n ~ragnarok float <ticker symbol> :: Checks Finviz for float")
         else:
-            await self.bot.say('Say Finviz dummy')
+            await self.bot.say('Unrecognized command. For options, type ~ragnarok help')
         
 
 def setup(bot):
