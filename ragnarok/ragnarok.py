@@ -35,8 +35,7 @@ class RagnarokClass:
             html = response.content
             
             soup = BeautifulSoup(html)
-            table = soup.find('tbody', attrs={'class': 'stripe'})
-            indexNum = table.find("Shs float")
+            indexNum = soup.find("Shs float")
 
             
             await self.bot.say(indexNum)
