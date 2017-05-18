@@ -50,9 +50,9 @@ class UnitedInvestors:
                 uri = "https://www.google.com/maps/search/"
                 quary = str(ctx.message.content
                             [len(ctx.prefix+ctx.command.name)+6:].lower())
-                #encode = urllib.parse.quote_plus(quary, encoding='utf-8',
-                                                 #errors='replace')
-                uir = uri+quary
+                encode = urllib.parse.quote_plus(quary, encoding='utf-8',
+                                                 errors='replace')
+                uir = uri+encode
                 await self.bot.say(uir)
             # End of Maps
         elif search_type[0] == "finviz":
