@@ -50,12 +50,12 @@ class RagnarokClass:
                     floatIndexEnd = html.find("</b>", indexstring)
                     floatString = html[floatIndexStart+3:floatIndexEnd] 
 
-                    await self.bot.say(quary.upper() + " has a float of " floatString + " shares")
+                    await self.bot.say(encode.upper() + " has a float of " floatString + " shares")
           #End of Float
         #Start of help
-        elif search_type[0] == "help":
-               await self.bot.say("List of working commands--")
-                await self.bot.say("~ragnarok float <ticker symbol> :: Checks Finviz for float")
+        #elif search_type[0] == "help":
+               #await self.bot.say("List of working commands--")
+                #await self.bot.say("~ragnarok float <ticker symbol> :: Checks Finviz for float")
         else:
             await self.bot.say('Unrecognized command. For options, type ~ragnarok help')
         
