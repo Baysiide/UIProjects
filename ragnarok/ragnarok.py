@@ -34,10 +34,9 @@ class RagnarokClass:
             str = "bg color"
             response = requests.get(url)
             html = response.content
-            indexNum = html.index(str)
-
             
-            await self.bot.say(indexNum)
+            
+            await self.bot.say(html)
         
         else:
             await self.bot.say('Say Finviz dummy')
