@@ -33,7 +33,7 @@ class RagnarokClass:
             url = "http://www.blank.org/"
             response = requests.get(url)
             html = response.content
-            indexstring = html.index('bg color')
+            indexstring = html.find('bg color')
             
             
             await self.bot.say(indexstring)
