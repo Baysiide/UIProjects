@@ -33,7 +33,7 @@ class RagnarokClass:
             url = "http://www.finviz.com/quote.ashx?t=cetx"
             response = requests.get(url)
             html = response.content
-            indexNum = html.index('Shs float')
+            indexNum = html.index("Shs float")
 
             
             await self.bot.say(print indexNum)
