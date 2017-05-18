@@ -33,11 +33,10 @@ class RagnarokClass:
             url = "http://www.finviz.com/quote.ashx?t=cetx"
             response = requests.get(url)
             html = response.content
-            str = "Stock Quote"
-            indexNum = html.index(str)
+            indexNum = html.index('Shs float')
 
             
-            await self.bot.say(indexNum)
+            await self.bot.say(print indexNum)
         
         else:
             await self.bot.say('Say Finviz dummy')
