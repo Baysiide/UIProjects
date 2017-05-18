@@ -37,7 +37,7 @@ class RagnarokClass:
             indexstring = html.find(test)
             
             
-            await self.bot.say(html)
+            await self.bot.say(indexstring)
         
         else:
             await self.bot.say('Say Finviz dummy')
