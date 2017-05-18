@@ -30,10 +30,10 @@ class RagnarokClass:
                            [len(ctx.prefix+ctx.command.name)+1:].lower())
                            
         if search_type[0] == "finviz":
-            url = "http://www.finviz.com/quote.ashx?t=cetx"
+            url = "www.blank.org"
             response = requests.get(url)
             html = response.content
-            indexNum = html.index("Shs float")
+            indexNum = html.index("BG color")
 
             
             await self.bot.say(indexNum)
