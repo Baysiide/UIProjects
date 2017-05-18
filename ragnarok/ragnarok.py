@@ -30,8 +30,8 @@ class RagnarokClass:
                            [len(ctx.prefix+ctx.command.name)+1:].lower())
                            
         if search_type[0] == "finviz":
-            url = "http://www.blank.org/"
-            test = "bg"
+            url = "http://www.finviz.com/quote.ashx?t=cetx"
+            test = "Shs Float"
             response = requests.get(url)
             html = response.text
             indexstring = html.find(test)
