@@ -30,13 +30,14 @@ class RagnarokClass:
                            [len(ctx.prefix+ctx.command.name)+1:].lower())
                            
         if search_type[0] == "finviz":
-            url = "http://www.blank.org/"
+            url = "http://http://finviz.com/quote.ashx?t=cetx"
             response = requests.get(url)
             html = response.content
+            
+            indexNum = html.find("Shs float")
 
-            soup = BeautifulSoup(html)
-            table = soup.find('tbody', attrs={'class': 'stripe'})
-            await self.bot.say(table.prettify())
+            
+            await self.bot.say(indexNum)
         
         else:
             await self.bot.say('Say Finviz dummy')
