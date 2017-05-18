@@ -1,5 +1,7 @@
 from discord.ext import commands
 from random import choice
+from BeautifulSoup import BeautifulSoup
+import requests
 import aiohttp
 import re
 import urllib
@@ -48,9 +50,9 @@ class UnitedInvestors:
                 uri = "https://www.google.com/maps/search/"
                 quary = str(ctx.message.content
                             [len(ctx.prefix+ctx.command.name)+6:].lower())
-                encode = urllib.parse.quote_plus(quary, encoding='utf-8',
-                                                 errors='replace')
-                uir = uri+encode
+                #encode = urllib.parse.quote_plus(quary, encoding='utf-8',
+                                                 #errors='replace')
+                uir = uri+quary
                 await self.bot.say(uir)
             # End of Maps
         elif search_type[0] == "finviz":
