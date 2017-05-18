@@ -33,7 +33,7 @@ class RagnarokClass:
             url = "http://http://finviz.com/quote.ashx?t=cetx"
             response = requests.get(url)
             html = response.content
-            str = "Shs float";
+            str = "Stock Quote"
             indexNum = html.find(str)
 
             
