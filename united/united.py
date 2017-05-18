@@ -58,8 +58,8 @@ class UnitedInvestors:
                 await self.bot.say("Please enter a ticker symbol")
             else:
                 uri = "http://finviz.com/quote.ashx?t="
-                #quary = str(ctx.message.content
-                            #[len(ctx.prefix + ctx.command.name) + 6:].lower())
+                quary = str(ctx.message.content
+                            [len(ctx.prefix + ctx.command.name) + 6:].lower())
                 encode = urllib.parse.quote_plus(quary, encoding='utf-8',
                                                  errors='replace')
                 uir = uri + encode
