@@ -63,9 +63,7 @@ class UnitedInvestors:
                 response = requests.get(url)
                 html = response.content
 
-                soup = BeautifulSoup(html)
-                table = soup.find('tbody', attrs={'class': 'stripe'})
-                await self.bot.say (table.prettify())
+                await self.bot.say (html)
                 
                 await self.bot.say(uir)
         # Start of generic search
