@@ -30,13 +30,13 @@ class UnitedInvestors1:
                            [len(ctx.prefix+ctx.command.name)+1:].lower())
                            
         if search_type[0] == "finviz":
-        url = 'http://www.showmeboone.com/sheriff/JailResidents/JailResidents.asp'
+        url = 'http://www.finviz.com/'
         response = requests.get(url)
         html = response.content
 
-        soup = BeautifulSoup(html)
-        table = soup.find('tbody', attrs={'class': 'stripe'})
-        await self.bot.say(table.prettify())
+        #soup = BeautifulSoup(html)
+        #table = soup.find('tbody', attrs={'class': 'stripe'})
+        await self.bot.say(html)
         
         else:
         await self.bot.say('Say Finviz dummy)
