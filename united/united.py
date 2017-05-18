@@ -1,7 +1,5 @@
 from discord.ext import commands
 from random import choice
-from bs4 import BeautifulSoup
-import requests
 import aiohttp
 import re
 import urllib
@@ -55,17 +53,6 @@ class UnitedInvestors:
                 uir = uri+encode
                 await self.bot.say(uir)
             # End of Maps
-        elif search_type[0] == "finviz":
-            if search_valid == "finviz":
-                await self.bot.say("Please enter a ticker symbol")
-            else:
-                url = 'http://www.finviz.com'
-                response = requests.get(url)
-                html = response.content
-
-                await self.bot.say (html)
-                
-                await self.bot.say(uir)
         # Start of generic search
         else:
             uri = "https://www.google.com/search?hl=en&q="
