@@ -103,6 +103,11 @@ class RagnarokClass:
                     floatString = html[floatIndexStart+3:floatIndexEnd] 
                     if floatString == "-":
                         await self.bot.say(encode[1:].upper() + " does not have listed short float data on Finviz.")
+                    elif floatString[1] == "<":
+                        exIndex = floatString.find(">")
+                        endIndex = floatString.find("</b>")
+                        floatString = floatString[exIndex+1:endIndex]
+                        await self.bot.say(encode[1:].upper() + " has a short float of " + floatString)
                     else:
                         await self.bot.say(encode[1:].upper() + " has a short float of " + floatString)
                         #End of short float
