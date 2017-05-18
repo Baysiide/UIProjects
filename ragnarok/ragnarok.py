@@ -38,7 +38,7 @@ class RagnarokClass:
                     #encode = urllib.parse.quote_plus(quary, encoding='utf-8',
                      #                                errors='replace')
                 
-                url = "http://www.finviz.com/quote.ashx?t=cetx"
+                url = "http://www.finviz.com/quote.ashx?t=bbbbbbb"
                 test = "Shs Float"
                 response = requests.get(url)
                 if response.status_code == 404:
