@@ -7,12 +7,12 @@ import re
 import urllib
 
 
-class UnitedInvestors1:
+class RagnarokClass:
 
     def __init__(self, bot):
         self.bot = bot
 
-    @commands.command(name="united1", pass_context=True)
+    @commands.command(name="ragnarok", pass_context=True)
     @commands.cooldown(5, 60, commands.BucketType.user)
     async def _united(self, ctx, text):
         """Compilation #2 of commands for United Investors"""
@@ -43,5 +43,5 @@ class UnitedInvestors1:
         
 
 def setup(bot):
-    n = UnitedInvestors1(bot)
+    n = RagnarokClass(bot)
     bot.add_cog(n)
