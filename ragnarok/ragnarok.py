@@ -32,13 +32,13 @@ class RagnarokClass:
         if search_type[0] == "float":
             if search_valid == "float":
                 await self.bot.say("Please actually search something")
-            else:
-                quary = str(ctx.message.content
-                             [len(ctx.prefix+ctx.command.name)+6:].lower())
-                    encode = urllib.parse.quote_plus(quary, encoding='utf-8',
-                                                     errors='replace')
+            #else:
+                #quary = str(ctx.message.content
+                             #[len(ctx.prefix+ctx.command.name)+6:].lower())
+                    #encode = urllib.parse.quote_plus(quary, encoding='utf-8',
+                     #                                errors='replace')
                 
-                url = "http://www.finviz.com/quote.ashx?t=" + encode
+                url = "http://www.finviz.com/quote.ashx?t=cetx"
                 test = "Shs Float"
                 response = requests.get(url)
                 if response.status_code == 404:
