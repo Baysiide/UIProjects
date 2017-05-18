@@ -76,12 +76,38 @@ class RagnarokClass:
 
                     await self.bot.say(encode[1:].upper() + " has an institutional ownership of " + floatString)
                         #End of institutional Ownership
+        #Start of short float
+        elif search_type[0] == "short":
+            if search_valid == "short":
+                await self.bot.say("Please add the the ticker symbol for data")
+            else:
+                quary = str(ctx.message.content
+                            [len(ctx.prefix+ctx.command.name)+6:].lower())
+                encode = urllib.parse.quote_plus(quary, encoding='utf-8',
+                                                 errors='replace')
+                
+                url = "http://www.finviz.com/quote.ashx?t=" + encode
+                test = "Short Float"
+                response = requests.get(url)
+                if response.status_code == 404:
+                     await self.bot.say("Stock not found. Please try again")
+                else:
+                    html = response.text
+                    indexstring = html.find(test)
+                    floatIndexStart = html.find("<b>", indexstring)
+                    floatIndexEnd = html.find("</b>", indexstring)
+                    floatString = html[floatIndexStart+3:floatIndexEnd] 
+
+                    await self.bot.say(encode[1:].upper() + " has a short float of " + floatString)
+                        #End of short float
         #Start of help
         elif search_type[0] == "help":
             if search_valid == "help":
                 await self.bot.say("List of working commands--")
                 await self.bot.say("~ragnarok float <ticker symbol> :: Checks Finviz for float")
-                await self.bot.say("~ragnarok inst <ticker symbol> :: Checks Finviz for institutional ownership")
+                await self.bot.say("~ragnarok insti <ticker symbol> :: Checks Finviz for institutional ownership")
+                await self.bot.say("~ragnarok short <ticker symbol> :: Checks Finviz for short float")
+                
         else:
             await self.bot.say('Unrecognized command. For options, type ~ragnarok help')
         
