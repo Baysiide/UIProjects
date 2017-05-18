@@ -30,7 +30,7 @@ class RagnarokClass:
                            [len(ctx.prefix+ctx.command.name)+1:].lower())
                            
         if search_type[0] == "finviz":
-            url = "http://http://finviz.com/quote.ashx?t=cetx"
+            url = "http://www.finviz.com/quote.ashx?t=cetx"
             response = requests.get(url)
             html = response.content
             str = "Stock Quote"
