@@ -5,7 +5,7 @@ import re
 import urllib
 
 
-class AdvancedGoogle:
+class UnitedInvestors:
 
     def __init__(self, bot):
         self.bot = bot
@@ -13,7 +13,7 @@ class AdvancedGoogle:
     @commands.command(name="united", pass_context=True)
     @commands.cooldown(5, 60, commands.BucketType.user)
     async def _united(self, ctx, text):
-        """Lick both of my balls"""
+        """Compilation of commands for United Investors"""
         search_type = ctx.message.content[len(ctx.prefix+ctx.command.name)+1:].lower().split(" ")
         option = {
             'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:40.0) Gecko/20100101 Firefox/40.1'
@@ -147,5 +147,5 @@ class AdvancedGoogle:
 
 
 def setup(bot):
-    n = AdvancedGoogle(bot)
+    n = UnitedInvestors(bot)
     bot.add_cog(n)
