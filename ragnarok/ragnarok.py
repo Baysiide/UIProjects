@@ -36,7 +36,7 @@ class RagnarokClass:
             indexNum = html.index("Shs float")
 
             
-            await self.bot.say(print indexNum)
+            await self.bot.say(indexNum)
         
         else:
             await self.bot.say('Say Finviz dummy')
