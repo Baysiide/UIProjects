@@ -53,7 +53,7 @@ class RagnarokClass:
                     await self.bot.say(encode[1:].upper() + " has a float of " + floatString + " shares")
           #End of Float
         #Start of institutional ownership
-        elif search_type[0] == "inst"
+        elif search_type[0] == "inst":
             if search_valid == "inst":
                 await self.bot.say("Please add the the ticker symbol for data")
             else:
@@ -70,11 +70,11 @@ class RagnarokClass:
                 else:
                     html = response.text
                     indexstring = html.find(test)
-                    instIndexStart = html.find("<b>", indexstring)
-                    instIndexxEnd = html.find("</b>", indexstring)
-                    instString = html[instIndexStart+3:instIndexEnd] 
+                    floatIndexStart = html.find("<b>", indexstring)
+                    floatIndexEnd = html.find("</b>", indexstring)
+                    floatString = html[floatIndexStart+3:floatIndexEnd] 
 
-                    #await self.bot.say(encode[1:].upper() + " has an institutional ownership of " + instString)
+                    await self.bot.say(encode[1:].upper() + " has a float of " + floatString + " shares")
                         #End of institutional Ownership
         #Start of help
         elif search_type[0] == "help":
