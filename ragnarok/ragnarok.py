@@ -346,6 +346,12 @@ class RagnarokClass:
                     IndexStart = html.find(">", indexstring)
                     IndexEnd = html.find("<", indexstring)
                     SymString1 = html[IndexStart+1:IndexEnd]
+                    if len(SymString1) == 1:
+                        SymString1 = SymString1 + "   "
+                    elif len(SymString1) == 2:
+                        SymString1 = SymString1 + "  "
+                    elif len(SymString1) == 3:
+                        SymString1 = SymString1 + " "
                     
                     indexstring = html.find(test)
                     html = html[indexstring+1:]
@@ -380,7 +386,13 @@ class RagnarokClass:
                     IndexStart = html.find(">", indexstring)
                     IndexEnd = html.find("<", indexstring)
                     SymString2 = html[IndexStart+1:IndexEnd]
-                    
+                    if len(SymString2) == 1:
+                        SymString2 = SymString2 + "   "
+                    elif len(SymString1) == 2:
+                        SymString2 = SymString2 + "  "
+                    elif len(SymString2) == 3:
+                        SymString2 = SymString2 + " "
+                        
                     indexstring = html.find(test)
                     html = html[indexstring+1:]
                     indexstring = html.find(test)
@@ -414,7 +426,13 @@ class RagnarokClass:
                     IndexStart = html.find(">", indexstring)
                     IndexEnd = html.find("<", indexstring)
                     SymString3 = html[IndexStart+1:IndexEnd]
-                    
+                    if len(SymString3) == 1:
+                        SymString3 = SymString3 + "   "
+                    elif len(SymString3) == 2:
+                        SymString3 = SymString3 + "  "
+                    elif len(SymString3) == 3:
+                        SymString3 = SymString3 + " "
+                        
                     indexstring = html.find(test)
                     html = html[indexstring+1:]
                     indexstring = html.find(test)
@@ -448,7 +466,13 @@ class RagnarokClass:
                     IndexStart = html.find(">", indexstring)
                     IndexEnd = html.find("<", indexstring)
                     SymString4 = html[IndexStart+1:IndexEnd]
-                    
+                    if len(SymString4) == 1:
+                        SymString4 = SymString4 + "   "
+                    elif len(SymString4) == 2:
+                        SymString4 = SymString4 + "  "
+                    elif len(SymString4) == 3:
+                        SymString4 = SymString4 + " "
+                        
                     indexstring = html.find(test)
                     html = html[indexstring+1:]
                     indexstring = html.find(test)
@@ -482,7 +506,13 @@ class RagnarokClass:
                     IndexStart = html.find(">", indexstring)
                     IndexEnd = html.find("<", indexstring)
                     SymString5 = html[IndexStart+1:IndexEnd]
-                    
+                    if len(SymString5) == 1:
+                        SymString5 = SymString5 + "   "
+                    elif len(SymString5) == 2:
+                        SymString5 = SymString5 + "  "
+                    elif len(SymString5) == 3:
+                        SymString5 = SymString5 + " "
+                        
                     indexstring = html.find(test)
                     html = html[indexstring+1:]
                     indexstring = html.find(test)
