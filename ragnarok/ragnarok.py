@@ -129,18 +129,22 @@ class RagnarokClass:
                 if response.status_code == 404:
                      await self.bot.say("Scan not found. Please try again")
                 else:
+                    
                     html = response.text
                     indexstring = html.find(test)
                     html = html[indexstring+1:]
-                    await self.bot.say(html[:100])
+                    
                     indexstring = html.find(test)
                     SymIndexStart = html.find(">", indexstring)
                     SymIndexEnd = html.find("<", indexstring)
                     SymString = html[SymIndexStart+1:SymIndexEnd]
+                    
+                    indexstring = html.find(test)
+                    html = html[indexstring+1:]
                     #indexstringSym = html.find(test)
                     #indexSymEnd = html[indexstringSym:].find("</a")
                     #html = html[indexstringSym+5:indexSymEnd]
-                    await self.bot.say(SymString)
+                    await self.bot.say(html[:100])
                     #floatIndexStart = html.find("<b>", indexstring)
                     #floatIndexEnd = html.find("</b>", indexstring)
                     #floatString = html[floatIndexStart+3:floatIndexEnd] 
