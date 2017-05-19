@@ -133,10 +133,11 @@ class RagnarokClass:
                     indexstring = html.find(test)
                     html = html[indexstring+1:]
                     await self.bot.say(html[:100])
+                    
                     indexstring = html.find(test)
                     IndexStart = html.find(">", indexstring)
                     IndexEnd = html.find("<", indexstring)
-                    SymString = html[IndexStart+1:IndexEnd]
+                    SymString1 = html[IndexStart+1:IndexEnd]
                     
                     indexstring = html.find(test)
                     html = html[indexstring+1:]
@@ -161,18 +162,24 @@ class RagnarokClass:
                     html = html[indexstring+2:]
                     indexStart = html.find(">")
                     indexEnd = html.find("<")
-                    percentChange = html[indexStart+1:indexEnd]
+                    percentChange1 = html[indexStart+1:indexEnd]
                     
+                    #move to 2nd
                     indexstring = html.find(">2<")
                     html = html[indexstring:]
-                    await self.bot.say(html[:100])
+                    
+                    indexstring = html.find(test)
+                    IndexStart = html.find(">", indexstring)
+                    IndexEnd = html.find("<", indexstring)
+                    SymString1 = html[IndexStart+1:IndexEnd]
+                    await self.bot.say(SymString1)
                     
                     
                     
                     #indexstringSym = html.find(test)
                     #indexSymEnd = html[indexstringSym:].find("</a")
                     #html = html[indexstringSym+5:indexSymEnd]
-                    await self.bot.say("Top Gainers -- \n1. " + SymString + "\t" + percentChange)
+                    await self.bot.say("Top Gainers -- \n1. " + SymString1 + "\t" + percentChange1)
                     #floatIndexStart = html.find("<b>", indexstring)
                     #floatIndexEnd = html.find("</b>", indexstring)
                     #floatString = html[floatIndexStart+3:floatIndexEnd] 
