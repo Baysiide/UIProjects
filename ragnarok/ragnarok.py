@@ -137,13 +137,8 @@ class RagnarokClass:
                     IndexStart = html.find(">", indexstring)
                     IndexEnd = html.find("<", indexstring)
                     SymString1 = html[IndexStart+1:IndexEnd]
-                    if len(SymString1) == 1:
-                        SymString1 = SymString1 + "   "
-                    elif len(SymString1) == 2:
-                        SymString1 = SymString1 + "  "
-                    elif len(SymString1) == 3:
-                        SymString1 = SymString1 + " "
-                        
+                    SymString1 = symStringLenCheck(SymString1)
+                    
                     indexstring = html.find(test)
                     html = html[indexstring+1:]
                     indexstring = html.find(test)
@@ -543,7 +538,15 @@ class RagnarokClass:
         elif search_type[0] == "help":
             if search_valid == "help":
                 await self.bot.say("```Ragnarok's list of working commands-- \n~float <ticker symbol> :: Checks Finviz for float \n~short <ticker symbol> :: Checks Finviz for short float \n~insti <ticker symbol> :: Checks Finviz for institutional ownership \n~pgain :: List of Top % gainers on the day \n~plose :: List of Top % losers on the day" + "```")
-                
+        #functions
+        def symStringLenCheck(SymString):
+                        if len(SymString) == 1:
+                            SymString = SymString + "   "
+                        elif len(SymString) == 2:
+                            SymString = SymString + "  "
+                        elif len(SymString) == 3:
+                            SymString = SymString + " "
+                        return SymString
         else:
             await self.bot.say('Unrecognized command. For options, type ~ragnarok help')
         
