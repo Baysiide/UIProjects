@@ -132,6 +132,7 @@ class RagnarokClass:
                     html = response.text
                     indexstring = html.find(test)
                     html = html[indexstring+1:]
+                    await self.bot.say(html[:10])
                     indexstring = html.find(test)
                     SymIndexStart = html.find(">", indexstring)
                     SymIndexEnd = html.find("<", indexstring)
