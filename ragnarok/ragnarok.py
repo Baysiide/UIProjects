@@ -28,7 +28,7 @@ class RagnarokClass:
             ]
         search_valid = str(ctx.message.content
                            [len(ctx.prefix+ctx.command.name)+1:].lower())
-        
+        #functions
         def symStringLenCheck(SymString):
                         if len(SymString) == 1:
                             SymString = SymString + "   "
@@ -36,7 +36,28 @@ class RagnarokClass:
                             SymString = SymString + "  "
                         elif len(SymString) == 3:
                             SymString = SymString + " "
-                        return SymString        
+                        return SymString     
+        
+        def symToPerc(oriString, text):
+                    indexstring = oriString.find(text)
+                    oriString = oriString[indexstring+1:]
+                    indexstring = oriString.find(text)
+                    oriString = oriString[indexstring+1:]
+                    indexstring = oriString.find(text)
+                    oriString = oriString[indexstring+1:]
+                    indexstring = oriString.find(text)
+                    oriString = oriString[indexstring+1:]
+                    indexstring = oriString.find(text)
+                    oriString = oriString[indexstring+1:]
+                    indexstring = oriString.find(text)
+                    oriString = oriString[indexstring+1:]
+                    indexstring = oriString.find(text)
+                    oriString = oriString[indexstring+1:]
+                    indexstring = oriString.find(text)
+                    oriString = oriString[indexstring+1:]
+                    indexstring = oriString.find(text)
+                    oriString = oriString[indexstring+1:]
+                    return oriString
         #Start of float calculations                   
         if search_type[0] == "float":
             if search_valid == "float":
@@ -148,25 +169,8 @@ class RagnarokClass:
                     SymString1 = html[IndexStart+1:IndexEnd]
                     SymString1 = symStringLenCheck(SymString = SymString1)
                     
-                    indexstring = html.find(test)
-                    html = html[indexstring+1:]
-                    indexstring = html.find(test)
-                    html = html[indexstring+1:]
-                    indexstring = html.find(test)
-                    html = html[indexstring+1:]
-                    indexstring = html.find(test)
-                    html = html[indexstring+1:]
-                    indexstring = html.find(test)
-                    html = html[indexstring+1:]
-                    indexstring = html.find(test)
-                    html = html[indexstring+1:]
-                    indexstring = html.find(test)
-                    html = html[indexstring+1:]
-                    indexstring = html.find(test)
-                    html = html[indexstring+1:]
-                    indexstring = html.find(test)
-                    html = html[indexstring+1:]
-                    
+                    html = symToPerc(oriString = html, text = test)
+                                        
                     indexstring = html.find("><")
                     html = html[indexstring+2:]
                     indexStart = html.find(">")
