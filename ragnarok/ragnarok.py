@@ -158,10 +158,18 @@ class RagnarokClass:
                     indexstring = html.find(test)
                     html = html[indexstring+1:]
                     
+                    indexstring = html.find("><")
+                    html = html[indexstring+2:]
+                    indexStart = html.find(">")
+                    indexEnd = html.find("<")
+                    percentChange = html[indexStart+1:indexEnd]
+                    
+                    
+                    
                     #indexstringSym = html.find(test)
                     #indexSymEnd = html[indexstringSym:].find("</a")
                     #html = html[indexstringSym+5:indexSymEnd]
-                    await self.bot.say(html[:100])
+                    await self.bot.say("Top Gainers -- \n1. " + SymString + "\t" + percentChange)
                     #floatIndexStart = html.find("<b>", indexstring)
                     #floatIndexEnd = html.find("</b>", indexstring)
                     #floatString = html[floatIndexStart+3:floatIndexEnd] 
