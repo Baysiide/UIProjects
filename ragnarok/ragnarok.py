@@ -187,7 +187,7 @@ class RagnarokClass:
                     IndexStart = html.find(">", indexstring)
                     IndexEnd = html.find("<", indexstring)
                     SymString2 = html[IndexStart+1:IndexEnd]
-                    SymString2 = symStringLenCheck(SymString = SymString1)
+                    SymString2 = symStringLenCheck(SymString = SymString2)
                     
                     html = symToPerc(oriString = html, text = test)
                     
@@ -205,7 +205,7 @@ class RagnarokClass:
                     IndexStart = html.find(">", indexstring)
                     IndexEnd = html.find("<", indexstring)
                     SymString3 = html[IndexStart+1:IndexEnd]
-                    SymString3 = symStringLenCheck(SymString = SymString1)
+                    SymString3 = symStringLenCheck(SymString = SymString3)
                     
                     html = symToPerc(oriString = html, text = test)
                     
@@ -223,7 +223,7 @@ class RagnarokClass:
                     IndexStart = html.find(">", indexstring)
                     IndexEnd = html.find("<", indexstring)
                     SymString4 = html[IndexStart+1:IndexEnd]
-                    SymString4 = symStringLenCheck(SymString = SymString1)
+                    SymString4 = symStringLenCheck(SymString = SymString4)
                     
                     html = symToPerc(oriString = html, text = test)
                     
@@ -241,7 +241,7 @@ class RagnarokClass:
                     IndexStart = html.find(">", indexstring)
                     IndexEnd = html.find("<", indexstring)
                     SymString5 = html[IndexStart+1:IndexEnd]
-                    SymString5 = symStringLenCheck(SymString = SymString1)
+                    SymString5 = symStringLenCheck(SymString = SymString5)
                     
                     html = symToPerc(oriString = html, text = test)
                     
@@ -286,7 +286,7 @@ class RagnarokClass:
                     IndexStart = html.find(">", indexstring)
                     IndexEnd = html.find("<", indexstring)
                     SymString2 = html[IndexStart+1:IndexEnd]
-                    SymString2 = symStringLenCheck(SymString = SymString1)
+                    SymString2 = symStringLenCheck(SymString = SymString2)
                     
                     html = symToPerc(oriString = html, text = test)
                     
@@ -304,7 +304,7 @@ class RagnarokClass:
                     IndexStart = html.find(">", indexstring)
                     IndexEnd = html.find("<", indexstring)
                     SymString3 = html[IndexStart+1:IndexEnd]
-                    SymString3 = symStringLenCheck(SymString = SymString1)
+                    SymString3 = symStringLenCheck(SymString = SymString3)
                     
                     html = symToPerc(oriString = html, text = test)
                     
@@ -322,7 +322,7 @@ class RagnarokClass:
                     IndexStart = html.find(">", indexstring)
                     IndexEnd = html.find("<", indexstring)
                     SymString4 = html[IndexStart+1:IndexEnd]
-                    SymString4 = symStringLenCheck(SymString = SymString1)
+                    SymString4 = symStringLenCheck(SymString = SymString4)
                     
                     html = symToPerc(oriString = html, text = test)
                     
@@ -340,7 +340,7 @@ class RagnarokClass:
                     IndexStart = html.find(">", indexstring)
                     IndexEnd = html.find("<", indexstring)
                     SymString5 = html[IndexStart+1:IndexEnd]
-                    SymString5 = symStringLenCheck(SymString = SymString1)
+                    SymString5 = symStringLenCheck(SymString = SymString5)
                     
                     html = symToPerc(oriString = html, text = test)
                     
