@@ -136,11 +136,11 @@ class RagnarokClass:
                     indexstring = html.find(test)
                     SymIndexStart = html.find(">", indexstring)
                     SymIndexEnd = html.find("<", indexstring)
-                    SymString = html[symindexstart+1:symindexend]
+                    SymString = html[SymIndexStart+1:SymIndexEnd]
                     #indexstringSym = html.find(test)
                     #indexSymEnd = html[indexstringSym:].find("</a")
                     #html = html[indexstringSym+5:indexSymEnd]
-                    await self.bot.say(symstring)
+                    await self.bot.say(SymString)
                     #floatIndexStart = html.find("<b>", indexstring)
                     #floatIndexEnd = html.find("</b>", indexstring)
                     #floatString = html[floatIndexStart+3:floatIndexEnd] 
