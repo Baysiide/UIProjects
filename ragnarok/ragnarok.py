@@ -122,7 +122,6 @@ class RagnarokClass:
                         await self.bot.say(encode[1:].upper() + " has a short float of " + floatString + ".")
                         #End of short float
         elif search_type[0] == "pgain":                 
-                await self.bot.say("youve made it this far")
                 url = "http://finviz.com/screener.ashx?v=111&o=-change"
                 test = "screener-link"
                 response = requests.get(url)
@@ -163,6 +162,10 @@ class RagnarokClass:
                     indexStart = html.find(">")
                     indexEnd = html.find("<")
                     percentChange = html[indexStart+1:indexEnd]
+                    
+                    indexstring = html.find(">2<");
+                    html = html[indexstring:100]
+                    await self.bot.say(html)
                     
                     
                     
