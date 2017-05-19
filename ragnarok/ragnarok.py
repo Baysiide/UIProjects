@@ -122,8 +122,28 @@ class RagnarokClass:
                         await self.bot.say(encode[1:].upper() + " has a short float of " + floatString + ".")
                         #End of short float
         elif search_type[0] == "pgain":                 
-                     await self.bot.say("youve made it this far")
-                
+                await self.bot.say("youve made it this far")
+                url = "http://finviz.com/screener.ashx?v=111&o=-change"
+                test = "screener-link"
+                response = requests.get(url)
+                if response.status_code == 404:
+                     await self.bot.say("Stock not found. Please try again")
+                else:
+                    html = response.text
+                    indexstring = html.find(test)
+                    await self.bot.say(indexstring)
+                    #floatIndexStart = html.find("<b>", indexstring)
+                    #floatIndexEnd = html.find("</b>", indexstring)
+                    #floatString = html[floatIndexStart+3:floatIndexEnd] 
+                    #if floatString == "-":
+                    #    await self.bot.say(encode[1:].upper() + " does not have listed short float data on Finviz.")
+                    #elif floatString[0] == "<":
+                    #    exIndex = floatString.find(">")
+                    #    endIndex = floatString.find("</s")
+                    #    floatString = floatString[exIndex+1:endIndex]
+                    #    await self.bot.say(encode[1:].upper() + " has a short float of " + floatString + ".")
+                    #else:
+                    #    await self.bot.say(encode[1:].upper() + " has a short float of " + floatString + ".")       
         #Start of help
         elif search_type[0] == "help":
             if search_valid == "help":
