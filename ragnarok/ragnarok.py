@@ -131,11 +131,13 @@ class RagnarokClass:
                 else:
                     html = response.text
                     indexstring = html.find(test)
-                    html = html[indexstring+3:]
-                    indexstringSym = html.find(test)
-                    indexSymEnd = html[indexstringSym:].find("</a")
-                    html = html[indexstringSym+5:indexSymEnd]
-                    await self.bot.say("end, but no data")
+                    SymIndexStart = html.find(">", indexstring)
+                    SymIndexEnd = html.find("<", indexstring)
+                    SymString = html[symindexstart+1:symindexend]
+                    #indexstringSym = html.find(test)
+                    #indexSymEnd = html[indexstringSym:].find("</a")
+                    #html = html[indexstringSym+5:indexSymEnd]
+                    await self.bot.say(symstring)
                     #floatIndexStart = html.find("<b>", indexstring)
                     #floatIndexEnd = html.find("</b>", indexstring)
                     #floatString = html[floatIndexStart+3:floatIndexEnd] 
