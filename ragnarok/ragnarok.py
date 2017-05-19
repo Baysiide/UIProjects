@@ -163,7 +163,7 @@ class RagnarokClass:
                     indexEnd = html.find("<")
                     percentChange = html[indexStart+1:indexEnd]
                     
-                    indexstring = html.find(">2<");
+                    indexstring = html.find(">2<")
                     html = html[indexstring:100]
                     await self.bot.say(html)
                     
