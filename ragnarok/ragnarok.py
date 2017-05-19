@@ -300,7 +300,7 @@ class RagnarokClass:
                     percentChange5 = html[indexStart+1:indexEnd]
                     await self.bot.say("Top Gainers -- \n1. " + SymString1 + "\t" + percentChange1 +"\n2. " + SymString2 + "\t" + percentChange2 +"\n3. " + SymString3 + "\t" + percentChange3 +"\n4. " + SymString4 + "\t" + percentChange4 +"\n5. " + SymString5 + "\t" + percentChange5)
         
-        elif search_type[0] == "ploss":                 
+        elif search_type[0] == "plose":                 
                 url = "http://finviz.com/screener.ashx?v=111&o=change"
                 test = "screener-link"
                 response = requests.get(url)
