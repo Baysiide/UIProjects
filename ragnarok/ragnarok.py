@@ -197,14 +197,116 @@ class RagnarokClass:
                     indexStart = html.find(">")
                     indexEnd = html.find("<")
                     percentChange2 = html[indexStart+1:indexEnd]
-                    await self.bot.say(percentChange2)
+                    
+                    #3rd
+                    indexstring = html.find(">3<")
+                    html = html[indexstring:]
+                    
+                    indexstring = html.find(test)
+                    IndexStart = html.find(">", indexstring)
+                    IndexEnd = html.find("<", indexstring)
+                    SymString3 = html[IndexStart+1:IndexEnd]
+                    
+                    indexstring = html.find(test)
+                    html = html[indexstring+1:]
+                    indexstring = html.find(test)
+                    html = html[indexstring+1:]
+                    indexstring = html.find(test)
+                    html = html[indexstring+1:]
+                    indexstring = html.find(test)
+                    html = html[indexstring+1:]
+                    indexstring = html.find(test)
+                    html = html[indexstring+1:]
+                    indexstring = html.find(test)
+                    html = html[indexstring+1:]
+                    indexstring = html.find(test)
+                    html = html[indexstring+1:]
+                    indexstring = html.find(test)
+                    html = html[indexstring+1:]
+                    indexstring = html.find(test)
+                    html = html[indexstring+1:]
+                    
+                    indexstring = html.find("><")
+                    html = html[indexstring+2:]
+                    indexStart = html.find(">")
+                    indexEnd = html.find("<")
+                    percentChange3 = html[indexStart+1:indexEnd]
+                    
+                    #4th
+                    indexstring = html.find(">4<")
+                    html = html[indexstring:]
+                    
+                    indexstring = html.find(test)
+                    IndexStart = html.find(">", indexstring)
+                    IndexEnd = html.find("<", indexstring)
+                    SymString4 = html[IndexStart+1:IndexEnd]
+                    
+                    indexstring = html.find(test)
+                    html = html[indexstring+1:]
+                    indexstring = html.find(test)
+                    html = html[indexstring+1:]
+                    indexstring = html.find(test)
+                    html = html[indexstring+1:]
+                    indexstring = html.find(test)
+                    html = html[indexstring+1:]
+                    indexstring = html.find(test)
+                    html = html[indexstring+1:]
+                    indexstring = html.find(test)
+                    html = html[indexstring+1:]
+                    indexstring = html.find(test)
+                    html = html[indexstring+1:]
+                    indexstring = html.find(test)
+                    html = html[indexstring+1:]
+                    indexstring = html.find(test)
+                    html = html[indexstring+1:]
+                    
+                    indexstring = html.find("><")
+                    html = html[indexstring+2:]
+                    indexStart = html.find(">")
+                    indexEnd = html.find("<")
+                    percentChange4 = html[indexStart+1:indexEnd]
+                    
+                    #5th
+                    indexstring = html.find(">5<")
+                    html = html[indexstring:]
+                    
+                    indexstring = html.find(test)
+                    IndexStart = html.find(">", indexstring)
+                    IndexEnd = html.find("<", indexstring)
+                    SymString5 = html[IndexStart+1:IndexEnd]
+                    
+                    indexstring = html.find(test)
+                    html = html[indexstring+1:]
+                    indexstring = html.find(test)
+                    html = html[indexstring+1:]
+                    indexstring = html.find(test)
+                    html = html[indexstring+1:]
+                    indexstring = html.find(test)
+                    html = html[indexstring+1:]
+                    indexstring = html.find(test)
+                    html = html[indexstring+1:]
+                    indexstring = html.find(test)
+                    html = html[indexstring+1:]
+                    indexstring = html.find(test)
+                    html = html[indexstring+1:]
+                    indexstring = html.find(test)
+                    html = html[indexstring+1:]
+                    indexstring = html.find(test)
+                    html = html[indexstring+1:]
+                    
+                    indexstring = html.find("><")
+                    html = html[indexstring+2:]
+                    indexStart = html.find(">")
+                    indexEnd = html.find("<")
+                    percentChange5 = html[indexStart+1:indexEnd]
+                    
                     
                     
                     
                     #indexstringSym = html.find(test)
                     #indexSymEnd = html[indexstringSym:].find("</a")
                     #html = html[indexstringSym+5:indexSymEnd]
-                    await self.bot.say("Top Gainers -- \n1. " + SymString1 + "\t" + percentChange1)
+                    await self.bot.say("Top Gainers -- \n1. " + SymString1 + "\t" + percentChange1 +"\n2. " + SymString2 + "\t" + percentChange2 +"\n3. " + SymString3 + "\t" + percentChange3 +"\n4. " + SymString4 + "\t" + percentChange4 +"\n5. " + SymString5 + "\t" + percentChange5)
                     #floatIndexStart = html.find("<b>", indexstring)
                     #floatIndexEnd = html.find("</b>", indexstring)
                     #floatString = html[floatIndexStart+3:floatIndexEnd] 
