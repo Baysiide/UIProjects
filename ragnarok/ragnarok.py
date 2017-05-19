@@ -298,26 +298,9 @@ class RagnarokClass:
                     indexStart = html.find(">")
                     indexEnd = html.find("<")
                     percentChange5 = html[indexStart+1:indexEnd]
-                    
-                    
-                    
-                    
-                    #indexstringSym = html.find(test)
-                    #indexSymEnd = html[indexstringSym:].find("</a")
-                    #html = html[indexstringSym+5:indexSymEnd]
+      
                     await self.bot.say("Top Gainers -- \n1. " + SymString1 + "\t" + percentChange1 +"\n2. " + SymString2 + "\t" + percentChange2 +"\n3. " + SymString3 + "\t" + percentChange3 +"\n4. " + SymString4 + "\t" + percentChange4 +"\n5. " + SymString5 + "\t" + percentChange5)
-                    #floatIndexStart = html.find("<b>", indexstring)
-                    #floatIndexEnd = html.find("</b>", indexstring)
-                    #floatString = html[floatIndexStart+3:floatIndexEnd] 
-                    #if floatString == "-":
-                    #    await self.bot.say(encode[1:].upper() + " does not have listed short float data on Finviz.")
-                    #elif floatString[0] == "<":
-                    #    exIndex = floatString.find(">")
-                    #    endIndex = floatString.find("</s")
-                    #    floatString = floatString[exIndex+1:endIndex]
-                    #    await self.bot.say(encode[1:].upper() + " has a short float of " + floatString + ".")
-                    #else:
-                    #    await self.bot.say(encode[1:].upper() + " has a short float of " + floatString + ".")       
+    
         #Start of help
         elif search_type[0] == "help":
             if search_valid == "help":
