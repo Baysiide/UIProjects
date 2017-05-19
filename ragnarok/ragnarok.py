@@ -141,6 +141,8 @@ class RagnarokClass:
                     
                     indexstring = html.find(test)
                     html = html[indexstring+1:]
+                    indexstring = html.find(test)
+                    html = html[indexstring+1:]
                     #indexstringSym = html.find(test)
                     #indexSymEnd = html[indexstringSym:].find("</a")
                     #html = html[indexstringSym+5:indexSymEnd]
