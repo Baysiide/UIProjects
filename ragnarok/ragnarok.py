@@ -477,13 +477,12 @@ class RagnarokClass:
                     indexStart = html.find(">")
                     indexEnd = html.find("<")
                     percentChange5 = html[indexStart+1:indexEnd]
-                    await self.bot.say("Top Losers -- \n1. " + SymString1 + "\t" + percentChange1 +"\n2. " + SymString2 + "\t" + percentChange2 +"\n3. " + SymString3 + "\t" + percentChange3 +"\n4. " + SymString4 + "\t" + percentChange4 +"\n5. " + SymString5 + "\t" + percentChange5)
+                    await self.bot.say("```Top Losers -- \n1. " + SymString1 + "\t" + percentChange1 +"\n2. " + SymString2 + "\t" + percentChange2 +"\n3. " + SymString3 + "\t" + percentChange3 +"\n4. " + SymString4 + "\t" + percentChange4 +"\n5. " + SymString5 + "\t" + percentChange5 +"```")
     
         #Start of help
         elif search_type[0] == "help":
             if search_valid == "help":
-                await self.bot.say("Ragnarok's list of working commands--")
-                await self.bot.say("~float <ticker symbol> :: Checks Finviz for float \n~short <ticker symbol> :: Checks Finviz for short float \n~insti <ticker symbol> :: Checks Finviz for institutional ownership \n~pgain :: List of Top % gainers on the day \n~plose :: List of Top % losers on the day")
+                await self.bot.say("```Ragnarok's list of working commands-- \n~float <ticker symbol> :: Checks Finviz for float \n~short <ticker symbol> :: Checks Finviz for short float \n~insti <ticker symbol> :: Checks Finviz for institutional ownership \n~pgain :: List of Top % gainers on the day \n~plose :: List of Top % losers on the day" + "```")
                 
         else:
             await self.bot.say('Unrecognized command. For options, type ~ragnarok help')
