@@ -135,14 +135,29 @@ class RagnarokClass:
                     html = html[indexstring+1:]
                     
                     indexstring = html.find(test)
-                    SymIndexStart = html.find(">", indexstring)
-                    SymIndexEnd = html.find("<", indexstring)
-                    SymString = html[SymIndexStart+1:SymIndexEnd]
+                    IndexStart = html.find(">", indexstring)
+                    IndexEnd = html.find("<", indexstring)
+                    SymString = html[IndexStart+1:IndexEnd]
                     
                     indexstring = html.find(test)
                     html = html[indexstring+1:]
                     indexstring = html.find(test)
                     html = html[indexstring+1:]
+                    indexstring = html.find(test)
+                    html = html[indexstring+1:]
+                    indexstring = html.find(test)
+                    html = html[indexstring+1:]
+                    indexstring = html.find(test)
+                    html = html[indexstring+1:]
+                    indexstring = html.find(test)
+                    html = html[indexstring+1:]
+                    indexstring = html.find(test)
+                    html = html[indexstring+1:]
+                    indexstring = html.find(test)
+                    html = html[indexstring+1:]
+                    indexstring = html.find(test)
+                    html = html[indexstring+1:]
+                    
                     #indexstringSym = html.find(test)
                     #indexSymEnd = html[indexstringSym:].find("</a")
                     #html = html[indexstringSym+5:indexSymEnd]
