@@ -121,10 +121,10 @@ class RagnarokClass:
                     else:
                         await self.bot.say(encode[1:].upper() + " has a short float of " + floatString + ".")
                         #End of short float
-        elif search_type[0] == "%gain":
-            if search_valid == "%gain"                
+        elif search_type[0] == "pgain":
+            if search_valid == "pgain"                
                 url = "http://www.finviz.com/screener.ashx?v=111&o=-change"
-                test = "screener-link"
+                test = "screener-link\">1"
                 response = requests.get(url)
                 if response.status_code == 404:
                      await self.bot.say("Stock not found. Please try again")
