@@ -130,8 +130,8 @@ class RagnarokClass:
                      await self.bot.say("Stock not found. Please try again")
                 else:
                     html = response.text
-                    indexstring = html.find(test)
-                    await self.bot.say(indexstring)
+                    #indexstring = html.find(test)
+                    #await self.bot.say(indexstring)
                     #floatIndexStart = html.find("<b>", indexstring)
                     #floatIndexEnd = html.find("</b>", indexstring)
                     #floatString = html[floatIndexStart+3:floatIndexEnd] 
