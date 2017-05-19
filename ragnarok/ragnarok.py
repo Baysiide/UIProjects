@@ -171,8 +171,33 @@ class RagnarokClass:
                     indexstring = html.find(test)
                     IndexStart = html.find(">", indexstring)
                     IndexEnd = html.find("<", indexstring)
-                    SymString1 = html[IndexStart+1:IndexEnd]
-                    await self.bot.say(SymString1)
+                    SymString2 = html[IndexStart+1:IndexEnd]
+                    
+                    indexstring = html.find(test)
+                    html = html[indexstring+1:]
+                    indexstring = html.find(test)
+                    html = html[indexstring+1:]
+                    indexstring = html.find(test)
+                    html = html[indexstring+1:]
+                    indexstring = html.find(test)
+                    html = html[indexstring+1:]
+                    indexstring = html.find(test)
+                    html = html[indexstring+1:]
+                    indexstring = html.find(test)
+                    html = html[indexstring+1:]
+                    indexstring = html.find(test)
+                    html = html[indexstring+1:]
+                    indexstring = html.find(test)
+                    html = html[indexstring+1:]
+                    indexstring = html.find(test)
+                    html = html[indexstring+1:]
+                    
+                    indexstring = html.find("><")
+                    html = html[indexstring+2:]
+                    indexStart = html.find(">")
+                    indexEnd = html.find("<")
+                    percentChange2 = html[indexStart+1:indexEnd]
+                    await self.bot.say(percentChange2)
                     
                     
                     
