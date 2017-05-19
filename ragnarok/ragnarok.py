@@ -127,9 +127,11 @@ class RagnarokClass:
                 test = "screener-link"
                 response = requests.get(url)
                 if response.status_code == 404:
-                     await self.bot.say("Stock not found. Please try again")
+                     await self.bot.say("Scan not found. Please try again")
                 else:
                     html = response.text
+                    indexstring = html.find(test)
+                    html = html[indexstring+1:]
                     indexstring = html.find(test)
                     SymIndexStart = html.find(">", indexstring)
                     SymIndexEnd = html.find("<", indexstring)
