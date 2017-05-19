@@ -121,8 +121,7 @@ class RagnarokClass:
                     else:
                         await self.bot.say(encode[1:].upper() + " has a short float of " + floatString + ".")
                         #End of short float
-        elif search_type[0] == "pgain":
-            if search_valid == "pgain"                
+        elif search_type[0] == "pgain":                 
                      await self.bot.say("youve made it this far")
                 
         #Start of help
