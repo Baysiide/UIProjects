@@ -1,6 +1,12 @@
-import discord
+from random import choice
+from bs4 import BeautifulSoup
 from discord.ext import commands
 import tosdb
+import discord
+import requests
+import aiohttp
+import re
+import urllib
 
 tosdb.init(root="C:/Users/camedee.ENROUTE4/TOSDataBridge/bin")
 block1 = tosdb.TOSDB_DataBlock(10000, True)
