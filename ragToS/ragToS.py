@@ -55,7 +55,7 @@ class RagnarokToS:
             tosdb.init(root="C:/Users/camedee.ENROUTE4/TOSDataBridge/bin")
             await self.bot.say("ToS Data Bridge connection successful")
         elif search_type[0] == "disconnect":
-            tosdb.clean_up(root="C:/Users/camedee.ENROUTE4/TOSDataBridge/bin")
+            tosdb.clean_up()
             await self.bot.say("ToSDB clean up successful.")
         else:
             await self.bot.say("No command entered")
