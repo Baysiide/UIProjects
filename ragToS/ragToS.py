@@ -49,11 +49,12 @@ class RagnarokToS:
                 #Your code will go here
 
                 await self.bot.say(block1)
-                
-                block1.remove_items(quary)
         
         elif search_type[0] == "help":
             await self.bot.say("You get NOTHING. SHOO")
+        elif search_type[0] == "remove":
+            block1.remove_items(quary)
+            await self.bot.say("Block1 cleared.")
         else:
             await self.bot.say("Unrecognized command. Please type ~toshelp for a list")
 def setup(bot):
