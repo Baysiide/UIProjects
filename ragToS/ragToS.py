@@ -53,6 +53,8 @@ class RagnarokToS:
         elif search_type[0] == "help":
             await self.bot.say("You get NOTHING. SHOO")
         elif search_type[0] == "remove":
+            quary = str(ctx.message.content
+                            [len(ctx.prefix+ctx.command.name)+6:].lower())
             block1.remove_items(quary)
             await self.bot.say("Block1 cleared.")
         else:
