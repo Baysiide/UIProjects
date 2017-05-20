@@ -54,6 +54,8 @@ class RagnarokToS:
         
         elif search_type[0] == "help":
             await self.bot.say("You get NOTHING. SHOO")
+        elif search_type[0] == "show":
+            await self.bot.say(block1)
         elif search_type[0] == "remv":
             quary = str(ctx.message.content
                             [len(ctx.prefix+ctx.command.name)+6:].lower())
