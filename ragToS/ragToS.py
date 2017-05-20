@@ -50,12 +50,6 @@ class RagnarokToS:
 
                 await self.bot.say(block1)
         
-        elif search_type[0] == "connect":
-            
-            await self.bot.say("ToS Data Bridge connection successful")
-        elif search_type[0] == "disconnect":
-            tosdb.clean_up()
-            await self.bot.say("ToSDB clean up successful.")
         elif search_type[0] == "help":
             await self.bot.say("You get NOTHING. SHOO")
         else:
