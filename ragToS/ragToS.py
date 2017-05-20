@@ -47,13 +47,11 @@ class RagnarokToS:
                 if tosdb.connected():
                     await self.bot.say("Connected to DB")
                 block1.add_items(quary)
+                block1.add_items(quary)
 
                 #Your code will go here
-                def saythis():
-                    threading.Timer(10.0, saythis).start()
-                    await self.bot.say(block1.get(quary, "LAST"))
-
-                saythis()
+                
+                await self.bot.say(block1.info())
                 
         
         elif search_type[0] == "help":
