@@ -29,11 +29,21 @@ class RagnarokToS:
         search_valid = str(ctx.message.content
                            [len(ctx.prefix+ctx.command.name)+1:].lower())
         
-        block1.add_items('GLYC')
+        if search_type[0] == "sData":
+            if search_valid == "sData":
+                await self.bot.say("Please add the the ticker symbol for data")
+            else:
+                quary = str(ctx.message.content
+                            [len(ctx.prefix+ctx.command.name)+6:].lower())
+                encode = urllib.parse.quote_plus(quary, encoding='utf-8',
+                                                 errors='replace')
+                
+                
+                block1.add_items(encode)
 
-        #Your code will go here
+                #Your code will go here
 
-        await self.bot.say(block1)
+                await self.bot.say(block1)
 
 def setup(bot):
     bot.add_cog(RagnarokToS(bot))
