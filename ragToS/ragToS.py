@@ -50,9 +50,10 @@ class RagnarokToS:
 
                 #Your code will go here
                 def saythis():
+                    threading.Timer(10.0, saythis).start()
                     await self.bot.say(block1.get(quary, "LAST"))
 
-                t = Timer(10.0, saythis)
+                saythis()
                 
         
         elif search_type[0] == "help":
