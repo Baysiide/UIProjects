@@ -17,9 +17,9 @@ class RagnarokToS:
     def __init__(self, bot):
         self.bot = bot
 
-    @commands.command(name="ragToS", pass_context=True)
+    @commands.command(name="ragtos", pass_context=True)
     @commands.cooldown(10, 60, commands.BucketType.user)
-    async def _ragToS(self, ctx, text):
+    async def _ragtos(self, ctx, text):
         """Compilation of ToS commands for United Investors. Type '~ragnarok help' for a list"""
         search_type = ctx.message.content[len(ctx.prefix+ctx.command.name)+1:].lower().split(" ")
         option = {
@@ -45,7 +45,7 @@ class RagnarokToS:
                 
                 block1 = tosdb.TOSDB_DataBlock(10000, True)
                 block1.add_topics(tosdb.TOPICS.LAST.val, "bid", "ASK", "vOLuMe")
-                block1.add_items(encode)
+                block1.add_items(encode.upper())
 
                 #Your code will go here
 
