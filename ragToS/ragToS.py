@@ -1,4 +1,5 @@
 from random import choice
+from threading import timer
 from bs4 import BeautifulSoup
 from discord.ext import commands
 import tosdb
@@ -48,8 +49,11 @@ class RagnarokToS:
                 block1.add_items(quary)
 
                 #Your code will go here
+                def saythis():
+                    await self.bot.say(block1.get(quary, "LAST"))
 
-                await self.bot.say(block1.get(quary, "LAST"))
+                t = Timer(10.0, saythis)
+                
         
         elif search_type[0] == "help":
             await self.bot.say("You get NOTHING. SHOO")
