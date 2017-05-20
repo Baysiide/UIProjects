@@ -10,8 +10,8 @@ import urllib
 
 
 #tosdb.init(root="C:/Users/camedee.ENROUTE4/TOSDataBridge/bin")
-#block1 = tosdb.TOSDB_DataBlock(10000, True)
-#block1.add_topics(tosdb.TOPICS.LAST.val, "bid", "ASK", "vOLuMe")
+block1 = tosdb.TOSDB_DataBlock(10000, True)
+block1.add_topics(tosdb.TOPICS.LAST.val, "bid", "ASK", "vOLuMe")
 
 
 class RagnarokToS:
@@ -43,7 +43,7 @@ class RagnarokToS:
                 quary = str(ctx.message.content
                             [len(ctx.prefix+ctx.command.name)+6:].lower())
                 
-                
+                tosdb.connect(
                 block1.add_items(quary)
 
                 #Your code will go here
