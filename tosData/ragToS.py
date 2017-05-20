@@ -44,6 +44,7 @@ class RagnarokToS:
                 #Your code will go here
 
                 await self.bot.say(block1)
-
+        else:
+            await self.bot.say("No command entered")
 def setup(bot):
     bot.add_cog(RagnarokToS(bot))
