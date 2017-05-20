@@ -40,12 +40,11 @@ class RagnarokToS:
             else:
                 quary = str(ctx.message.content
                             [len(ctx.prefix+ctx.command.name)+6:].lower())
-                encode = urllib.parse.quote_plus(quary, encoding='utf-8',
-                                                 errors='replace')
+                
                 
                 block1 = tosdb.TOSDB_DataBlock(10000, True)
                 block1.add_topics(tosdb.TOPICS.LAST.val, "bid", "ASK", "vOLuMe")
-                block1.add_items(encode.upper())
+                block1.add_items(quary.upper())
 
                 #Your code will go here
 
