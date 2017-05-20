@@ -51,7 +51,7 @@ class RagnarokToS:
 
                 #Your code will go here
                 
-                await self.bot.say(block1.get())
+                await self.bot.say(block1.get(quary, "LAST"))
                 
         
         elif search_type[0] == "help":
