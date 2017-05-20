@@ -43,7 +43,7 @@ class RagnarokToS:
                 quary = str(ctx.message.content
                             [len(ctx.prefix+ctx.command.name)+6:].lower())
                 
-                if tosdb.connected() is true:
+                if tosdb.connected():
                     await self.bot.say("Connected to DB")
                 block1.add_items(quary)
 
