@@ -20,7 +20,7 @@ class RagnarokToS:
         self.bot = bot
 
     @commands.command(name="ragToS", pass_context=True)
-    @commands.cooldown(10, 60, commands.BucketType.user)
+    @commands.cooldown(50, 60, commands.BucketType.user)
     async def _ragToS(self, ctx, text):
         """Compilation of ToS commands for United Investors. Type '~ragnarok help' for a list"""
         search_type = ctx.message.content[len(ctx.prefix+ctx.command.name)+1:].lower().split(" ")
@@ -56,7 +56,7 @@ class RagnarokToS:
             quary = str(ctx.message.content
                             [len(ctx.prefix+ctx.command.name)+6:].lower())
             block1.remove_items(quary)
-            await self.bot.say("Block1 cleared.")
+            await self.bot.say("Ticker " + quary.upper() + " has been removed from Block1.")
         else:
             await self.bot.say("Unrecognized command. Please type ~toshelp for a list")
 def setup(bot):
