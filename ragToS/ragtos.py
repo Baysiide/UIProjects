@@ -17,9 +17,9 @@ class RagnarokToS:
     def __init__(self, bot):
         self.bot = bot
 
-    @commands.command(name="ragtos", pass_context=True)
+    @commands.command(name="ragToS", pass_context=True)
     @commands.cooldown(10, 60, commands.BucketType.user)
-    async def _ragtos(self, ctx, text):
+    async def _ragToS(self, ctx, text):
         """Compilation of ToS commands for United Investors. Type '~ragnarok help' for a list"""
         search_type = ctx.message.content[len(ctx.prefix+ctx.command.name)+1:].lower().split(" ")
         option = {
