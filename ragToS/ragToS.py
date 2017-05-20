@@ -52,8 +52,8 @@ class RagnarokToS:
          #       await self.bot.say(block1)
         
         if search_type[0] == "connect":
-            tosdb.init(root="C:/Users/camedee.ENROUTE4/TOSDataBridge/bin")
-            await self.bot.say=("Init ToSDB connection successful.")
+            #tosdb.init(root="C:/Users/camedee.ENROUTE4/TOSDataBridge/bin")
+            await self.bot.say=("Line above this fucked it up")
         #elif search_type[0] == "disconnect":
         #    tosdb.clean_up(root="C:/Users/camedee.ENROUTE4/TOSDataBridge/bin")
         #    await self.bot.say=("ToSDB clean up successful.")
