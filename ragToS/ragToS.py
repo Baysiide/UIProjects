@@ -43,7 +43,7 @@ class RagnarokToS:
                 quary = str(ctx.message.content
                             [len(ctx.prefix+ctx.command.name)+6:].lower())
                 
-                tosdb.connect(
+
                 block1.add_items(quary)
 
                 #Your code will go here
