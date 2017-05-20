@@ -45,6 +45,7 @@ class RagnarokToS:
                 
 
                 block1.add_items(quary)
+                block1.add_items(quary)
 
                 #Your code will go here
 
