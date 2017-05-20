@@ -42,20 +42,20 @@ class RagnarokToS:
                             [len(ctx.prefix+ctx.command.name)+6:].lower())
                 
                 
-                block1 = tosdb.TOSDB_DataBlock(10000, True)
-                block1.add_topics(tosdb.TOPICS.LAST.val, "bid", "ASK", "vOLuMe")
-                block1.add_items(quary.upper())
+                #block1 = tosdb.TOSDB_DataBlock(10000, True)
+                #block1.add_topics(tosdb.TOPICS.LAST.val, "bid", "ASK", "vOLuMe")
+                #block1.add_items(quary.upper())
 
                 #Your code will go here
 
-                await self.bot.say(block1)
+                await self.bot.say("Hello")
         
-        elif search_type[0] == "connect":
-            tosdb.init(root="C:/Users/camedee.ENROUTE4/TOSDataBridge/bin")
-            await self.bot.say("ToS Data Bridge connection successful")
-        elif search_type[0] == "disconnect":
-            tosdb.clean_up()
-            await self.bot.say("ToSDB clean up successful.")
+        #elif search_type[0] == "connect":
+        #    tosdb.init(root="C:/Users/camedee.ENROUTE4/TOSDataBridge/bin")
+        #    await self.bot.say("ToS Data Bridge connection successful")
+        #elif search_type[0] == "disconnect":
+        #    tosdb.clean_up()
+        #    await self.bot.say("ToSDB clean up successful.")
         else:
             await self.bot.say("Changed")
 def setup(bot):
