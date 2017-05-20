@@ -49,6 +49,8 @@ class RagnarokToS:
                 #Your code will go here
 
                 await self.bot.say(block1)
+                
+                blocks1.remove_items(quary)
         
         elif search_type[0] == "help":
             await self.bot.say("You get NOTHING. SHOO")
