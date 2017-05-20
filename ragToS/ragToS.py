@@ -1,7 +1,6 @@
 from random import choice
 from bs4 import BeautifulSoup
 from discord.ext import commands
-import threading
 import tosdb
 import discord
 import requests
