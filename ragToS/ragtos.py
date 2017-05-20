@@ -51,7 +51,7 @@ class RagnarokToS:
 
                 await self.bot.say(block1)
         
-        if search_type[0] == "connect":
+        elif search_type[0] == "connect":
             tosdb.init(root="C:/Users/camedee.ENROUTE4/TOSDataBridge/bin")
             await self.bot.say("ToS Data Bridge connection successful")
         elif search_type[0] == "disconnect":
