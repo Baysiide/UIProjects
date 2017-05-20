@@ -8,9 +8,8 @@ import aiohttp
 import re
 import urllib
 
-tosdb.init(root="C:/Users/camedee.ENROUTE4/TOSDataBridge/bin")
-block1 = tosdb.TOSDB_DataBlock(10000, True)
-block1.add_topics(tosdb.TOPICS.LAST.val, "bid", "ASK", "vOLuMe")
+
+
 
 
 class RagnarokToS:
@@ -44,12 +43,17 @@ class RagnarokToS:
                 encode = urllib.parse.quote_plus(quary, encoding='utf-8',
                                                  errors='replace')
                 
-                
+                block1 = tosdb.TOSDB_DataBlock(10000, True)
+                block1.add_topics(tosdb.TOPICS.LAST.val, "bid", "ASK", "vOLuMe")
                 block1.add_items(encode)
 
                 #Your code will go here
 
                 await self.bot.say(block1)
+        
+        if search_type[0] == "connect":
+            tosdb.init(root="C:/Users/camedee.ENROUTE4/TOSDataBridge/bin")
+            await self.bot.say=("Init ToSDB connection successful.")
         else:
             await self.bot.say("No command entered")
 def setup(bot):
