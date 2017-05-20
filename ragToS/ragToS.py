@@ -42,13 +42,13 @@ class RagnarokToS:
                             [len(ctx.prefix+ctx.command.name)+6:].lower())
                 
                 
-                #block1 = tosdb.TOSDB_DataBlock(10000, True)
-                #block1.add_topics(tosdb.TOPICS.LAST.val, "bid", "ASK", "vOLuMe")
-                #block1.add_items(quary.upper())
+                block1 = tosdb.TOSDB_DataBlock(10000, True)
+                block1.add_topics(tosdb.TOPICS.LAST.val, "bid", "ASK", "vOLuMe")
+                block1.add_items(quary.upper())
 
                 #Your code will go here
 
-                await self.bot.say(quary)
+                #await self.bot.say(quary)
         
         elif search_type[0] == "connect":
             tosdb.init(root="C:/Users/camedee.ENROUTE4/TOSDataBridge/bin")
@@ -56,7 +56,9 @@ class RagnarokToS:
         elif search_type[0] == "disconnect":
             tosdb.clean_up()
             await self.bot.say("ToSDB clean up successful.")
+        elif search_type[0] == "help":
+            await self.bot.say("You get NOTHING. SHOO")
         else:
-            await self.bot.say("Changed")
+            await self.bot.say("Unrecognized command. Please type ~toshelp for a list")
 def setup(bot):
     bot.add_cog(RagnarokToS(bot))
