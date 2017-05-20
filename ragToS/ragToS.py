@@ -57,6 +57,6 @@ class RagnarokToS:
             tosdb.clean_up()
             await self.bot.say("ToSDB clean up successful.")
         else:
-            await self.bot.say("No command entered")
+            await self.bot.say("Changed")
 def setup(bot):
     bot.add_cog(RagnarokToS(bot))
