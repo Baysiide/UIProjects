@@ -51,9 +51,12 @@ class RagnarokToS:
 
                 await self.bot.say(block1)
         
-        if search_type[0] == "connect":
+        elif search_type[0] == "connect":
             tosdb.init(root="C:/Users/camedee.ENROUTE4/TOSDataBridge/bin")
             await self.bot.say=("Init ToSDB connection successful.")
+        elif search_type[0] == "disconnect":
+            tosdb.clean_up()
+            await self.bot.say=("ToSDB clean up successful.")
         else:
             await self.bot.say("No command entered")
 def setup(bot):
