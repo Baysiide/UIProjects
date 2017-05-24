@@ -80,6 +80,7 @@ class Admin:
         server = ctx.message.server
         #trial_ended = [x.name for x in server.members if TrialEnd in x.roles]
         TrialEnd = self._role_from_string(server, ("Trial Ended")
+        Trialist = self._role_from_string(server, ("Trialist")
         members = [x for x in server.members if x.name != "@everyone"]
         for x in members:
             #x: discord.User=None
@@ -90,7 +91,7 @@ class Admin:
                         joined_at = self.fetch_joined_at(x, server)
                         since_joined = (ctx.message.timestamp - joined_at).days
                         if since_joined >= 5:
-                            await self.bot.remove_roles(x, y)
+                            #await self.bot.remove_roles(x, y)
                             await self.bot.add_roles(x, TrialEnd)
                             await self.bot.say(x.name)
                             await self.bot.say("This user's trial has ended!")
