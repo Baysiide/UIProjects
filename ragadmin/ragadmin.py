@@ -82,10 +82,10 @@ class Admin:
         #TrialEnd = self._role_from_string(server, ("Trial Ended")
         members = [x.name for x in server.members if x.name != "@everyone"]
         for x in members:
-            u: discord.User=x
+            x: discord.User=none
             #roles = [y for y in u.roles if y.name != "@everyone"]
-            if not u.bot:
-                await self.bot.say(u)
+            if not x.bot:
+                await self.bot.say(x)
             #await self.bot.say(roles)
         #    if x.name != "@everyone"
         #        roles = [y for y in x.roles if y.name != "@everyone"]
