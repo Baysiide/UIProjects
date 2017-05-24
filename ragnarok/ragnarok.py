@@ -91,6 +91,23 @@ class RagnarokClass:
                     else:
                         await self.bot.say(encode[1:].upper() + " has a float of " + floatString + " shares.")
           #End of Float
+        elif search_type[0] == "chart":
+            if search_valid == "chart":
+                await self.bot.say("Please add the the ticker symbol for data.")
+            else:
+                quary = str(ctx.message.content
+                            [len(ctx.prefix+ctx.command.name)+6:].lower())
+                encode = urllib.parse.quote_plus(quary, encoding='utf-8',
+                                                 errors='replace')
+                
+                url = "http://finviz.com/chart.ashx?t={}&ty=c&ta=1&p=d&s=l".format(encome)
+                response = requests.get(url)
+                if response.status_code == 404:
+                    await self.bot.say("Stock not found. Please try again.")
+                else:
+                    await self.bot.say(url)
+                    await self.bot.say(response)
+        
         #Start of institutional ownership
         elif search_type[0] == "insti":
             if search_valid == "insti":
