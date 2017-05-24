@@ -74,7 +74,7 @@ class Admin:
         self._save_settings()
     @commands.command(no_pm=True, pass_context=True)
     async def checktrial(self, ctx, user: discord.Member=None):
-        
+        server = ctx.message.server
         await self.bot.say(server.get_all_members())     
     @commands.command(no_pm=True, pass_context=True)
     async def addrole(self, ctx, user: discord.Member=None):
