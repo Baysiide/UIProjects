@@ -74,6 +74,10 @@ class Admin:
         self._save_settings()
     @commands.command(no_pm=True, pass_context=True)
     async def checktrial(self, ctx, user: discord.Member=None):
+        author = ctx.message.author
+        channel = ctx.message.channel
+        server = ctx.message.server
+        
         result = None
         members = server.members();
         
