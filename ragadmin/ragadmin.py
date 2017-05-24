@@ -72,6 +72,7 @@ class Admin:
     def _set_serverlock(self, lock=True):
         self._settings["SERVER_LOCK"] = lock
         self._save_settings()
+        
     @commands.command(no_pm=True, pass_context=True)
     async def checktrial(self, ctx, user: discord.Member=None):
         author = ctx.message.author
@@ -79,6 +80,10 @@ class Admin:
         server = ctx.message.server
         TrialEnd = self._role_from_string(server, ("Trial Ended"))
         members = [x.name for x in server.members if x.name != "@everyone"]
+                if roles:
+            roles = sorted(roles, key=[x.name for x in server.role_hierarchy
+                                       if x.name != "@everyone"].index)
+            roles = ", ".join(roles)
         trial_ended = [x.name for x in members if TrialEnd in x.roles]
         await self.bot.say(members)   
         await self.bot.say(trial_ended) 
