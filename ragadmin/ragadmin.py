@@ -87,7 +87,12 @@ class Admin:
             if not x.bot:
                 for y in x.roles:
                     if y.name == "Trialist":
-                        await self.bot.say(x.name)
+                        joined_at = self.fetch_joined_at(x, server)
+                        since_joined = (ctx.message.timestamp - joined_at).days
+                        if since_joined >= 5:
+                            await self.bot.say(x.name)
+                            await self.bot.say("This user's trial has ended!")
+                            
             #await self.bot.say(roles)
         #    if x.name != "@everyone"
         #        roles = [y for y in x.roles if y.name != "@everyone"]
