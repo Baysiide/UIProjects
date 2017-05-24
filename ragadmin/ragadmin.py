@@ -71,12 +71,8 @@ class Admin:
     def _set_serverlock(self, lock=True):
         self._settings["SERVER_LOCK"] = lock
         self._save_settings()
-    
-    @server.event
-    async def on_message(message):
-        if message.content.startswith('~say dickmeat'):
-            await self.bot.say("oh yes dick meat")
-            
+
+        
     @commands.command(no_pm=True, pass_context=True)
     async def checktrial(self, ctx):
         author = ctx.message.author
