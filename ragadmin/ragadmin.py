@@ -78,6 +78,12 @@ class Admin:
         author = ctx.message.author
         channel = ctx.message.channel
         server = ctx.message.server
+        
+        if not user:
+            user = author
+
+            
+        roles = [x.name for x in user.roles if x.name != "@everyone"]
         TrialEnd = self._role_from_string(server, ("Trial Ended"))
         members = [x.name for x in server.members if x.name != "@everyone"]
         if roles:
