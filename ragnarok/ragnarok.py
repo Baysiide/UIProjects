@@ -106,7 +106,7 @@ class RagnarokClass:
                     await self.bot.say("Stock not found. Please try again.")
                 else:
                     await self.bot.say(url)
-                    await self.bot.say(response)
+                    #await self.bot.say(response)
         
         #Start of institutional ownership
         elif search_type[0] == "insti":
