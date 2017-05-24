@@ -10,7 +10,6 @@ import os
 
 
 log = logging.getLogger("red.admin")
-client = discord.Client()
 
 class Admin:
     """Admin tools, more to come."""
@@ -73,7 +72,7 @@ class Admin:
         self._settings["SERVER_LOCK"] = lock
         self._save_settings()
     
-    @client.event
+    @server.event
     async def on_message(message):
         if message.content.startswith('~say dickmeat'):
             await self.bot.say("oh yes dick meat")
