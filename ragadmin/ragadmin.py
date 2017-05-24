@@ -93,7 +93,7 @@ class Admin:
                             await self.bot.remove_roles(x, y)
                             await self.bot.add_roles(x, TrialEnd)
                             await self.bot.say(x.name)
-                            await self.bot.say("This user's trial has ended!")
+                            await self.bot.say("This user's trial has ended and has been changed!")
                         else:
                             await self.bot.say(x.name)
                             await self.bot.say("Trial still going")
