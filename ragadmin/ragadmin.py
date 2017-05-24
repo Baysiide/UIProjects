@@ -78,21 +78,11 @@ class Admin:
         author = ctx.message.author
         channel = ctx.message.channel
         server = ctx.message.server
-        
-        if not user:
-            user = author
 
-            
-        roles = [x.name for x in user.roles if x.name != "@everyone"]
-        TrialEnd = self._role_from_string(server, ("Trial Ended"))
-        members = [x.name for x in server.members if x.name != "@everyone"]
-        if roles:
-            roles = sorted(roles, key=[x.name for x in server.role_hierarchy
-            if x.name != "@everyone"].index)
-                roles = ", ".join(roles)
-        #trial_ended = [x.name for x in members if TrialEnd in x.roles]
+        TrialEnd = self._role_from_string(server, ("Trial Ended")
+        trial_ended = [x.name for x in server.members if TrialEnd in x.roles]
         await self.bot.say(members)   
-        await self.bot.say(roles) 
+        await self.bot.say(trial_ended) 
         
         
     @commands.command(no_pm=True, pass_context=True)
