@@ -84,7 +84,7 @@ class Admin:
         #TrialEnd = self._role_from_string(server, ("Trial Ended")
         #trial_ended = [x.name for x in server.members if TrialEnd in x.roles]
         await self.bot.say(members) 
-        await self.bot.say(len(members) + " members total.")   
+        await self.bot.say(x for x in members)   
         #await self.bot.say(trial_ended) 
         
         
