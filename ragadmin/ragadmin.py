@@ -100,6 +100,10 @@ class Admin:
                         else:
                             await self.bot.say(x.name)
                             await self.bot.say("Trial still going")
+                            
+                if TrialEnd and Trialist in x.roles:
+                    await self.bot.remove_roles(x, Trialist)
+                    
         if trialistcountBefore == 0:
             await self.bot.say("No Trialists....")
         else:
