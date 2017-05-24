@@ -79,7 +79,7 @@ class Admin:
         server = ctx.message.server
         TrialEnd = self._role_from_string(server, ("Trial Ended"))
         members = [x.name for x in server.members if x.name != "@everyone"]
-        trial_ended = [x.name for x in members if x.role != TrialEnd]
+        trial_ended = [x.name for x in members if TrialEnd in x.roles]
         await self.bot.say(members)   
         await self.bot.say(trial_ended) 
         
