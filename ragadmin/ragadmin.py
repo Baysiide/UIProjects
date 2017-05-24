@@ -10,7 +10,7 @@ import os
 
 
 log = logging.getLogger("red.admin")
-
+client = discord.Client()
 
 class Admin:
     """Admin tools, more to come."""
