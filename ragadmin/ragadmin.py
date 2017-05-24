@@ -81,16 +81,19 @@ class Admin:
 
         TrialEnd = self._role_from_string(server, ("Trial Ended"))
         Trialist = self._role_from_string(server, ("Trialist"))
-        trialistcount = 0                                  
+        trialistcount = 0
+        trialistcountBefore = 0
         members = [x for x in server.members if x.name != "@everyone"]
         for x in members:
             if not x.bot:
                 for y in x.roles:
                     if y.name == "Trialist":
+                        trialistcountBefore = trialistcountBefore + 1
                         trialistcount = trialistcount + 1
                         joined_at = self.fetch_joined_at(x, server)
                         since_joined = (ctx.message.timestamp - joined_at).days
                         if since_joined >= 1:
+                            trialistcount = trialistcount - 1
                             await self.bot.remove_roles(x, Trialist)
                             await self.bot.add_roles(x, TrialEnd)
                             await self.bot.say(x.name + " <-- Trial has ended and has been changed!")
@@ -99,6 +102,8 @@ class Admin:
                             await self.bot.say("Trial still going")
         if trialistcount == 0:
             await self.bot.say("No Trialists....")
+        else:
+            await self.bot.say("We have " + trialistcountBefore + " trialists before check, and " + trialistcount + " now.")
         
     @commands.command(no_pm=True, pass_context=True)
     async def addrole(self, ctx, user: discord.Member=None):
