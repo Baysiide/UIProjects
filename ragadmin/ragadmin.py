@@ -78,13 +78,12 @@ class Admin:
         author = ctx.message.author
         channel = ctx.message.channel
         server = ctx.message.server
-        #trial_ended = [x.name for x in server.members if TrialEnd in x.roles]
+
         TrialEnd = self._role_from_string(server, ("Trial Ended")
         Trialist = self._role_from_string(server, ("Trialist")
+                                          
         members = [x for x in server.members if x.name != "@everyone"]
         for x in members:
-            #x: discord.User=None
-            #roles = [y for y in u.roles if y.name != "@everyone"]
             if not x.bot:
                 for y in x.roles:
                     if y.name == "Trialist":
@@ -92,21 +91,12 @@ class Admin:
                         since_joined = (ctx.message.timestamp - joined_at).days
                         if since_joined >= 5:
                             #await self.bot.remove_roles(x, y)
-                            await self.bot.add_roles(x, TrialEnd)
+                            #await self.bot.add_roles(x, TrialEnd)
                             await self.bot.say(x.name)
                             await self.bot.say("This user's trial has ended!")
                         else:
                             await self.bot.say(x.name)
                             await self.bot.say("Trial still going")
-            #await self.bot.say(roles)
-        #    if x.name != "@everyone"
-        #        roles = [y for y in x.roles if y.name != "@everyone"]
-        #        await self.bot.say(x + roles)   
-        #roles = [x for x in members if x.name != "@everyone"]
-        #TrialEnd = self._role_from_string(server, ("Trial Ended")
-        #trial_ended = [x.name for x in server.members if TrialEnd in x.roles]
-        #await self.bot.say(members)    
-        #await self.bot.say(trial_ended) 
         
         
     @commands.command(no_pm=True, pass_context=True)
