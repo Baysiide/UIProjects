@@ -79,8 +79,9 @@ class Admin:
         server = ctx.message.server
         
         members = [x.name for x in server.members if x.name != "@everyone"]
-        
-        await self.bot.say(members)     
+        trial_ended = [x.name for x in members if x.role != "Trial Ended"]
+        await self.bot.say(members)   
+        await self.bot.say(trial_ended) 
         
         
     @commands.command(no_pm=True, pass_context=True)
