@@ -72,7 +72,10 @@ class Admin:
     def _set_serverlock(self, lock=True):
         self._settings["SERVER_LOCK"] = lock
         self._save_settings()
-
+    @commands.command(no_pm=True, pass_context=True)
+    async def checktrial(self, ctx, user: discord.Member=None):
+        await self.bot.say(get_all_members())
+        
     @commands.command(no_pm=True, pass_context=True)
     async def addrole(self, ctx, user: discord.Member=None):
         """Adds a role to a user, defaults to author
