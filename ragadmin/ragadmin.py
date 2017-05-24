@@ -103,7 +103,7 @@ class Admin:
         if trialistcountBefore == 0:
             await self.bot.say("No Trialists....")
         else:
-            await self.bot.say("We have " + str(trialistcountBefore) + " trialists before check, and " + str(trialistcount) + " now.")
+            await self.bot.say("We had " + str(trialistcountBefore) + " trialists before check, and " + str(trialistcount) + " now.")
         
     @commands.command(no_pm=True, pass_context=True)
     async def addrole(self, ctx, user: discord.Member=None):
