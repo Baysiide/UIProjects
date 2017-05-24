@@ -80,9 +80,9 @@ class Admin:
         server = ctx.message.server
 
         TrialEnd = self._role_from_string(server, ("Trial Ended")
-        trial_ended = [x.name for x in server.members if TrialEnd in x.roles]
+        #trial_ended = [x.name for x in server.members if TrialEnd in x.roles]
         await self.bot.say(members)   
-        await self.bot.say(trial_ended) 
+        #await self.bot.say(trial_ended) 
         
         
     @commands.command(no_pm=True, pass_context=True)
