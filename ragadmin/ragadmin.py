@@ -100,7 +100,7 @@ class Admin:
                         else:
                             await self.bot.say(x.name)
                             await self.bot.say("Trial still going")
-        if trialistcount == 0:
+        if trialistcountBefore == 0:
             await self.bot.say("No Trialists....")
         else:
             await self.bot.say("We have " + trialistcountBefore + " trialists before check, and " + trialistcount + " now.")
