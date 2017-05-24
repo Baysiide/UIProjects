@@ -78,9 +78,7 @@ class Admin:
         channel = ctx.message.channel
         server = ctx.message.server
         
-        result = None
-        members = server.members();
-        
+        members = [x.name for x in server.members if x.name != "@everyone"]
         
         await self.bot.say(members)     
         
