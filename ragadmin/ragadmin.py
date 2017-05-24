@@ -92,7 +92,9 @@ class Admin:
                         if since_joined >= 5:
                             await self.bot.say(x.name)
                             await self.bot.say("This user's trial has ended!")
-                            
+                        else:
+                            await self.bot.say(x.name)
+                            await self.bot.say("Trial still going")
             #await self.bot.say(roles)
         #    if x.name != "@everyone"
         #        roles = [y for y in x.roles if y.name != "@everyone"]
