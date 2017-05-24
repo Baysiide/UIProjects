@@ -74,13 +74,13 @@ class Admin:
         self._save_settings()
         
     @commands.command(no_pm=True, pass_context=True)
-    async def checktrial(self, ctx, user: discord.Member=None):
+    async def checktrial(self, ctx):
         author = ctx.message.author
         channel = ctx.message.channel
         server = ctx.message.server
         
         members = [x.name for x in server.members if x.name != "@everyone"]
-        TrialEnd = self._role_from_string(server, ("Trial Ended")
+        #TrialEnd = self._role_from_string(server, ("Trial Ended")
         #trial_ended = [x.name for x in server.members if TrialEnd in x.roles]
         await self.bot.say(members)   
         #await self.bot.say(trial_ended) 
