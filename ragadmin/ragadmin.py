@@ -74,11 +74,8 @@ class Admin:
         self._save_settings()
     @commands.command(no_pm=True, pass_context=True)
     async def checktrial(self, ctx, user: discord.Member=None):
-        for server in client.servers:
-            for member in server.members:
-                yield member
-        await self.bot.say(member)
         
+        await self.bot.say(server.get_all_members())     
     @commands.command(no_pm=True, pass_context=True)
     async def addrole(self, ctx, user: discord.Member=None):
         """Adds a role to a user, defaults to author
