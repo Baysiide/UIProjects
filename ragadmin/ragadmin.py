@@ -92,7 +92,7 @@ class Admin:
                         if since_joined >= 1:
                             await self.bot.remove_roles(x, Trialist)
                             await self.bot.add_roles(x, TrialEnd)
-                            await self.bot.say(x.name + " <---- Trial has ended and has been changed!")
+                            await self.bot.say(x.name + " <-- Trial has ended and has been changed!")
                         else:
                             await self.bot.say(x.name)
                             await self.bot.say("Trial still going")
