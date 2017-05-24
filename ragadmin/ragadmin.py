@@ -84,7 +84,7 @@ class Admin:
         for x in members:
             u: discord.User=x
             #roles = [y for y in u.roles if y.name != "@everyone"]
-            if !u.bot:
+            if not u.bot:
                 await self.bot.say(u)
             #await self.bot.say(roles)
         #    if x.name != "@everyone"
