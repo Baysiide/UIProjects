@@ -81,12 +81,13 @@ class Admin:
 
         TrialEnd = self._role_from_string(server, ("Trial Ended"))
         Trialist = self._role_from_string(server, ("Trialist"))
-                                          
+        trialistcount = 0                                  
         members = [x for x in server.members if x.name != "@everyone"]
         for x in members:
             if not x.bot:
                 for y in x.roles:
                     if y.name == "Trialist":
+                        trialistcount = trialistcount + 1
                         joined_at = self.fetch_joined_at(x, server)
                         since_joined = (ctx.message.timestamp - joined_at).days
                         if since_joined >= 1:
@@ -96,9 +97,8 @@ class Admin:
                         else:
                             await self.bot.say(x.name)
                             await self.bot.say("Trial still going")
-                    else: 
-                        await self.bot.say("We have no trialists? Dragon wtf are you doing?!?")
-        
+        if trialistcount == 0
+            await self.bot.say("No Trialists....")
         
     @commands.command(no_pm=True, pass_context=True)
     async def addrole(self, ctx, user: discord.Member=None):
