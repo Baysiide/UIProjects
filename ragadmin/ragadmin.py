@@ -90,7 +90,7 @@ class Admin:
                         joined_at = self.fetch_joined_at(x, server)
                         since_joined = (ctx.message.timestamp - joined_at).days
                         if since_joined >= 1:
-                            await self.bot.remove_roles(x, y)
+                            await self.bot.remove_roles(x, Trialist)
                             await self.bot.add_roles(x, TrialEnd)
                             await self.bot.say(x.name)
                             await self.bot.say("This user's trial has ended and has been changed!")
