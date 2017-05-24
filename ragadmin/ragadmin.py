@@ -84,9 +84,9 @@ class Admin:
             roles = sorted(roles, key=[x.name for x in server.role_hierarchy
             if x.name != "@everyone"].index)
                 roles = ", ".join(roles)
-        trial_ended = [x.name for x in members if TrialEnd in x.roles]
+        #trial_ended = [x.name for x in members if TrialEnd in x.roles]
         await self.bot.say(members)   
-        await self.bot.say(trial_ended) 
+        await self.bot.say(roles) 
         
         
     @commands.command(no_pm=True, pass_context=True)
