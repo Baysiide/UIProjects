@@ -97,11 +97,10 @@ class Admin:
                                 if y.name == "Trial Ended":
                                     await self.bot.remove_roles(x, Trialist)
                                 else:
-                            trialistcount = trialistcount - 1
-                            await self.bot.remove_roles(x, Trialist)
-                            await self.bot.add_roles(x, TrialEnd)
-                            await self.bot.say(x.name + " <-- Trial has ended and has been changed!")
-                            if 
+                                    trialistcount = trialistcount - 1
+                                    await self.bot.remove_roles(x, Trialist)
+                                    await self.bot.add_roles(x, TrialEnd)
+                                    await self.bot.say(x.name + " <-- Trial has ended and has been changed!")
                         else:
                             await self.bot.say(x.name)
                             await self.bot.say("Trial still going")
