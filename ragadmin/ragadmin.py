@@ -96,6 +96,8 @@ class Admin:
                         else:
                             await self.bot.say(x.name)
                             await self.bot.say("Trial still going")
+                    else: 
+                        await self.bot.say("We have no trialists? Dragon wtf are you doing?!?")
         
         
     @commands.command(no_pm=True, pass_context=True)
