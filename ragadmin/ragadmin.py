@@ -87,7 +87,7 @@ class Admin:
             if not x.bot:
                 for y in x.roles:
                     if y.name == TrialEnd:
-                        await self.bot.say(x.name)
+                        await self.bot.say(y)
             #await self.bot.say(roles)
         #    if x.name != "@everyone"
         #        roles = [y for y in x.roles if y.name != "@everyone"]
