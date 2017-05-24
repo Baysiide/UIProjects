@@ -100,7 +100,7 @@ class RagnarokClass:
                 encode = urllib.parse.quote_plus(quary, encoding='utf-8',
                                                  errors='replace')
                 
-                url = "http://finviz.com/chart.ashx?t={}&ty=c&ta=1&p=d&s=l".format(encome)
+                url = "http://finviz.com/chart.ashx?t={}&ty=c&ta=1&p=d&s=l".format(encode)
                 response = requests.get(url)
                 if response.status_code == 404:
                     await self.bot.say("Stock not found. Please try again.")
