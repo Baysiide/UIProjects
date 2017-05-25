@@ -92,7 +92,7 @@ class Admin:
                         trialistcount = trialistcount + 1
                         joined_at = self.fetch_joined_at(x, server)
                         since_joined = (ctx.message.timestamp - joined_at).days
-                        if since_joined >= 21:
+                        if since_joined >= 1:
                             trialistcount = trialistcount - 1
                             await self.bot.remove_roles(x, Trialist)
                             await self.bot.add_roles(x, TrialEnd)
