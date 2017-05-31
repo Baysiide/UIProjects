@@ -9,19 +9,7 @@ import logging
 import os
 
 
-client = discord.Client()
 log = logging.getLogger("red.admin")
-
-@client.command(pass_context = True)
-    async def clear(ctx, number):
-        
-        number = int(number) #Converting the amount of messages to delete to an integer
-        counter = 0
-        async for x in client.logs_from(ctx.message.channel, limit = number):
-            if counter < number:
-                await client.delete_message(x)
-                counter += 1
-                await asyncio.sleep(1.2) #1.2 second timer so the deleting process can be even
                 
 class Admin:
     """Admin tools, more to come."""
@@ -83,7 +71,17 @@ class Admin:
     def _set_serverlock(self, lock=True):
         self._settings["SERVER_LOCK"] = lock
         self._save_settings()
-
+        
+    @commands.command(pass_context = True)
+    async def clear(ctx, number):
+        client = discord.client()
+        number = int(number) #Converting the amount of messages to delete to an integer
+        counter = 0
+        async for x in client.logs_from(ctx.message.channel, limit = number):
+            if counter < number:
+                await client.delete_message(x)
+                counter += 1
+                await asyncio.sleep(1.2) #1.2 second timer so the deleting process can be even
         
     @commands.command(no_pm=True, pass_context=True)
     async def checktrial(self, ctx):
