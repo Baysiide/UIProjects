@@ -78,9 +78,9 @@ class Admin:
         
         number = int(number) #Converting the amount of messages to delete to an integer
         counter = 0
-        async for x in client.logs_from(ctx.message.channel, number):
+        async for x in client.logs_from(ctx.message.channel, limit = number):
             if counter < number:
-                await server.delete_message(x)
+                await client.delete_message(x)
                 counter += 1
                 await asyncio.sleep(1.2) #1.2 second timer so the deleting process can be even
 
