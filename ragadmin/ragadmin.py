@@ -8,6 +8,7 @@ import asyncio
 import logging
 import os
 
+Client = Bot('!')
 
 log = logging.getLogger("red.admin")
 
@@ -72,6 +73,17 @@ class Admin:
         self._settings["SERVER_LOCK"] = lock
         self._save_settings()
 
+    @Client.command(pass_context = True)
+        async def clear(ctx, number):
+        number = int(number) #Converting the amount of messages to delete to an integer
+        counter = 0
+        async for x in Client.logs_from(ctx.message.channel, limit = number):
+            if counter < number:
+                await Client.delete_message(x)
+                counter += 1
+                await asyncio.sleep(1.2) #1.2 second timer so the deleting process can be even
+
+        Client.run(Token)  
         
     @commands.command(no_pm=True, pass_context=True)
     async def checktrial(self, ctx):
