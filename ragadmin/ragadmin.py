@@ -74,6 +74,8 @@ class Admin:
 
     @commands.command(pass_context = True)
     async def clear(ctx, number):
+        Client = Bot('!')
+        
         number = int(number) #Converting the amount of messages to delete to an integer
         counter = 0
         async for x in Client.logs_from(ctx.message.channel, limit = number):
