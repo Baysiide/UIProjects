@@ -74,13 +74,13 @@ class Admin:
 
     @commands.command(pass_context = True)
     async def clear(ctx, number):
-        Client = ctx.message.channel
+        server = ctx.message.server
         
         number = int(number) #Converting the amount of messages to delete to an integer
         counter = 0
-        async for x in Client.logs_from(ctx.message.channel, limit = number):
+        async for x in server.logs_from(ctx.message.channel, limit = number):
             if counter < number:
-                await Client.delete_message(x)
+                await server.delete_message(x)
                 counter += 1
                 await asyncio.sleep(1.2) #1.2 second timer so the deleting process can be even
 
