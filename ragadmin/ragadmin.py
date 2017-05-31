@@ -73,9 +73,8 @@ class Admin:
         self._settings["SERVER_LOCK"] = lock
         self._save_settings()
 
-    @commands.command(pass_context = True)
+    @client.command(pass_context = True)
     async def clear(ctx, number):
-        server = ctx.message.server
         
         number = int(number) #Converting the amount of messages to delete to an integer
         counter = 0
