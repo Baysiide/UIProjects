@@ -4,6 +4,7 @@ from cogs.utils import checks
 from cogs.utils.dataIO import dataIO
 from cogs.utils.chat_formatting import box, pagify
 from copy import deepcopy
+import Bot
 import asyncio
 import logging
 import os
