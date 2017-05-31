@@ -4,7 +4,6 @@ from cogs.utils import checks
 from cogs.utils.dataIO import dataIO
 from cogs.utils.chat_formatting import box, pagify
 from copy import deepcopy
-import Bot
 import asyncio
 import logging
 import os
@@ -75,7 +74,7 @@ class Admin:
 
     @commands.command(pass_context = True)
     async def clear(ctx, number):
-        Client = Bot('!')
+        Client = ctx.message.channel
         
         number = int(number) #Converting the amount of messages to delete to an integer
         counter = 0
@@ -85,7 +84,6 @@ class Admin:
                 counter += 1
                 await asyncio.sleep(1.2) #1.2 second timer so the deleting process can be even
 
-        Client.run(Token)  
         
     @commands.command(no_pm=True, pass_context=True)
     async def checktrial(self, ctx):
