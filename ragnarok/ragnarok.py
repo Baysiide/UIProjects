@@ -367,7 +367,106 @@ class RagnarokClass:
                     indexEnd = html.find("<")
                     percentChange5 = html[indexStart+1:indexEnd]
                     await self.bot.say("```Top Losers -- \n1. " + SymString1 + "\t" + percentChange1 +"\n2. " + SymString2 + "\t" + percentChange2 +"\n3. " + SymString3 + "\t" + percentChange3 +"\n4. " + SymString4 + "\t" + percentChange4 +"\n5. " + SymString5 + "\t" + percentChange5 +"```")
-    
+        
+        elif search_type[0] == "pummh":                 
+                url = "http://finviz.com/screener.ashx?v=111&f=cap_micro,sh_avgvol_o200,ta_sma20_pa,ta_sma200_pa,ta_sma50_pa&ft=4&o=-change"
+                test = "screener-link"
+                response = requests.get(url)
+                if response.status_code == 404:
+                     await self.bot.say("Scan not found. Please try again")
+                else:
+                    
+                    html = response.text
+                    indexstring = html.find(test)
+                    html = html[indexstring+1:]
+                    
+                    indexstring = html.find(test)
+                    IndexStart = html.find(">", indexstring)
+                    IndexEnd = html.find("<", indexstring)
+                    SymString1 = html[IndexStart+1:IndexEnd]
+                    SymString1 = symStringLenCheck(SymString = SymString1)
+                    
+                    html = symToPerc(oriString = html, text = test)
+                                        
+                    indexstring = html.find("><")
+                    html = html[indexstring+2:]
+                    indexStart = html.find(">")
+                    indexEnd = html.find("<")
+                    percentChange1 = html[indexStart+1:indexEnd]
+                    
+                    #move to 2nd
+                    indexstring = html.find(">2<")
+                    html = html[indexstring:]
+                    
+                    indexstring = html.find(test)
+                    IndexStart = html.find(">", indexstring)
+                    IndexEnd = html.find("<", indexstring)
+                    SymString2 = html[IndexStart+1:IndexEnd]
+                    SymString2 = symStringLenCheck(SymString = SymString2)
+                    
+                    html = symToPerc(oriString = html, text = test)
+                    
+                    indexstring = html.find("><")
+                    html = html[indexstring+2:]
+                    indexStart = html.find(">")
+                    indexEnd = html.find("<")
+                    percentChange2 = html[indexStart+1:indexEnd]
+                    
+                    #3rd
+                    indexstring = html.find(">3<")
+                    html = html[indexstring:]
+                    
+                    indexstring = html.find(test)
+                    IndexStart = html.find(">", indexstring)
+                    IndexEnd = html.find("<", indexstring)
+                    SymString3 = html[IndexStart+1:IndexEnd]
+                    SymString3 = symStringLenCheck(SymString = SymString3)
+                    
+                    html = symToPerc(oriString = html, text = test)
+                    
+                    indexstring = html.find("><")
+                    html = html[indexstring+2:]
+                    indexStart = html.find(">")
+                    indexEnd = html.find("<")
+                    percentChange3 = html[indexStart+1:indexEnd]
+                    
+                    #4th
+                    indexstring = html.find(">4<")
+                    html = html[indexstring:]
+                    
+                    indexstring = html.find(test)
+                    IndexStart = html.find(">", indexstring)
+                    IndexEnd = html.find("<", indexstring)
+                    SymString4 = html[IndexStart+1:IndexEnd]
+                    SymString4 = symStringLenCheck(SymString = SymString4)
+                    
+                    html = symToPerc(oriString = html, text = test)
+                    
+                    indexstring = html.find("><")
+                    html = html[indexstring+2:]
+                    indexStart = html.find(">")
+                    indexEnd = html.find("<")
+                    percentChange4 = html[indexStart+1:indexEnd]
+                    
+                    #5th
+                    indexstring = html.find(">5<")
+                    html = html[indexstring:]
+                    
+                    indexstring = html.find(test)
+                    IndexStart = html.find(">", indexstring)
+                    IndexEnd = html.find("<", indexstring)
+                    SymString5 = html[IndexStart+1:IndexEnd]
+                    SymString5 = symStringLenCheck(SymString = SymString5)
+                    
+                    html = symToPerc(oriString = html, text = test)
+                    
+                    indexstring = html.find("><")
+                    html = html[indexstring+2:]
+                    indexStart = html.find(">")
+                    indexEnd = html.find("<")
+                    percentChange5 = html[indexStart+1:indexEnd]
+                    await self.bot.say("```Small Cap Swing Scanner by PummHead -- \n1. " + SymString1 + "\t" + percentChange1 +"\n2. " + SymString2 + "\t" + percentChange2 +"\n3. " + SymString3 + "\t" + percentChange3 +"\n4. " + SymString4 + "\t" + percentChange4 +"\n5. " + SymString5 + "\t" + percentChange5 +"```")
+        
         #Start of help
         elif search_type[0] == "help":
             if search_valid == "help":
