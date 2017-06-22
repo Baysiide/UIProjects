@@ -79,7 +79,7 @@ class Admin:
         text = "Kevin"
         if text in message:
         fmt = 'he who shall not be named'
-        await client.send_message(channel, fmt)
+        await self.bot.say(fmt)
     
     @commands.command(no_pm=True, pass_context=True)
     async def checktrial(self, ctx):
