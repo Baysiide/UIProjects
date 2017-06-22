@@ -116,7 +116,7 @@ class Admin:
         channel = ctx.message.channel
         server = ctx.message.server
         total = 0
-        async for msg in client.logs_from(channel, limit=500):
+        for msg in client.logs_from(channel, limit=500):
             if msg == "+$"
                 total = total + 1
           
