@@ -118,9 +118,9 @@ class Admin:
         
         counter = 0
         #async for message in client.logs_from(channel, limit=100):
-        async for message in client.logs_from(channel, limit=100, before=None, after=None, around=None, reverse=False):
-            if message[:2] == "+$":
-                counter = counter + 1
+        #async for message in client.logs_from(channel, limit=100, before=None, after=None, around=None, reverse=False):
+            #if message[:2] == "+$":
+                #counter = counter + 1
         #logs = yield from client.logs_from(channel, limit=5)
         await self.bot.say(counter+1)
         #for msg in logs:
