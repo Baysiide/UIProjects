@@ -8,9 +8,9 @@ import asyncio
 import logging
 import os
 
-
-log = logging.getLogger("red.admin")
 client = discord.Client()
+log = logging.getLogger("red.admin")
+
 
 class Admin:
     """Admin tools, more to come."""
