@@ -118,7 +118,7 @@ class Admin:
         total = 0
         
         for msg in client.logs_from(ctx.message.channel, limit=50):
-            total += 1
+            
         #for msg in logs:
             #if msg == "+$"
             #total = total + 1
