@@ -117,13 +117,13 @@ class Admin:
         server = ctx.message.server
         total = 0
         
-        for msg in client.logs_from(channel, limit=50):
-            
+        for msg in client.logs_from(channel, limit=5):
+            await self.bot.say("ok")
         #for msg in logs:
             #if msg == "+$"
             #total = total + 1
           
-        await self.bot.say("ok")
+        
         #text = ctx.message.timestamp.strftime('%d.%m.%Y')
         #await self.bot.say(text)
         
