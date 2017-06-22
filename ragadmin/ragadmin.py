@@ -116,9 +116,9 @@ class Admin:
         channel = ctx.message.channel
         server = ctx.message.server
         
-        
+        chan = [x for x in server.channels if x.name == "winning-trades"]
         counter = 0
-        async for message in client.logs_from(channel):
+        async for message in client.logs_from(chan):
             #if message[:2] == "+$":
             counter = counter + 1
         #logs = yield from client.logs_from(channel, limit=5)
