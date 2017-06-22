@@ -72,7 +72,14 @@ class Admin:
     def _set_serverlock(self, lock=True):
         self._settings["SERVER_LOCK"] = lock
         self._save_settings()  
-        
+    
+    @my_bot.event
+    async def on_message(message, timeout=10,):
+        if message.content.startswith('$greet'):
+            await self.bot.send_message(message.channel, 'Say hello', tts=True)
+            msg = await self.bot.wait_for_message(author=message.author, content='hello')
+            await self.bot.send_message(message.channel, 'Hello.')
+    
     @commands.command(no_pm=True, pass_context=True)
     async def checktrial(self, ctx):
         author = ctx.message.author
