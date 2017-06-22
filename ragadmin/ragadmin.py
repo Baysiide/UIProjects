@@ -73,7 +73,7 @@ class Admin:
         self._settings["SERVER_LOCK"] = lock
         self._save_settings()  
     
-    @client.event
+    @bot.event
     async def on_hello(message):
         channel = ctx.message.channel
         text = "Kevin"
