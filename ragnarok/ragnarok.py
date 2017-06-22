@@ -120,6 +120,7 @@ class RagnarokClass:
                 url = "http://www.nasdaq.com/symbol/{}/news-headlines".format(encode)
                 response = requests.get(url)
                 if response.status_code == 404:
+                    await self.bot.say(url)
                     await self.bot.say("Stock not found. Please try again.")
                 else:
                     await self.bot.say("made it this far")
