@@ -117,7 +117,7 @@ class Admin:
         server = ctx.message.server
         total = 0
         client = discord.Client()
-        async for message in client.logs_from(channel, limit=500):
+        for message in client.logs_from(channel, limit=50):
             total += 1
         #for msg in logs:
             #if msg == "+$"
