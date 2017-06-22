@@ -99,8 +99,7 @@ class Admin:
                         else:
                             if TrialEnd and Trialist in x.roles:
                                 await self.bot.remove_roles(x, TrialEnd)
-                            await self.bot.say(x.name)
-                            await self.bot.say("Trial still going")
+                            await self.bot.say(x.name + " <--- Trial still going")
                             
         if TrialEnd and Trialist in x.roles:
             await self.bot.remove_roles(x, Trialist)            
