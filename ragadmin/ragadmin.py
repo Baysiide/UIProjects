@@ -117,8 +117,13 @@ class Admin:
         server = ctx.message.server
         total = 0
         
-        logs = yield from client.logs_from(channel, limit=5)
-        await self.bot.say(logs)
+        
+        counter = 0
+        async for message in client.logs_from(channel, limit=500):
+            if message.author == client.user:
+                counter += 1
+        #logs = yield from client.logs_from(channel, limit=5)
+        #await self.bot.say(logs)
         #for msg in logs:
             #if msg == "+$"
             #total = total + 1
