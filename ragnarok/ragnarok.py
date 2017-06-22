@@ -135,11 +135,11 @@ class RagnarokClass:
                     #await self.bot.say(html[6:105])
 
                     IndexEnd = html.find(">")
-                    newsString = html[6:IndexEnd] 
+                    newsString = html[6:IndexEnd-1] 
                     if newsString == "-":
                         await self.bot.say(encode.upper() + " does not have listed news on Nasdaq.")
                     else:
-                        await self.bot.say(encode.upper() + "\n" + newsString + ".")
+                        await self.bot.say(encode.upper() + "\n" + newsString)
         
         #Start of institutional ownership
         elif search_type[0] == "insti":
