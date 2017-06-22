@@ -122,7 +122,7 @@ class Admin:
             if message[:2] == "+$":
                 counter = counter + 1
         #logs = yield from client.logs_from(channel, limit=5)
-        await self.bot.say(counter)
+        await self.bot.say(counter+1)
         #for msg in logs:
             #if msg == "+$"
             #total = total + 1
