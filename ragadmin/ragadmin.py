@@ -108,6 +108,15 @@ class Admin:
             await self.bot.say("No Trialists....")
         else:
             await self.bot.say("We had " + str(trialistcountBefore) + " trialists before check, and " + str(trialistcount) + " now.")
+            
+    @commands.command(no_pm=True, pass_context=True)
+    async def total(self, ctx):
+        author = ctx.message.author
+        channel = ctx.message.channel
+        server = ctx.message.server
+        
+        text = ctx.message.timestamp.strftime('%d.%m.%Y')
+        await self.bot.say(text)
         
     @commands.command(no_pm=True, pass_context=True)
     async def addrole(self, ctx, user: discord.Member=None):
