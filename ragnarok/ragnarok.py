@@ -108,7 +108,7 @@ class RagnarokClass:
                     await self.bot.say(url)
                     #await self.bot.say(response)
                     
-         elif search_type[0] == "newsn":
+        elif search_type[0] == "newsn":
             if search_valid == "newsn":
                 await self.bot.say("Please add the the ticker symbol for data.")
             else:
