@@ -109,6 +109,9 @@ class RagnarokClass:
                     #await self.bot.say(response)
                     
          elif search_type[0] == "newsn":
+            if search_valid == "newsn":
+                await self.bot.say("Please add the the ticker symbol for data.")
+            else:
                 quary = str(ctx.message.content
                             [len(ctx.prefix+ctx.command.name)+6:].lower())
                 encode = urllib.parse.quote_plus(quary, encoding='utf-8',
