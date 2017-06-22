@@ -10,7 +10,7 @@ import os
 
 
 log = logging.getLogger("red.admin")
-client = discord.Client()
+
 
 class Admin:
     """Admin tools, more to come."""
@@ -116,10 +116,11 @@ class Admin:
         channel = ctx.message.channel
         server = ctx.message.server
         total = 0
+        client = discord.Client()
         logs = yield from client.logs_from(channel)
-        for msg in logs:
+        #for msg in logs:
             #if msg == "+$"
-            total = total + 1
+            #total = total + 1
           
         await self.bot.say(total)
         #text = ctx.message.timestamp.strftime('%d.%m.%Y')
