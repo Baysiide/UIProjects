@@ -115,16 +115,13 @@ class Admin:
         author = ctx.message.author
         channel = ctx.message.channel
         server = ctx.message.server
-        for x in server.channels:
-            if x.name == "winning-trades":
-                chan = x.id    
         
         counter = 0
         async for message in client.logs_from(channel, limit=100):
             if message[:2] == "+$":
                 counter = counter + 1
         #logs = yield from client.logs_from(channel, limit=5)
-        await self.bot.say(chan)
+        await self.bot.say(counter)
         #for msg in logs:
             #if msg == "+$"
             #total = total + 1
