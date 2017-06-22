@@ -120,7 +120,7 @@ class Admin:
         counter = 0
         async for message in client.logs_from(channel):
             #if message[:2] == "+$":
-            counter += 1
+            counter = counter + 1
         #logs = yield from client.logs_from(channel, limit=5)
         await self.bot.say(channel)
         #for msg in logs:
