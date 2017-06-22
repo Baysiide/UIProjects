@@ -127,6 +127,7 @@ class RagnarokClass:
                     test = "<div class=\"news-headlines\">"
                     indexstring = html.find(test)
                     html = html[indexstring:]
+                    await self.bot.say(html[:100])
                     IndexStart = html.find("href=", indexstring)
                     IndexEnd = html.find(">", IndexStart)
                     newsString = html[IndexStart+5:IndexEnd] 
