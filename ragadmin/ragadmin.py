@@ -8,7 +8,7 @@ import asyncio
 import logging
 import os
 
-
+client = discord.Client()
 log = logging.getLogger("red.admin")
 
 
@@ -73,12 +73,13 @@ class Admin:
         self._settings["SERVER_LOCK"] = lock
         self._save_settings()  
     
-    @my_bot.event
-    async def on_message(message, timeout=10,):
-        if message.content.startswith('$greet'):
-            await self.bot.send_message(message.channel, 'Say hello', tts=True)
-            msg = await self.bot.wait_for_message(author=message.author, content='hello')
-            await self.bot.send_message(message.channel, 'Hello.')
+    @client.event
+    async def on_hello(message):
+        channel = ctx.message.channel
+        text = "Kevin"
+        if text in message:
+        fmt = 'he who shall not be named'
+        await client.send_message(channel, fmt)
     
     @commands.command(no_pm=True, pass_context=True)
     async def checktrial(self, ctx):
@@ -124,7 +125,6 @@ class Admin:
         server = ctx.message.server
         
         counter = 0
-        client = discord.Client()
         async for message in server.logs_from(channel, limit=100):
         #async for message in client.logs_from(channel, limit=100, before=None, after=None, around=None, reverse=False):
             #if message[:2] == "+$":
