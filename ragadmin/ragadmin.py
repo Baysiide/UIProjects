@@ -119,10 +119,10 @@ class Admin:
             if x.name == "winning-trades":
                 chan = x.id    
         
-        #counter = 0
-        #async for message in client.logs_from(chan.id, limit=100):
-            #if message[:2] == "+$":
-            #counter = counter + 1
+        counter = 0
+        async for message in client.logs_from(chan, limit=100):
+            if message[:2] == "+$":
+                counter = counter + 1
         #logs = yield from client.logs_from(channel, limit=5)
         await self.bot.say(chan)
         #for msg in logs:
