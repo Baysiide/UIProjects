@@ -118,7 +118,7 @@ class Admin:
         total = 0
         
         logs = client.logs_from(channel, limit=5)
-        await self.bot.say("ok")
+        await self.bot.say(logs)
         #for msg in logs:
             #if msg == "+$"
             #total = total + 1
