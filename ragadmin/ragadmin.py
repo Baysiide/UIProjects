@@ -117,8 +117,8 @@ class Admin:
         server = ctx.message.server
         total = 0
         
-        for msg in client.logs_from(channel, limit=5):
-            await self.bot.say("ok")
+        logs = client.logs_from(channel, limit=5)
+        await self.bot.say("ok")
         #for msg in logs:
             #if msg == "+$"
             #total = total + 1
