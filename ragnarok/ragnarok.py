@@ -129,7 +129,7 @@ class RagnarokClass:
                     html = html[indexstring:]
                     IndexStart = html.find("href=", indexstring)
                     IndexEnd = html.find(">", IndexStart)
-                    newsString = html[floatIndexStart+3:floatIndexEnd] 
+                    newsString = html[IndexStart+5:IndexEnd] 
                     if newsString == "-":
                         await self.bot.say(encode[1:].upper() + " does not have listed news on Nasdaq.")
                     else:
