@@ -114,9 +114,14 @@ class Admin:
         author = ctx.message.author
         channel = ctx.message.channel
         server = ctx.message.server
-        
-        text = ctx.message.timestamp.strftime('%d.%m.%Y')
-        await self.bot.say(text)
+        total = 0
+        for x in channel.messages
+          if x[:2] == "+$"
+            total = total + 1
+          
+        await self.bot.say(total)
+        #text = ctx.message.timestamp.strftime('%d.%m.%Y')
+        #await self.bot.say(text)
         
     @commands.command(no_pm=True, pass_context=True)
     async def addrole(self, ctx, user: discord.Member=None):
