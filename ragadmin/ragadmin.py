@@ -115,9 +115,10 @@ class Admin:
         author = ctx.message.author
         channel = ctx.message.channel
         server = ctx.message.server
-        #total = 0
+        total = 0
         client = discord.Client()
-        logs = yield from client.logs_from(ctx.message.channel)
+        async for message in client.logs_from(channel, limit=500):
+            total += 1
         #for msg in logs:
             #if msg == "+$"
             #total = total + 1
