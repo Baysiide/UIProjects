@@ -111,7 +111,7 @@ class Admin:
             await self.bot.say("We had " + str(trialistcountBefore) + " trialists before check, and " + str(trialistcount) + " now.")
             
     @commands.command(no_pm=True, pass_context=True)
-    async def total(self, ctx):
+    async def total(self, ctx, *):
         author = ctx.message.author
         channel = ctx.message.channel
         server = ctx.message.server
