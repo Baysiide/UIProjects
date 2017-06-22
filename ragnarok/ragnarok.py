@@ -136,10 +136,30 @@ class RagnarokClass:
 
                     IndexEnd = html.find(">")
                     newsString = html[6:IndexEnd-1] 
+                    
+                    test = "<small>"
+                    indexstring = html.find(test)
+                    html = html[indexstring+7:]
+                    
+                    IndexEnd = html.find("-")
+                    dateString = html[7:IndexEnd-1] 
+                    
+                    #2nd
+                    test = "target="
+                    indexstring = html.find(test)
+                    html = html[indexstring:]
+                    
+                    test = "href="
+                    indexstring = html.find(test)
+                    html = html[indexstring:]
+                    
+                    IndexEnd = html.find(">")
+                    newsString1 = html[6:IndexEnd-1]
+                    
                     if newsString == "-":
                         await self.bot.say(encode.upper() + " does not have listed news on Nasdaq.")
                     else:
-                        await self.bot.say(encode.upper() + "\n" + newsString)
+                        await self.bot.say(encode.upper() + " news: \n" + dateString + "\n" + newsString + "\n" + newsString1)
         
         #Start of institutional ownership
         elif search_type[0] == "insti":
