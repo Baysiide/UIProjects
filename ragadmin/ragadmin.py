@@ -118,7 +118,7 @@ class Admin:
         
         
         counter = 0
-        async for message in client.logs_from(channel, limit=100):
+        async for message in client.logs_from(channel):
             #if message[:2] == "+$":
             counter += 1
         #logs = yield from client.logs_from(channel, limit=5)
