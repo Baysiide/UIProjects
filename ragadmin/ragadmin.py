@@ -117,7 +117,8 @@ class Admin:
         server = ctx.message.server
         
         counter = 0
-        async for message in client.logs_from(channel, limit=100):
+        #async for message in client.logs_from(channel, limit=100):
+        async for message in client.logs_from(channel, limit=100, *, before=None, after=None, around=None, reverse=False):
             if message[:2] == "+$":
                 counter = counter + 1
         #logs = yield from client.logs_from(channel, limit=5)
