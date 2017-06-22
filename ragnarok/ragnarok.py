@@ -107,6 +107,20 @@ class RagnarokClass:
                 else:
                     await self.bot.say(url)
                     #await self.bot.say(response)
+                    
+         elif search_type[0] == "newsn":
+                quary = str(ctx.message.content
+                            [len(ctx.prefix+ctx.command.name)+6:].lower())
+                encode = urllib.parse.quote_plus(quary, encoding='utf-8',
+                                                 errors='replace')
+                
+                url = "http://www.nasdaq.com/symbol/{}/news-headlines".format(encode)
+                response = requests.get(url)
+                if response.status_code == 404:
+                    await self.bot.say("Stock not found. Please try again.")
+                else:
+                    await self.bot.say(url)
+         
         
         #Start of institutional ownership
         elif search_type[0] == "insti":
