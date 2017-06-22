@@ -118,6 +118,7 @@ class RagnarokClass:
                                                  errors='replace')
                 
                 url = "http://www.nasdaq.com/symbol/{}/news-headlines".format(encode)
+                newsList = url
                 response = requests.get(url)
                 if response.status_code == 404:
                     await self.bot.say("Stock not found. Please try again.")
@@ -166,7 +167,7 @@ class RagnarokClass:
                     if newsString == "-":
                         await self.bot.say(encode.upper() + " does not have listed news on Nasdaq.")
                     else:
-                        await self.bot.say(encode.upper() + " news: \n" + dateString + "\n" + newsString + "\n" + dateString1 + "\n" + newsString1)
+                        await self.bot.say(encode.upper() + " latest news: \n" + dateString + "\n" + newsString + "\n" + "Full list: " + newsList)
         
         #Start of institutional ownership
         elif search_type[0] == "insti":
