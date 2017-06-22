@@ -10,7 +10,7 @@ import os
 
 
 log = logging.getLogger("red.admin")
-
+client = discord.Client()
 
 class Admin:
     """Admin tools, more to come."""
@@ -116,7 +116,7 @@ class Admin:
         channel = ctx.message.channel
         server = ctx.message.server
         total = 0
-        client = discord.Client()
+        
         for message in client.logs_from(channel, limit=50):
             total += 1
         #for msg in logs:
