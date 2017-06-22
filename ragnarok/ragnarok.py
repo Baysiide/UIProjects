@@ -132,10 +132,10 @@ class RagnarokClass:
                     indexstring = html.find(test)
                     html = html[indexstring:]
                     
-                    await self.bot.say(html[5:105])
+                    #await self.bot.say(html[6:105])
 
                     IndexEnd = html.find(">")
-                    newsString = html[IndexStart+5:IndexEnd] 
+                    newsString = html[6:IndexEnd] 
                     if newsString == "-":
                         await self.bot.say(encode.upper() + " does not have listed news on Nasdaq.")
                     else:
