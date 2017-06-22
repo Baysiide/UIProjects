@@ -115,12 +115,11 @@ class Admin:
         author = ctx.message.author
         channel = ctx.message.channel
         server = ctx.message.server
-        total = 0
         
         
         counter = 0
         async for message in client.logs_from(channel, limit=500):
-            if message.author == client.user:
+            if message[:2] == "+$":
                 counter += 1
         #logs = yield from client.logs_from(channel, limit=5)
         #await self.bot.say(logs)
