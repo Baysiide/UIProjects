@@ -122,7 +122,6 @@ class RagnarokClass:
                 if response.status_code == 404:
                     await self.bot.say("Stock not found. Please try again.")
                 else:
-                    await self.bot.say("made it this far")
                     html = response.text
                     
                     test = "<div class=\"news-headlines\">"
@@ -133,9 +132,9 @@ class RagnarokClass:
                     indexstring = html.find(test)
                     html = html[indexstring:]
                     
-                    await self.bot.say(html[:100])
+                    await self.bot.say(html[5:105])
 
-                    IndexEnd = html.find("\">")
+                    IndexEnd = html.find(">")
                     newsString = html[IndexStart+5:IndexEnd] 
                     if newsString == "-":
                         await self.bot.say(encode.upper() + " does not have listed news on Nasdaq.")
