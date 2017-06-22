@@ -168,7 +168,7 @@ class RagnarokClass:
                         await self.bot.say(encode.upper() + " does not have listed news on Nasdaq.")
                     else:
                         await self.bot.say(encode.upper() + " most recent news: \n" + dateString + "  -  " + newsString)
-                        await self.bot.say("Full list: " + newsList)
+                        await self.bot.say("Full list: " + "<" + newsList + ">")
         
         #Start of institutional ownership
         elif search_type[0] == "insti":
