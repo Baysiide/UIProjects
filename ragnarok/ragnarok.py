@@ -130,6 +130,11 @@ class RagnarokClass:
             global counter
             counter = 0
             await self.bot.say("Counter has been cleared to " + str(counter))
+            
+        elif search_type[0] == "clearmsgcounter":
+            global messcount
+            messcount = 0
+            await self.bot.say("Message counter has been cleared to " + str(messcount))
         
         elif search_type[0] == "total":
             global counter
