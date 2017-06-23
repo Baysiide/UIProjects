@@ -11,7 +11,11 @@ class RagnarokClass:
 
     def __init__(self, bot):
         self.bot = bot
-
+        
+    async def proc_mess(message):
+        global counter
+        counter += 1
+        
     @commands.command(name="ragnarok", pass_context=True)
     @commands.cooldown(10, 60, commands.BucketType.user)
     async def _ragnarok(self, ctx, text):
@@ -695,4 +699,5 @@ class RagnarokClass:
 
 def setup(bot):
     n = RagnarokClass(bot)
+    bot.add_listener(n.proc_mess, "on_message")
     bot.add_cog(n)
