@@ -12,7 +12,7 @@ class RagnarokClass:
     def __init__(self, bot):
         self.bot = bot
         
-    async def proc_mess(message):
+    async def proc_mess(self, ctx):
         global counter
         counter += 1
         
