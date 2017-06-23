@@ -1,6 +1,8 @@
 from discord.ext import commands
 from random import choice
 from bs4 import BeautifulSoup
+from .utils.dataIO import fileIO
+from .utils import checks
 import requests
 import aiohttp
 import re
@@ -12,7 +14,7 @@ class RagnarokClass:
     def __init__(self, bot):
         self.bot = bot
         
-    async def _proc_on_message(self, message):
+    async def proc_on_message(self, message):
         text = "Kevin"
         indexstring = message.find(text)
         if indexstring > 0:
