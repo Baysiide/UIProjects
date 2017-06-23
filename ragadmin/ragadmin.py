@@ -8,6 +8,7 @@ import asyncio
 import logging
 import os
 
+#client = discord.Client()
 log = logging.getLogger("red.admin")
 
 
@@ -116,8 +117,8 @@ class Admin:
         server = ctx.message.server
         
         counter = 0
-        async for message in client.logs_from(channel, limit=100):
-            counter = counter + 1
+        #async for message in client.logs_from(channel, limit=100):
+            #counter = counter + 1
         #async for message in client.logs_from(channel, limit=100, before=None, after=None, around=None, reverse=False):
             #if message[:2] == "+$":
             #counter = counter + 1
