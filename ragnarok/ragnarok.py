@@ -695,9 +695,9 @@ class RagnarokClass:
         else:
             await self.bot.say('Unrecognized command. For options, type ~ragnarok help')
         
-    async def proc_on_message(self, ctx.message):
-        global counter
-        counter +=1
+    #async def proc_on_message(self, ctx.message):
+        #global counter
+        #counter +=1
 
 def setup(bot):
     n = RagnarokClass(bot)
