@@ -73,14 +73,6 @@ class Admin:
         self._settings["SERVER_LOCK"] = lock
         self._save_settings()  
     
-    @bot.event
-    async def on_hello(message):
-        channel = ctx.message.channel
-        text = "Kevin"
-        if text in message:
-        fmt = 'he who shall not be named'
-        await self.bot.say(fmt)
-    
     @commands.command(no_pm=True, pass_context=True)
     async def checktrial(self, ctx):
         author = ctx.message.author
@@ -125,7 +117,7 @@ class Admin:
         server = ctx.message.server
         
         counter = 0
-        async for message in server.logs_from(channel, limit=100):
+        async for message in client.logs_from(channel, limit=100):
         #async for message in client.logs_from(channel, limit=100, before=None, after=None, around=None, reverse=False):
             #if message[:2] == "+$":
             counter = counter + 1
@@ -469,3 +461,5 @@ def setup(bot):
     bot.add_cog(n)
     bot.add_listener(n.server_locker, "on_server_join")
     bot.loop.create_task(n.announce_manager())
+    
+client.run('MzE0NDEwMzcyMjMwODA3NTUy.C_3xHw.D8MKhkFAZ3VLLTFL9mSNCVSPRdk')
