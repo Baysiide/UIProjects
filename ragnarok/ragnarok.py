@@ -14,10 +14,8 @@ class RagnarokClass:
         self.bot = bot
         
     async def proc_on_message(self, message):
-        text = "Kevin"
-        indexstring = message.find(text)
-        if indexstring > 0:
-            await self.bot.say("He who shall not be named")
+        global counter
+        counter +=1
             
     @commands.command(name="ragnarok", pass_context=True)
     @commands.cooldown(10, 60, commands.BucketType.user)
