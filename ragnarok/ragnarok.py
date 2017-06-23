@@ -15,8 +15,9 @@ class RagnarokClass:
         
     async def proc_mess(self, ctx):
         global messcount
-
-        messcount = messcount + 1
+        msg = "What is a Kevin man do like what"
+        if "Kevin" in msg:
+            messcount = messcount + 1
         
         
     @commands.command(name="ragnarok", pass_context=True)
