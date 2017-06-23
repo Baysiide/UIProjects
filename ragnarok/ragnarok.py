@@ -130,9 +130,10 @@ class RagnarokClass:
         
         elif search_type[0] == "total":
             global counter
+            global messcount
             
             await self.bot.say("Total of $" + str(counter) + " made in IU today!")
-            await self.bot.say("Message count: " + str(counter))
+            await self.bot.say("Message count: " + str(messcount))
         
         elif search_type[0] == "chart":
             if search_valid == "chart":
