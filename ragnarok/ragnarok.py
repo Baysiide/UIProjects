@@ -106,7 +106,7 @@ class RagnarokClass:
                 amount = int(encode)
                 counter = counter + amount
                 
-                await self.bot.say("Total of $" + counter + " made today!")    
+                await self.bot.say("Total of $" + str(counter) + " made today!")    
                 
         elif search_type[0] == "chart":
             if search_valid == "chart":
