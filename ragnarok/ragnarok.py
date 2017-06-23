@@ -15,9 +15,9 @@ class RagnarokClass:
         
     async def proc_mess(self, ctx, text):
         global messcount
-        if "Kevin" in text.content:
-            await self.bot.say("He who shall not be named")
+
         messcount = messcount + 1
+        await self.bot.say("Testing")
         
     @commands.command(name="ragnarok", pass_context=True)
     @commands.cooldown(10, 60, commands.BucketType.user)
