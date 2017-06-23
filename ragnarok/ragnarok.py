@@ -6,7 +6,7 @@ import aiohttp
 import re
 import urllib
 
-
+counter = 0
 class RagnarokClass:
 
     def __init__(self, bot):
@@ -14,7 +14,7 @@ class RagnarokClass:
 
     @commands.command(name="ragnarok", pass_context=True)
     @commands.cooldown(10, 60, commands.BucketType.user)
-    async def _ragnarok(self, ctx, text, counter):
+    async def _ragnarok(self, ctx, text):
         """Compilation of commands for United Investors. Type '~ragnarok help' for a list"""
         search_type = ctx.message.content[len(ctx.prefix+ctx.command.name)+1:].lower().split(" ")
         option = {
@@ -97,12 +97,14 @@ class RagnarokClass:
                 await self.bot.say("How much was it?")
             else:
                 quary = str(ctx.message.content
-                            [len(ctx.prefix+ctx.command.name)+6:].lower())
+                            [len(ctx.prefix+ctx.command.name)+5:].lower())
                 encode = urllib.parse.quote_plus(quary, encoding='utf-8',
                                                  errors='replace')
+                global counter
+
                 await self.bot.say(encode)
-                #amount = encode[2:len(encode)]
-                #counter = counter + amount
+                amount = encode.int()
+                counter = counter + amount
                 
                 await self.bot.say("Total of $" + counter + " made today!")    
                 
