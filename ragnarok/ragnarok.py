@@ -91,9 +91,21 @@ class RagnarokClass:
                     else:
                         await self.bot.say(encode[1:].upper() + " has a float of " + floatString + " shares.")
           #End of Float
+        elif search_type[0] == "+$":
+            if search_valid == "+$":
+                await self.bot.say("How much was it?")
+            else:
+                quary = str(ctx.message.content
+                            [len(ctx.prefix+ctx.command.name)+2:].lower())
+                encode = urllib.parse.quote_plus(quary, encoding='utf-8',
+                                                 errors='replace')
+                
+                counter = counter + encode.int()
+                await self.bot.say("Total of $" + counter + " made today!")    
+                
         elif search_type[0] == "chart":
             if search_valid == "chart":
-                await self.bot.say("Please add the the ticker symbol for data.")
+                await self.bot.say("Please add the ticker symbol for data.")
             else:
                 quary = str(ctx.message.content
                             [len(ctx.prefix+ctx.command.name)+6:].lower())
@@ -110,7 +122,7 @@ class RagnarokClass:
                     
         elif search_type[0] == "news":
             if search_valid == "news":
-                await self.bot.say("Please add the the ticker symbol for data.")
+                await self.bot.say("Please add the ticker symbol for data.")
             else:
                 quary = str(ctx.message.content
                             [len(ctx.prefix+ctx.command.name)+6:].lower())
