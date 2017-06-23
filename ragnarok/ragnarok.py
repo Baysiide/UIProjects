@@ -15,7 +15,7 @@ class RagnarokClass:
         
     async def proc_mess(self, message):
         global messcount
-        if message.content.startsWith('Kevin'):
+        if message == "Kevin":
             messcount = messcount + 1
         
         
