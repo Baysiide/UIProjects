@@ -15,7 +15,7 @@ class RagnarokClass:
         
     async def proc_mess(self, message):
         global messcount
-        messcount += 1
+        messcount = messcount + 1
         
     @commands.command(name="ragnarok", pass_context=True)
     @commands.cooldown(10, 60, commands.BucketType.user)
