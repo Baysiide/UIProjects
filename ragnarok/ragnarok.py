@@ -91,13 +91,18 @@ class RagnarokClass:
                     else:
                         await self.bot.say(encode[1:].upper() + " has a float of " + floatString + " shares.")
           #End of Float
-        com = "+$"
-        elif com in search_type[0]:
-            if search_valid == "+$":
+        
+        elif search_type[0] == "add":
+            if search_valid == "add":
                 await self.bot.say("How much was it?")
             else:
-                amount = search_type[2:len(search_type)]
-                counter = counter + amount
+                quary = str(ctx.message.content
+                            [len(ctx.prefix+ctx.command.name)+6:].lower())
+                encode = urllib.parse.quote_plus(quary, encoding='utf-8',
+                                                 errors='replace')
+                await self.bot.say(encode)
+                #amount = encode[2:len(encode)]
+                #counter = counter + amount
                 
                 await self.bot.say("Total of $" + counter + " made today!")    
                 
