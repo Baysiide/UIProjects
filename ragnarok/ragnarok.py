@@ -13,9 +13,7 @@ class RagnarokClass:
     def __init__(self, bot):
         self.bot = bot
         
-    async def proc_on_message(self, message):
-        global counter
-        counter +=1
+    
             
     @commands.command(name="ragnarok", pass_context=True)
     @commands.cooldown(10, 60, commands.BucketType.user)
@@ -697,7 +695,9 @@ class RagnarokClass:
         else:
             await self.bot.say('Unrecognized command. For options, type ~ragnarok help')
         
-
+    async def proc_on_message(self, message):
+        global counter
+        counter +=1
 
 def setup(bot):
     n = RagnarokClass(bot)
