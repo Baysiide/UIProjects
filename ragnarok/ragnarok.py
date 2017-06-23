@@ -124,6 +124,11 @@ class RagnarokClass:
             counter = 0
             await self.bot.say("Counter has been cleared to " + str(counter))
         
+        elif search_type[0] == "total":
+            global counter
+            
+            await self.bot.say("Total of $" + str(counter) + " made in IU today!")
+        
         elif search_type[0] == "chart":
             if search_valid == "chart":
                 await self.bot.say("Please add the ticker symbol for data.")
