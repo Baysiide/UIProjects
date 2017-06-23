@@ -121,6 +121,8 @@ class RagnarokClass:
                     text = "Absolutely insane... Congratulations!"
                 elif (amount > 9999):
                     text = "That's it, I quit"
+                elif (amount < 0):
+                    text = "Ouch. Better luck next time Jim."
                     
                 counter = counter + amount
                 
