@@ -103,7 +103,7 @@ class RagnarokClass:
                 global counter
 
                 await self.bot.say(encode)
-                amount = encode.int()
+                amount = int(encode)
                 counter = counter + amount
                 
                 await self.bot.say("Total of $" + counter + " made today!")    
