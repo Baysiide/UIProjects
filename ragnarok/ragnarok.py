@@ -14,10 +14,10 @@ class RagnarokClass:
         self.bot = bot
         
     async def proc_mess(self, ctx):
+        global messcount
+        messcount = messcount + 1        
         
-        if "Kevin" in ctx.message.content:
-            global messcount
-            messcount = messcount + 1
+
         
         
     @commands.command(name="ragnarok", pass_context=True)
