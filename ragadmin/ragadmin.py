@@ -117,10 +117,10 @@ class Admin:
         server = ctx.message.server
         
         counter = 0
-        async for message in client.logs_from(channel, limit=100):
+        #async for message in client.logs_from(channel, limit=100):
         #async for message in client.logs_from(channel, limit=100, before=None, after=None, around=None, reverse=False):
             #if message[:2] == "+$":
-            counter = counter + 1
+            #counter = counter + 1
         #logs = yield from client.logs_from(channel, limit=5)
         await self.bot.say(counter)
         #for msg in logs:
@@ -462,4 +462,4 @@ def setup(bot):
     bot.add_listener(n.server_locker, "on_server_join")
     bot.loop.create_task(n.announce_manager())
     
-client.run('MzE0NDEwMzcyMjMwODA3NTUy.C_3xHw.D8MKhkFAZ3VLLTFL9mSNCVSPRdk')
+#client.run('MzE0NDEwMzcyMjMwODA3NTUy.C_3xHw.D8MKhkFAZ3VLLTFL9mSNCVSPRdk')
