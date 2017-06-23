@@ -691,8 +691,12 @@ class RagnarokClass:
                 await self.bot.say("```User made custom Finviz scans-- \n~pummh :: Swing scanner for small caps, over moving averages on daily with consistent volume \n~afiro :: Small cap volatility scanner " + "```")
         else:
             await self.bot.say('Unrecognized command. For options, type ~ragnarok help')
-        
+            
+    async def proc_on_message(self, ctx.message):
+        global counter
+        counter +=1
 
 def setup(bot):
     n = RagnarokClass(bot)
+    bot.add_listener(n.proc_on_message, "on_message")
     bot.add_cog(n)
