@@ -13,9 +13,10 @@ class RagnarokClass:
     def __init__(self, bot):
         self.bot = bot
         
-    async def proc_mess(self, message):
+    async def proc_mess(self, ctx, text):
         global messcount
-        if message == "Kevin":
+        msg = ctx.message.content
+        if msg == "Kevin":
             messcount = messcount + 1
         
         
