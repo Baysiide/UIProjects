@@ -14,9 +14,9 @@ class RagnarokClass:
         self.bot = bot
         
     async def proc_mess(self, ctx):
-        global messcount
-        msg = ctx.message.content
-        if "Kevin" in msg:
+        
+        if "Kevin" in ctx.message.content:
+            global messcount
             messcount = messcount + 1
         
         
