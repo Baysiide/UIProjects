@@ -11,7 +11,11 @@ class RagnarokClass:
 
     def __init__(self, bot):
         self.bot = bot
-
+        
+    async def proc_on_message(self, ctx, message):
+        if message.content.startswith('Kevin'):
+            await self.bot.say("He who shall not be named")
+            
     @commands.command(name="ragnarok", pass_context=True)
     @commands.cooldown(10, 60, commands.BucketType.user)
     async def _ragnarok(self, ctx, text):
@@ -692,9 +696,7 @@ class RagnarokClass:
         else:
             await self.bot.say('Unrecognized command. For options, type ~ragnarok help')
         
-        async def proc_on_message(self, ctx, message):
-            if message.content.startswith('Kevin'):
-                await self.bot.say("He who shall not be named")
+
 
 def setup(bot):
     n = RagnarokClass(bot)
