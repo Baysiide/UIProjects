@@ -11,9 +11,7 @@ class RagnarokClass:
 
     def __init__(self, bot):
         self.bot = bot
-        
-    
-            
+
     @commands.command(name="ragnarok", pass_context=True)
     @commands.cooldown(10, 60, commands.BucketType.user)
     async def _ragnarok(self, ctx, text):
@@ -694,7 +692,6 @@ class RagnarokClass:
         else:
             await self.bot.say('Unrecognized command. For options, type ~ragnarok help')
         
-
 
 def setup(bot):
     n = RagnarokClass(bot)
