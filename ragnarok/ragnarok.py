@@ -107,7 +107,8 @@ class RagnarokClass:
                 counter = counter + amount
                 
                 await self.bot.say("Total of $" + str(counter) + " made today!")    
-        elif search_type[0] == "clearcounter"
+                
+        elif search_type[0] == "clearcounter":
             global counter
             counter = 0
             await self.bot.say("Counter has been cleared to " + str(counter))
