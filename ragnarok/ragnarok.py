@@ -701,5 +701,5 @@ class RagnarokClass:
 
 def setup(bot):
     n = RagnarokClass(bot)
-    bot.add_listener(n.proc_on_message, "on_message")
+    #bot.add_listener(n.proc_on_message, "on_message")
     bot.add_cog(n)
