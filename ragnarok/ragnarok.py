@@ -13,7 +13,9 @@ class RagnarokClass:
         self.bot = bot
         
     async def _proc_on_message(self, message):
-        if message.content.startswith("Kevin"):
+        text = "Kevin"
+        indexstring = message.find(text)
+        if indexstring > 0:
             await self.bot.say("He who shall not be named")
             
     @commands.command(name="ragnarok", pass_context=True)
