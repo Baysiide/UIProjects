@@ -122,7 +122,7 @@ class RagnarokClass:
                 elif (amount > 9999):
                     text = "That's it, I quit"
                 elif (amount < 0):
-                    text = "Ouch. Better luck next time Jim."
+                    text = "Ouch. That's ok! Tomorrow is another trading day. Message a mod if would like some unbiased loss analysis."
                     
                 counter = counter + amount
                 
