@@ -7,15 +7,15 @@ import re
 import urllib
 
 counter = 0
-msgcount = 0
+messcount = 0
 class RagnarokClass:
 
     def __init__(self, bot):
         self.bot = bot
         
     async def proc_mess(self, message):
-        global msgcount
-        msgcount += 1
+        global messcount
+        messcount += 1
         
     @commands.command(name="ragnarok", pass_context=True)
     @commands.cooldown(10, 60, commands.BucketType.user)
