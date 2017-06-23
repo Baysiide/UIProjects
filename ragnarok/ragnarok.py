@@ -693,7 +693,7 @@ class RagnarokClass:
             await self.bot.say('Unrecognized command. For options, type ~ragnarok help')
         
         async def proc_on_message(self, ctx, message):
-            if message.content.startswith('Kevin')
+            if message.content.startswith('Kevin'):
                 await self.bot.say("He who shall not be named")
 
 def setup(bot):
