@@ -102,7 +102,6 @@ class RagnarokClass:
                                                  errors='replace')
                 global counter
 
-                await self.bot.say(encode)
                 amount = int(encode)
                 if (amount > 0 and amount <= 99):
                     text = "Solid profits!"
