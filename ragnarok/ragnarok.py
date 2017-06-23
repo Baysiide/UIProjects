@@ -104,9 +104,20 @@ class RagnarokClass:
 
                 await self.bot.say(encode)
                 amount = int(encode)
+                if (amount > 0 and amount <= 99):
+                    text = "Solid profits!"
+                elif (amount > 99 and amount <= 499):
+                    text = "Nice! Go buy yourself a nice dinner!"
+                elif (amount > 499 and amount <= 999):
+                    text = "Geez buddy save some for the rest of us!" 
+                elif (amount > 999 and amount < 9999):
+                    text = "Absolutely insane... Congratulations!"
+                elif (amount > 9999):
+                    text = "That's it, I quit"
+                    
                 counter = counter + amount
                 
-                await self.bot.say("Total of $" + str(counter) + " made today!")    
+                await self.bot.say(text + "\nTotal of $" + str(counter) + " made in IU today!")    
                 
         elif search_type[0] == "clearcounter":
             global counter
