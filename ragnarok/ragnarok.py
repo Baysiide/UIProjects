@@ -14,8 +14,9 @@ class RagnarokClass:
         self.bot = bot
         
     async def proc_mess(self, message):
-        if message.startswith('Kevin'):
+        if message.cont("Kevin"):
             await self.bot.say("He who shall not be named")
+        global messcount
         messcount += 1
         
     @commands.command(name="ragnarok", pass_context=True)
