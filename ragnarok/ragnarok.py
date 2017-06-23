@@ -1,9 +1,8 @@
 from discord.ext import commands
 from random import choice
 from bs4 import BeautifulSoup
-from .utils.dataIO import fileIO
-from .utils import checks
 import requests
+import os
 import aiohttp
 import re
 import urllib
