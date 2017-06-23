@@ -14,8 +14,6 @@ class RagnarokClass:
         self.bot = bot
         
     async def proc_mess(self, message):
-        if message.contents == "Kevin":
-            await self.bot.say("He who shall not be named")
         global messcount
         messcount += 1
         
@@ -134,6 +132,7 @@ class RagnarokClass:
             global counter
             
             await self.bot.say("Total of $" + str(counter) + " made in IU today!")
+            await self.bot.say("Message count: " + str(counter))
         
         elif search_type[0] == "chart":
             if search_valid == "chart":
