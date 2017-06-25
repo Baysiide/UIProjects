@@ -138,7 +138,7 @@ class RagnarokClass:
                             [len(ctx.prefix+ctx.command.name)+12:].lower())
                 encode = urllib.parse.quote_plus(quary, encoding='utf-8',
                                                  errors='replace')
-                x = encode
+                x = int(encode)
                 
             url = "https://www.biopharmcatalyst.com/calendars/fda-calendar"
             test = "/company/"
