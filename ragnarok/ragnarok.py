@@ -150,7 +150,7 @@ class RagnarokClass:
                 IndexEnd = html.find("</div>")
                 priceString = html[IndexStart+2:IndexEnd]
                 
-                await self.bot.say(compString + " - " + priceString
+                await self.bot.say(compString + " - " + priceString)
                 
                 
                 
