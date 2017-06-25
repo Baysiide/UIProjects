@@ -148,7 +148,7 @@ class RagnarokClass:
             else:
                 string = "one"
                 html = response.text
-                for x in string:
+                for y in range(0, x):
                     
                     indexstring = html.find(test)
                     IndexStart = html.find("ticker", indexstring)
@@ -189,7 +189,7 @@ class RagnarokClass:
                     dataString = html[IndexStart+7:IndexEnd]
                     html = html[IndexEnd:]
             
-                    if x != "e":
+                    if y != x:
                         await self.bot.say(dateString + " - **" + compString + "**  -  " + priceString + "          Drug/Condition: " + drugString + "/" + conString + "\n" + urlString + "\n" + dataString + "\n------------------------------------------------------------------------")
                     else:
                         await self.bot.say(dateString + " - **" + compString + "**  -  " + priceString + "          Drug/Condition: " + drugString + "/" + conString + "\n" + urlString + "\n" + dataString)
