@@ -189,7 +189,7 @@ class RagnarokClass:
                     dataString = html[IndexStart+7:IndexEnd]
                     html = html[IndexEnd:]
             
-                    if y != x:
+                    if y != x-1:
                         await self.bot.say(dateString + " - **" + compString + "**  -  " + priceString + "          Drug/Condition: " + drugString + "/" + conString + "\n" + urlString + "\n" + dataString + "\n------------------------------------------------------------------------")
                     else:
                         await self.bot.say(dateString + " - **" + compString + "**  -  " + priceString + "          Drug/Condition: " + drugString + "/" + conString + "\n" + urlString + "\n" + dataString)
