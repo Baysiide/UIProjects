@@ -129,7 +129,7 @@ class RagnarokClass:
                     else:
                         await self.bot.say(encode[1:].upper() + " has an insider ownership of " + floatString + ".")
         
-        elif search_type[0] == "fdacalender":
+        elif search_type[0] == "fdacalendar":
             url = "https://www.biopharmcatalyst.com/calendars/fda-calendar"
             test = "/company/"
             response = requests.get(url)
@@ -180,7 +180,7 @@ class RagnarokClass:
                     html = html[IndexEnd:]
             
                 
-                    await self.bot.say(compString + " - " + priceString + " - " + drugString + " - " + conString + " - " + urlString + " - " + dateString + " - " + dataString)
+                    await self.bot.say(dateString + " - " + compString + "  -  " + priceString + "          Drug/Condition: " + priceString + "/" + drugString + "  -  " + urlString + "\n" + dataString)
                 
                 
                 
