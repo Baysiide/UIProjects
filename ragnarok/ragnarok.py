@@ -130,6 +130,16 @@ class RagnarokClass:
                         await self.bot.say(encode[1:].upper() + " has an insider ownership of " + floatString + ".")
         
         elif search_type[0] == "fdacalendar":
+            x = 0
+            if search_valid == "fdacalendar":
+                x = 3
+            else:
+                quary = str(ctx.message.content
+                            [len(ctx.prefix+ctx.command.name)+12:].lower())
+                encode = urllib.parse.quote_plus(quary, encoding='utf-8',
+                                                 errors='replace')
+                x = encode
+                
             url = "https://www.biopharmcatalyst.com/calendars/fda-calendar"
             test = "/company/"
             response = requests.get(url)
