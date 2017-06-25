@@ -180,7 +180,7 @@ class RagnarokClass:
                     html = html[IndexEnd:]
             
                     if x != "e":
-                        await self.bot.say(dateString + " - **" + compString + "**  -  " + priceString + "          Drug/Condition: " + drugString + "/" + conString + "\n" + urlString + "\n" + dataString + "-----------------------------------------------------------------------")
+                        await self.bot.say(dateString + " - **" + compString + "**  -  " + priceString + "          Drug/Condition: " + drugString + "/" + conString + "\n" + urlString + "\n" + dataString + "\n-----------------------------------------------------------------------")
                     else:
                         await self.bot.say(dateString + " - **" + compString + "**  -  " + priceString + "          Drug/Condition: " + drugString + "/" + conString + "\n" + urlString + "\n" + dataString)
                 
