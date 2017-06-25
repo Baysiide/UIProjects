@@ -99,7 +99,7 @@ class RagnarokClass:
                     else:
                         await self.bot.say(encode[1:].upper() + " has a float of " + floatString + " shares.")
                         
-        if search_type[0] == "inside":
+        elif search_type[0] == "inside":
             if search_valid == "inside":
                 await self.bot.say("Please add the the ticker symbol for data")
             else:
@@ -128,7 +128,32 @@ class RagnarokClass:
                         await self.bot.say(encode[1:].upper() + " has an insider ownership of " + floatString + ".")
                     else:
                         await self.bot.say(encode[1:].upper() + " has an insider ownership of " + floatString + ".")
-          #End of Float
+        
+        elif search_type[0] == "fdacalender":
+            url = "https://www.biopharmcatalyst.com/calendars/fda-calendar"
+            test = "/company/"
+            response = requests.get(url)
+            if response.status_code == 404:
+                await self.bot.say("Site is down. Please try again")
+            else:
+                html = response.text
+                indexstring = html.find(test)
+                IndexStart = html.find("ticker", indexstring)
+                IndexEnd = html.find("</a>", indexstring)
+                compString = html[IndexStart+8:IndexEnd] 
+                html = html[indexstring:]
+                
+                indexstring = html.find("data-value")
+                html = html[indexstring:]
+                
+                IndexStart = html.find("\">")
+                IndexEnd = html.find("</div>")
+                priceString = html[IndexStart+2:IndexEnd]
+                
+                await self.bot.say(compString + " - " + priceString
+                
+                
+                
         
         elif search_type[0] == "add":
             if search_valid == "add":
