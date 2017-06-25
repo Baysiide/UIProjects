@@ -188,7 +188,8 @@ class RagnarokClass:
                     IndexEnd = html.find("</div>")
                     dataString = html[IndexStart+7:IndexEnd]
                     html = html[IndexEnd:]
-            
+                    
+                    await self.bot.say("*Dates shown are LATEST expected release dates. FDA data for these may be already released.*")
                     if y != x-1:
                         await self.bot.say(dateString + " - **" + compString + "**  -  " + priceString + "          Drug/Condition: " + drugString + "/" + conString + "\n" + urlString + "\n" + dataString + "\n------------------------------------------------------------------------")
                     else:
