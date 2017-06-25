@@ -146,7 +146,6 @@ class RagnarokClass:
             if response.status_code == 404:
                 await self.bot.say("Site is down. Please try again")
             else:
-                string = "one"
                 html = response.text
                 for y in range(0, x):
                     
