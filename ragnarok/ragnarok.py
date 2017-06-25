@@ -137,8 +137,9 @@ class RagnarokClass:
                 await self.bot.say("Site is down. Please try again")
             else:
                 string = "one"
+                html = response.text
                 for x in string:
-                    html = response.text
+                    
                     indexstring = html.find(test)
                     IndexStart = html.find("ticker", indexstring)
                     IndexEnd = html.find("</a>", indexstring)
