@@ -157,7 +157,8 @@ class RagnarokClass:
                     IndexStart = html.find("drug")
                     IndexEnd = html.find("</strong>")
                     drugString = html[IndexStart+6:IndexEnd]
-                
+                    html = html[IndexEnd:]
+                    
                     IndexStart = html.find("cation")
                     IndexEnd = html.find("</div>")
                     conString = html[IndexStart+8:IndexEnd]
