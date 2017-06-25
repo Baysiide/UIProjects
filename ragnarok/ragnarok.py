@@ -136,21 +136,49 @@ class RagnarokClass:
             if response.status_code == 404:
                 await self.bot.say("Site is down. Please try again")
             else:
-                html = response.text
-                indexstring = html.find(test)
-                IndexStart = html.find("ticker", indexstring)
-                IndexEnd = html.find("</a>", indexstring)
-                compString = html[IndexStart+8:IndexEnd] 
-                html = html[indexstring:]
+                string = "one"
+                for x in string:
+                    html = response.text
+                    indexstring = html.find(test)
+                    IndexStart = html.find("ticker", indexstring)
+                    IndexEnd = html.find("</a>", indexstring)
+                    compString = html[IndexStart+8:IndexEnd] 
+                    html = html[indexstring:]
                 
-                indexstring = html.find("data-value")
-                html = html[indexstring:]
+                    indexstring = html.find("data-value")
+                    html = html[indexstring:]
                 
-                IndexStart = html.find("\">")
-                IndexEnd = html.find("</div>")
-                priceString = html[IndexStart+2:IndexEnd]
+                    IndexStart = html.find("\">")
+                    IndexEnd = html.find("</div>")
+                    priceString = html[IndexStart+2:IndexEnd]
+                    html = html[IndexEnd:]
                 
-                await self.bot.say(compString + " - " + priceString)
+                    IndexStart = html.find("drug")
+                    IndexEnd = html.find("</strong>")
+                    drugString = html[IndexStart+6:IndexEnd]
+                
+                    IndexStart = html.find("cation")
+                    IndexEnd = html.find("</div>")
+                    conString = html[IndexStart+8:IndexEnd]
+                    html = html[IndexEnd:]
+                
+                    IndexStart = html.find("a href")
+                    IndexEnd = html.find("\" target")
+                    urlString = "<" + html[IndexStart+8:IndexEnd] + ">"
+                    html = html[IndexEnd:]
+                
+                    IndexStart = html.find("-date")
+                    IndexEnd = html.find("</time>")
+                    dateString = html[IndexStart+7:IndexEnd]
+                    html = html[IndexEnd:]
+                
+                    IndexStart = html.find("-note")
+                    IndexEnd = html.find("</div>")
+                    dataString = html[IndexStart+7:IndexEnd]
+                    html = html[IndexEnd:]
+            
+                
+                    await self.bot.say(compString + " - " + priceString + " - " + drugString + " - " + conString + " - " + urlString + " - " + dateString + " - " + dataString)
                 
                 
                 
