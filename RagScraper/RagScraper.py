@@ -116,7 +116,7 @@ class ScrClass:
                 await self.bot.say(r.url)
                 url = "https://optionalpha.com/members/watch-list"
                 response = s.get(url)
-                if r.url != "https://optionalpha.com/members":
+                if r.url == "https://optionalpha.com/members":
                      await self.bot.say("Variable not found. Please try again")
                 else:
                     x = 6
