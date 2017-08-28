@@ -1,7 +1,6 @@
 from discord.ext import commands
 from random import choice
 from bs4 import BeautifulSoup
-from selenium import webdriver
 import requests
 import aiohttp
 import re
