@@ -112,8 +112,8 @@ class ScrClass:
                  test = "Sample Company Name"
                  indexString = html.find(test)
                  
-                 await self.bot.say(html[:1000])
-                 await self.bot.say(html[indexString:100])
+                 await self.bot.say(html[:100])
+                 await self.bot.say(html[:100])
                  #for y in range(0, x):
                  #   indexstring = html.find(test)
         else:
