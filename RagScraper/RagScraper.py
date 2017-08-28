@@ -100,7 +100,7 @@ class ScrClass:
             values = {'username': 'collinamedee@gmail.com',
                       'password': 'collin1'}
             r = requests.post(url1, data=values)
-            await self.bot.say(r.content[:100])
+            await self.bot.say(r.content[:500])
             
             url = "https://optionalpha.com/members/watch-list"
             response = requests.get(url)
