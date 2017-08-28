@@ -114,8 +114,8 @@ class ScrClass:
                  indexString = html.find(test, indexString+10)
                  html = html[indexString:]
                 
-                 nameStart = html.find("companyName")
-                 nameEnd = html.find("<")
+                 nameStart = html.find("company")
+                 nameEnd = html.find("<", nameStart)
                  nameString = html[nameStart+14:nameEnd]
                  
                  #await self.bot.say(html[:100])
