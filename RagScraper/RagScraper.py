@@ -137,6 +137,18 @@ class ScrClass:
                      ivStart = html.find(">IV Rank:")
                      ivEnd = html.find("<", ivStart)
                      ivString = html[ivStart+1:ivEnd]
+                     
+                     stratStart = html.find("serif;\">")
+                     stratEnd = html.find("<\h3", stratStart)
+                     stratString = html[stratStart+8:stratEnd]
+                     
+                     strattwoStart = html.find("serif;\">", stratEnd)
+                     strattwoEnd = html.find("<\h3", strattwoStart)
+                     strattwoString = html[strattwoStart+8:strattwoEnd]
+                        
+                     stratthreeStart = html.find("serif;\">", strattwoEnd)
+                     stratthreeEnd = html.find("<\h3", stratthreeStart)
+                     stratthreeString = html[stratthreeStart+8:stratthreeEnd]
                         
                      dayRangeStart = html.find("1 Day Expected Range</h4>")
                      dayRangeEnd = html.find("</h3", dayRangeStart)
@@ -151,7 +163,7 @@ class ScrClass:
                      monthRangeString = html[monthRangeStart+41:monthRangeEnd]
                      
                      html = html[monthRangeEnd:]
-                     await self.bot.say(nameString + "  --  " + symbolString + "\nPrice: " + priceString + "\n" + ivString + "\n1 Day Range: " + dayRangeString + "\n1 Week Range: " + weekRangeString + "\n1 Month Range: " + monthRangeString)
+                     await self.bot.say("**" + nameString + "**  --  **" + symbolString + "**\nPrice: " + priceString + "\n" + ivString + "\n1 Day Range: " + dayRangeString + "\n1 Week Range: " + weekRangeString + "\n1 Month Range: " + monthRangeString + "\n" + stratString + " | " + strattwoString + " | " + stratthreeString + \n -----------------------------------------------------------)
                     
                  
                  #await self.bot.say(html[:100])
