@@ -34,7 +34,7 @@ class ScrClass:
         
         
         #Start of float calculations                   
-        if search_type[0] == "float":
+        if search_type[0] == "alpha":
             if search_valid == "float":
                 await self.bot.say("Please add the the ticker symbol for data")
             else:
@@ -74,7 +74,7 @@ class ScrClass:
                                                  errors='replace')
                 
                 url = "http://www.finviz.com/quote.ashx?t=" + encode
-                test = "Insider Own"
+                test = "<li class=\"oagrid-item  highiv earnings\">"
                 response = requests.get(url)
                 if response.status_code == 404:
                      await self.bot.say("Stock not found. Please try again")
@@ -95,10 +95,18 @@ class ScrClass:
                         await self.bot.say(encode[1:].upper() + " has an insider ownership of " + floatString + ".")
         
         
-        elif search_type[0] == "help":
-            if search_valid == "help":
-                await self.bot.say("```Ragnarok's list of working commands-- \n~chart <ticker symbol> :: Shows image of daily chart \n~float <ticker symbol> :: Checks Finviz for float \n~insti <ticker symbol> :: Checks Finviz for institutional ownership \n~short <ticker symbol> :: Checks Finviz for short float \n~pgain :: List of Top % gainers on the day \n~plose :: List of Top % losers on the day" + "```")
-                await self.bot.say("```User made custom Finviz scans-- \n~pummh :: Swing scanner for small caps, over moving averages on daily with consistent volume \n~afiro :: Small cap volatility scanner " + "```")
+        elif search_type[0] == "alpha":
+            url = "https://optionalpha.com/members/watch-list"
+            response = requests.get(url)
+            if response.status_code == 404:
+                 await self.bot.say("Stock not found. Please try again")
+            else:
+                 x = 6
+                 test = "<li class=\"oagrid-item  highiv earnings\">"
+                 html = response.text
+                 await self.bot.say(html[:100])
+                 #for y in range(0, x):
+                 #   indexstring = html.find(test)
         else:
             await self.bot.say('Unrecognized command. For options, type ~ragnarok help')
             
