@@ -6,16 +6,11 @@ import aiohttp
 import re
 import urllib
 
-counter = 0
-messcount = 0
 class ScrClass:
 
     def __init__(self, bot):
         self.bot = bot
-        
-    async def proc_mess(self, ctx):
-        global messcount
-        messcount = messcount + 1        
+     
         
 
         
@@ -110,5 +105,4 @@ class ScrClass:
 
 def setup(bot):
     n = ScrClass(bot)
-    bot.add_listener(n.proc_mess, "on_message")
     bot.add_cog(n)
