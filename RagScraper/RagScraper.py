@@ -12,7 +12,7 @@ class ScraperClass:
     def __init__(self, bot):
         self.bot = bot
         
-    async def proc_mess(self, ctx):   
+    
         
     @commands.command(name="scraper", pass_context=True)
     @commands.cooldown(10, 60, commands.BucketType.user)
@@ -47,5 +47,4 @@ class ScraperClass:
               
 def setup(bot):
     n = ScraperClass(bot)
-    bot.add_listener(n.proc_mess, "on_message")
     bot.add_cog(n)
