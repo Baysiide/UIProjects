@@ -40,9 +40,9 @@ class ScraperClass:
               url = "https://optionalpha.com/members/watch-list"
               response = requests.get(url)
               if response.status_code == 404:
-                   await self.bot.say("Site not found. Please try again")
+                  await self.bot.say("Site not found. Please try again")
               else:
-                  test = "<li class=\"oagrid-item  highiv earnings\">"
+                  #test = "<li class=\"oagrid-item  highiv earnings\">"
                   await self.bot.say("Got this far")
               
 def setup(bot):
