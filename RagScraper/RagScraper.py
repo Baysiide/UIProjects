@@ -34,7 +34,7 @@ class ScrClass:
         
         
         #Start of float calculations                   
-        if search_type[0] == "alpha":
+        if search_type[0] == "float":
             if search_valid == "float":
                 await self.bot.say("Please add the the ticker symbol for data")
             else:
