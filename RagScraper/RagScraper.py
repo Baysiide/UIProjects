@@ -171,7 +171,7 @@ class ScrClass:
                  #for y in range(0, x):
                  #   indexstring = html.find(test)
         else:
-            await self.bot.say('Unrecognized command. For options, type ~ragnarok help')
+            await self.bot.say('wut r u doin m8')
             
 
 def setup(bot):
