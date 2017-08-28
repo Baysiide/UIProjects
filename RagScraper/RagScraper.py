@@ -100,7 +100,7 @@ class ScrClass:
             values = {'log': 'collinamedee@gmail.com',
                       'pwd': 'collin1'}
             r = requests.post(url1, data=values)
-            await self.bot.say(r.url)
+            #await self.bot.say(r.url)
             
             url = "https://optionalpha.com/members/watch-list"
             response = requests.get(url)
@@ -112,9 +112,14 @@ class ScrClass:
                  test = "highiv"
                  indexString = html.find(test)
                  indexString = html.find(test, indexString+10)
+                 html = html[indexString:]
+                
+                 nameStart = html.find("companyName")
+                 nameEnd = html.find("<")
+                 nameString = html[nameStart+14:nameEnd]
                  
-                 await self.bot.say(html[:100])
-                 await self.bot.say(html[indexString:indexString+100])
+                 #await self.bot.say(html[:100])
+                 await self.bot.say(nameString)
                  #for y in range(0, x):
                  #   indexstring = html.find(test)
         else:
