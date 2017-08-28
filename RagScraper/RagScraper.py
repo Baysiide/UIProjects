@@ -109,7 +109,7 @@ class ScrClass:
             else:
                  #x = 6
                  html = response.text
-                 test = "<li class=\"oagrid-item  highiv earnings\">"
+                 test = "class="
                  indexString = html.find(test)
                  
                  await self.bot.say(html[:100])
