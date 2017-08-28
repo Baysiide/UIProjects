@@ -141,7 +141,7 @@ class ScrClass:
                         
                      dayRangeStart = html.find("Range</h4>")
                      dayRangeEnd = html.find("</h3", dayRangeStart)
-                     dayRangeString = html[dayRangeStart+13:dayRangeEnd]
+                     dayRangeString = html[dayRangeStart+25:dayRangeEnd]
                      await self.bot.say(nameString + "  --  " + symbolString + "\nPrice: " + priceString + "\n" + ivString + "\n1 Day Range: " + dayRangeString)
                     
                  
