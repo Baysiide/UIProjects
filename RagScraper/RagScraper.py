@@ -8,7 +8,7 @@ import urllib
 
 counter = 0
 messcount = 0
-class ScraperClass:
+class ScrClass:
 
     def __init__(self, bot):
         self.bot = bot
@@ -20,9 +20,9 @@ class ScraperClass:
 
         
         
-    @commands.command(name="scraper", pass_context=True)
+    @commands.command(name="scr", pass_context=True)
     @commands.cooldown(10, 60, commands.BucketType.user)
-    async def _scraper(self, ctx, text):
+    async def _scr(self, ctx, text):
         """Compilation of commands for United Investors. Type '~ragnarok help' for a list"""
         search_type = ctx.message.content[len(ctx.prefix+ctx.command.name)+1:].lower().split(" ")
         option = {
@@ -811,6 +811,6 @@ class ScraperClass:
             
 
 def setup(bot):
-    n = ScraperClass(bot)
+    n = ScrClass(bot)
     bot.add_listener(n.proc_mess, "on_message")
     bot.add_cog(n)
