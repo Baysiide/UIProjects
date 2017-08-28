@@ -96,6 +96,12 @@ class ScrClass:
         
         
         elif search_type[0] == "alpha":
+            url1 = "https://optionalpha.com/wp-login.php"
+            values = {'username': 'collinamedee@gmail.com',
+                      'password': 'collin1'}
+            r = requests.post(url1, data=values)
+            await self.bot.say(r.content[:100])
+            
             url = "https://optionalpha.com/members/watch-list"
             response = requests.get(url)
             if response.status_code == 404:
