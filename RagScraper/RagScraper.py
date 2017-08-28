@@ -118,16 +118,22 @@ class ScrClass:
                  test = "highiv"
                  indexString = html.find(test)
                  html = html[indexString+10:]
-                  
-                 indexString = html.find(test)
-                 html = html[indexString:]
+                 
+                 for y in range(0, x):
+                        
+                    indexString = html.find(test)
+                    html = html[indexString:]
                 
-                 nameStart = html.find("company")
-                 nameEnd = html.find("<", nameStart)
-                 nameString = html[nameStart+14:nameEnd]
+                    nameStart = html.find("company")
+                    nameEnd = html.find("<", nameStart)
+                    nameString = html[nameStart+14:nameEnd]
+                    
+                    symbolStart = html.find("class=\"name\"")
+                    symbolEnd = html.find("<", symbolStart)
+                    symbolString = html[symbolStart+14:symbolEnd]
                  
                  #await self.bot.say(html[:100])
-                 await self.bot.say(nameString)
+                 await self.bot.say(nameString + " " + symbolString)
                  #for y in range(0, x):
                  #   indexstring = html.find(test)
         else:
