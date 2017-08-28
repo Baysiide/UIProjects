@@ -111,7 +111,7 @@ class ScrClass:
                  html = response.text
                  test = "highiv"
                  indexString = html.find(test)
-                 indexString = html.find(test, indexString)
+                 indexString = html.find(test, indexString+10)
                  
                  await self.bot.say(html[:100])
                  await self.bot.say(html[indexString:indexString+100])
