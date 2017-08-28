@@ -134,7 +134,11 @@ class ScrClass:
                      priceStart = html.find("stockprice")
                      priceEnd = html.find("<", priceStart)
                      priceString = html[priceStart+12:priceEnd]
-                     await self.bot.say(nameString + "  --  " + symbolString + "\nPrice: " + priceString)
+                     
+                     ivStart = html.find(">IV Rank:")
+                     ivEnd = html.find("<", ivStart)
+                     ivString = html[ivStart+1:ivEnd]
+                     await self.bot.say(nameString + "  --  " + symbolString + "\nPrice: " + priceString + "\n" + ivString)
                     
                  
                  #await self.bot.say(html[:100])
