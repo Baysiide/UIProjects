@@ -120,26 +120,25 @@ class ScrClass:
                  html = html[indexString+10:]
                  
                  for y in range(0, x):
-                        
-                    indexString = html.find(test)
-                    html = html[indexString:]
+                     indexString = html.find(test)
+                     html = html[indexString:]
                 
-                    nameStart = html.find("company")
-                    nameEnd = html.find("<", nameStart)
-                    nameString = html[nameStart+14:nameEnd]
+                     nameStart = html.find("company")
+                     nameEnd = html.find("<", nameStart)
+                     nameString = html[nameStart+14:nameEnd]
                     
-                    symbolStart = html.find("class=\"name\"")
-                    symbolEnd = html.find("<", symbolStart)
-                    symbolString = html[symbolStart+13:symbolEnd]
+                     symbolStart = html.find("class=\"name\"")
+                     symbolEnd = html.find("<", symbolStart)
+                     symbolString = html[symbolStart+13:symbolEnd]
                     
-                    priceStart = html.find("stockprice")
-                    priceEnd = html.find("<", priceStart)
-                    priceString = html[priceStart+12:priceEnd]
-                    
+                     priceStart = html.find("stockprice")
+                     priceEnd = html.find("<", priceStart)
+                     priceString = html[priceStart+12:priceEnd]
+                     await self.bot.say(nameString + "  --  " + symbolString + "\nPrice: " + priceString)
                     
                  
                  #await self.bot.say(html[:100])
-                 await self.bot.say(nameString + "  --  " + symbolString + "\nPrice: " + priceString)
+                 #await self.bot.say(nameString + "  --  " + symbolString + "\nPrice: " + priceString)
                  #for y in range(0, x):
                  #   indexstring = html.find(test)
         else:
