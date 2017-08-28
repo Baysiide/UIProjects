@@ -97,9 +97,13 @@ class ScrClass:
         
         
         elif search_type[0] == "alpha":
-            if search_valid == "inside":
+            if search_valid == "alpha":
                 await self.bot.say("Please add post preference variable")
             else:
+                quary = str(ctx.message.content
+                            [len(ctx.prefix+ctx.command.name)+6:].lower())
+                encode = urllib.parse.quote_plus(quary, encoding='utf-8',
+                                                 errors='replace')
                 add_stderr_logger()
                 s = requests.Session()
 
@@ -107,7 +111,7 @@ class ScrClass:
     
                 url1 = "https://optionalpha.com/wp-login.php"
                 values = {'log': 'collinamedee@gmail.com',
-                          'pwd': 'collin1'}
+                          'pwd': encode}
                 r = s.post(url1, data=values)
             
                 url = "https://optionalpha.com/members/watch-list"
