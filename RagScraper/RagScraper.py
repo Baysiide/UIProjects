@@ -46,7 +46,7 @@ class ScraperClass:
         #          await self.bot.say("Got this far")
         #else:
         #    await self.bot.say('Unrecognized command. For options, type ~ragnarok help')   
-        await self.bot.say('ayooooo')
+        await self.bot.say("ayooooo")
             
 def setup(bot):
     n = ScraperClass(bot)
