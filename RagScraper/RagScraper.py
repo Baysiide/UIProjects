@@ -139,15 +139,15 @@ class ScrClass:
                      ivString = html[ivStart+1:ivEnd]
                      
                      stratStart = html.find("serif;\">")
-                     stratEnd = html.find("<\h3", stratStart)
+                     stratEnd = html.find("</h3", stratStart)
                      stratString = html[stratStart+8:stratEnd]
                      
                      strattwoStart = html.find("serif;\">", stratEnd)
-                     strattwoEnd = html.find("<\h3", strattwoStart)
+                     strattwoEnd = html.find("</h3", strattwoStart)
                      strattwoString = html[strattwoStart+8:strattwoEnd]
                         
                      stratthreeStart = html.find("serif;\">", strattwoEnd)
-                     stratthreeEnd = html.find("<\h3", stratthreeStart)
+                     stratthreeEnd = html.find("</h3", stratthreeStart)
                      stratthreeString = html[stratthreeStart+8:stratthreeEnd]
                         
                      dayRangeStart = html.find("1 Day Expected Range</h4>")
