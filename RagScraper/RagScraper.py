@@ -52,7 +52,6 @@ class ScrClass:
                 values = {'log': 'collinamedee@gmail.com',
                           'pwd': encode}
                 r = s.post(url1, data=values)
-                await self.bot.say(encode)
                 url = "https://optionalpha.com/members/watch-list"
                 response = s.get(url)
                 if r.url != "https://optionalpha.com/members":
@@ -114,11 +113,6 @@ class ScrClass:
                         else:
                             await self.bot.say("**" + nameString + "**  --  **" + symbolString + "**\nPrice: " + priceString + "\n" + ivString + "\n1 Day Range: " + dayRangeString + "\n1 Week Range: " + weekRangeString + "\n1 Month Range: " + monthRangeString + "\n" + stratString + " | " + strattwoString + " | " + stratthreeString + "\n -----------------------------------------------------------")
                     
-                 
-                 #await self.bot.say(html[:100])
-                 #await self.bot.say(nameString + "  --  " + symbolString + "\nPrice: " + priceString)
-                 #for y in range(0, x):
-                 #   indexstring = html.find(test)
         else:
             await self.bot.say('wut r u doin m8')
             
