@@ -113,7 +113,7 @@ class ScrClass:
                 values = {'log': 'collinamedee@gmail.com',
                           'pwd': encode}
                 r = s.post(url1, data=values)
-            
+                await self.bot.say(r.url)
                 url = "https://optionalpha.com/members/watch-list"
                 response = s.get(url)
                 if r.url != "https://optionalpha.com/members":
