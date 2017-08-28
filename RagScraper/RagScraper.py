@@ -96,13 +96,13 @@ class ScrClass:
         
         
         elif search_type[0] == "alpha":
-            url = "https://optionalpha.com/members/watch-list"
+            url = "https://www.optionalpha.com/members/watch-list"
             response = requests.get(url)
             if response.status_code == 404:
-                 await self.bot.say("Stock not found. Please try again")
+                 await self.bot.say("Site not found. Please try again")
             else:
-                 x = 6
-                 test = "<li class=\"oagrid-item  highiv earnings\">"
+                 #x = 6
+                 #test = "<li class=\"oagrid-item  highiv earnings\">"
                  html = response.text
                  await self.bot.say(html[:100])
                  #for y in range(0, x):
