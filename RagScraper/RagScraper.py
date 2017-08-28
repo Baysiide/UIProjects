@@ -114,7 +114,7 @@ class ScrClass:
                  indexString = html.find(test, indexString+10)
                  html = html[indexString:]
                 
-                 nameStart = html.find("company")
+                 nameStart = html.find("Apple")
                  nameEnd = html.find("<", nameStart)
                  nameString = html[nameStart+14:nameEnd]
                  
