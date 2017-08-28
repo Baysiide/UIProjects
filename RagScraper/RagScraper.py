@@ -44,7 +44,9 @@ class ScraperClass:
               else:
                   #test = "<li class=\"oagrid-item  highiv earnings\">"
                   await self.bot.say("Got this far")
-              
+        else:
+            await self.bot.say('Unrecognized command. For options, type ~ragnarok help')   
+            
 def setup(bot):
     n = ScraperClass(bot)
     bot.add_cog(n)
