@@ -139,10 +139,18 @@ class ScrClass:
                      ivEnd = html.find("<", ivStart)
                      ivString = html[ivStart+1:ivEnd]
                         
-                     dayRangeStart = html.find("Range</h4>")
+                     dayRangeStart = html.find("1 Day Expected Range</h4>")
                      dayRangeEnd = html.find("</h3", dayRangeStart)
-                     dayRangeString = html[dayRangeStart+25:dayRangeEnd]
-                     await self.bot.say(nameString + "  --  " + symbolString + "\nPrice: " + priceString + "\n" + ivString + "\n1 Day Range: " + dayRangeString)
+                     dayRangeString = html[dayRangeStart+39:dayRangeEnd]
+                    
+                     weekRangeStart = html.find("1 Week Expected Range</h4>")
+                     weekRangeEnd = html.find("</h3", weekRangeStart)
+                     weekRangeString = html[weekRangeStart+40:weekRangeEnd]
+                     
+                     monthRangeStart = html.find("1 Month Expected Range</h4>")
+                     monthRangeEnd = html.find("</h3", monthRangeStart)
+                     monthRangeString = html[monthRangeStart+41:monthRangeEnd]
+                     await self.bot.say(nameString + "  --  " + symbolString + "\nPrice: " + priceString + "\n" + ivString + "\n1 Day Range: " + dayRangeString + "\n1 Week Range: " + weekRangeString + "\n1 Month Range: " + monthRangeString)
                     
                  
                  #await self.bot.say(html[:100])
