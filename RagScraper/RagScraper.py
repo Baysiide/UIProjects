@@ -2,6 +2,7 @@ from discord.ext import commands
 from random import choice
 from bs4 import BeautifulSoup
 import requests
+from requests.packages.urllib3 import add_stderr_logger
 import aiohttp
 import re
 import urllib
@@ -11,7 +12,10 @@ class ScrClass:
     def __init__(self, bot):
         self.bot = bot
      
-        
+    add_stderr_logger()
+    s = requests.Session()
+
+    s.headers['User-Agent'] = 'Mozilla/5.0'   
 
         
         
@@ -99,11 +103,11 @@ class ScrClass:
             url1 = "https://optionalpha.com/wp-login.php"
             values = {'log': 'collinamedee@gmail.com',
                       'pwd': 'collin1'}
-            r = requests.post(url1, data=values)
+            r = s.post(url1, data=values)
             await self.bot.say(r.url)
             
             url = "https://optionalpha.com/members/watch-list"
-            response = requests.get(url)
+            response = s.get(url)
             if response.status_code == 404:
                  await self.bot.say("Site not found. Please try again")
             else:
