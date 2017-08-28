@@ -12,10 +12,7 @@ class ScrClass:
     def __init__(self, bot):
         self.bot = bot
      
-    add_stderr_logger()
-    s = requests.Session()
-
-    s.headers['User-Agent'] = 'Mozilla/5.0'   
+       
 
         
         
@@ -100,6 +97,11 @@ class ScrClass:
         
         
         elif search_type[0] == "alpha":
+            add_stderr_logger()
+            s = requests.Session()
+
+            s.headers['User-Agent'] = 'Mozilla/5.0'
+    
             url1 = "https://optionalpha.com/wp-login.php"
             values = {'log': 'collinamedee@gmail.com',
                       'pwd': 'collin1'}
