@@ -106,7 +106,6 @@ class ScrClass:
             values = {'log': 'collinamedee@gmail.com',
                       'pwd': 'collin1'}
             r = s.post(url1, data=values)
-            await self.bot.say(r.url)
             
             url = "https://optionalpha.com/members/watch-list"
             response = s.get(url)
@@ -150,6 +149,8 @@ class ScrClass:
                      monthRangeStart = html.find("1 Month Expected Range</h4>")
                      monthRangeEnd = html.find("</h3", monthRangeStart)
                      monthRangeString = html[monthRangeStart+41:monthRangeEnd]
+                     
+                     html = html[monthRangeEnd:]
                      await self.bot.say(nameString + "  --  " + symbolString + "\nPrice: " + priceString + "\n" + ivString + "\n1 Day Range: " + dayRangeString + "\n1 Week Range: " + weekRangeString + "\n1 Month Range: " + monthRangeString)
                     
                  
