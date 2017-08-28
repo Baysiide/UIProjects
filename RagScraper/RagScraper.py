@@ -109,11 +109,11 @@ class ScrClass:
             else:
                  #x = 6
                  html = response.text
-                 test = "Sample Company Name"
+                 test = "Sample Exchange"
                  indexString = html.find(test)
                  
                  await self.bot.say(html[:100])
-                 await self.bot.say(html[:100])
+                 await self.bot.say(html[indexString:100])
                  #for y in range(0, x):
                  #   indexstring = html.find(test)
         else:
