@@ -97,8 +97,8 @@ class ScrClass:
         
         elif search_type[0] == "alpha":
             url1 = "https://optionalpha.com/wp-login.php"
-            values = {'username': 'collinamedee@gmail.com',
-                      'password': 'collin1'}
+            values = {'user_login': 'collinamedee@gmail.com',
+                      'user_pass': 'collin1'}
             r = requests.post(url1, data=values)
             await self.bot.say(r.url)
             
