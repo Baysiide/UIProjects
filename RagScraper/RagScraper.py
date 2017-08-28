@@ -113,11 +113,13 @@ class ScrClass:
             if response.status_code == 404:
                  await self.bot.say("Site not found. Please try again")
             else:
-                 #x = 6
+                 x = 6
                  html = response.text
                  test = "highiv"
                  indexString = html.find(test)
-                 indexString = html.find(test, indexString+10)
+                 html = html[indexString+10:]
+                  
+                 indexString = html.find(test)
                  html = html[indexString:]
                 
                  nameStart = html.find("company")
