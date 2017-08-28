@@ -97,73 +97,79 @@ class ScrClass:
         
         
         elif search_type[0] == "alpha":
-            add_stderr_logger()
-            s = requests.Session()
-
-            s.headers['User-Agent'] = 'Mozilla/5.0'
-    
-            url1 = "https://optionalpha.com/wp-login.php"
-            values = {'log': 'collinamedee@gmail.com',
-                      'pwd': 'collin1'}
-            r = s.post(url1, data=values)
-            
-            url = "https://optionalpha.com/members/watch-list"
-            response = s.get(url)
-            if response.status_code == 404:
-                 await self.bot.say("Site not found. Please try again")
+            if search_valid == "inside":
+                await self.bot.say("Please add post preference variable")
             else:
-                 x = 6
-                 html = response.text
-                 test = "highiv"
-                 indexString = html.find(test)
-                 html = html[indexString+10:]
+                add_stderr_logger()
+                s = requests.Session()
+
+                s.headers['User-Agent'] = 'Mozilla/5.0'
+    
+                url1 = "https://optionalpha.com/wp-login.php"
+                values = {'log': 'collinamedee@gmail.com',
+                          'pwd': 'collin1'}
+                r = s.post(url1, data=values)
+            
+                url = "https://optionalpha.com/members/watch-list"
+                response = s.get(url)
+                if r.url != "https://optionalpha.com/members":
+                     await self.bot.say("Variable not found. Please try again")
+                else:
+                    x = 6
+                    html = response.text
+                    test = "highiv"
+                    indexString = html.find(test)
+                    html = html[indexString+10:]
                  
-                 for y in range(0, x):
-                     indexString = html.find(test)
-                     html = html[indexString:]
+                    for y in range(0, x):
+                        indexString = html.find(test)
+                        html = html[indexString:]
                 
-                     nameStart = html.find("company")
-                     nameEnd = html.find("<", nameStart)
-                     nameString = html[nameStart+14:nameEnd]
+                        nameStart = html.find("company")
+                        nameEnd = html.find("<", nameStart)
+                        nameString = html[nameStart+14:nameEnd]
                     
-                     symbolStart = html.find("class=\"name\"")
-                     symbolEnd = html.find("<", symbolStart)
-                     symbolString = html[symbolStart+13:symbolEnd]
+                        symbolStart = html.find("class=\"name\"")
+                        symbolEnd = html.find("<", symbolStart)
+                        symbolString = html[symbolStart+13:symbolEnd]
                     
-                     priceStart = html.find("stockprice")
-                     priceEnd = html.find("<", priceStart)
-                     priceString = html[priceStart+12:priceEnd]
+                        priceStart = html.find("stockprice")
+                        priceEnd = html.find("<", priceStart)
+                        priceString = html[priceStart+12:priceEnd]
                      
-                     ivStart = html.find(">IV Rank:")
-                     ivEnd = html.find("<", ivStart)
-                     ivString = html[ivStart+1:ivEnd]
+                        ivStart = html.find(">IV Rank:")
+                        ivEnd = html.find("<", ivStart)
+                        ivString = html[ivStart+1:ivEnd]
                      
-                     stratStart = html.find("serif;\">")
-                     stratEnd = html.find("</h3", stratStart)
-                     stratString = html[stratStart+8:stratEnd]
+                        stratStart = html.find("serif;\">")
+                        stratEnd = html.find("</h3", stratStart)
+                        stratString = html[stratStart+8:stratEnd]
                      
-                     strattwoStart = html.find("serif;\">", stratEnd)
-                     strattwoEnd = html.find("</h3", strattwoStart)
-                     strattwoString = html[strattwoStart+8:strattwoEnd]
+                        strattwoStart = html.find("serif;\">", stratEnd)
+                        strattwoEnd = html.find("</h3", strattwoStart)
+                        strattwoString = html[strattwoStart+8:strattwoEnd]
                         
-                     stratthreeStart = html.find("serif;\">", strattwoEnd)
-                     stratthreeEnd = html.find("</h3", stratthreeStart)
-                     stratthreeString = html[stratthreeStart+8:stratthreeEnd]
+                        stratthreeStart = html.find("serif;\">", strattwoEnd)
+                        stratthreeEnd = html.find("</h3", stratthreeStart)
+                        stratthreeString = html[stratthreeStart+8:stratthreeEnd]
                         
-                     dayRangeStart = html.find("1 Day Expected Range</h4>")
-                     dayRangeEnd = html.find("</h3", dayRangeStart)
-                     dayRangeString = html[dayRangeStart+39:dayRangeEnd]
+                        dayRangeStart = html.find("1 Day Expected Range</h4>")
+                        dayRangeEnd = html.find("</h3", dayRangeStart)
+                        dayRangeString = html[dayRangeStart+39:dayRangeEnd]
                     
-                     weekRangeStart = html.find("1 Week Expected Range</h4>")
-                     weekRangeEnd = html.find("</h3", weekRangeStart)
-                     weekRangeString = html[weekRangeStart+40:weekRangeEnd]
+                        weekRangeStart = html.find("1 Week Expected Range</h4>")
+                        weekRangeEnd = html.find("</h3", weekRangeStart)
+                        weekRangeString = html[weekRangeStart+40:weekRangeEnd]
                      
-                     monthRangeStart = html.find("1 Month Expected Range</h4>")
-                     monthRangeEnd = html.find("</h3", monthRangeStart)
-                     monthRangeString = html[monthRangeStart+41:monthRangeEnd]
+                        monthRangeStart = html.find("1 Month Expected Range</h4>")
+                        monthRangeEnd = html.find("</h3", monthRangeStart)
+                        monthRangeString = html[monthRangeStart+41:monthRangeEnd]
                      
-                     html = html[monthRangeEnd:]
-                     await self.bot.say("**" + nameString + "**  --  **" + symbolString + "**\nPrice: " + priceString + "\n" + ivString + "\n1 Day Range: " + dayRangeString + "\n1 Week Range: " + weekRangeString + "\n1 Month Range: " + monthRangeString + "\n" + stratString + " | " + strattwoString + " | " + stratthreeString + "\n -----------------------------------------------------------")
+                        html = html[monthRangeEnd:]
+                        if y == 5
+                            await self.bot.say("**" + nameString + "**  --  **" + symbolString + "**\nPrice: " + priceString + "\n" + ivString + "\n1 Day Range: " + dayRangeString + "\n1 Week Range: " + weekRangeString + "\n1 Month Range: " + monthRangeString + "\n" + stratString + " | " + strattwoString + " | " + stratthreeString")
+                        else:
+                            await self.bot.say("**" + nameString + "**  --  **" + symbolString + "**\nPrice: " + priceString + "\n" + ivString + "\n1 Day Range: " + dayRangeString + "\n1 Week Range: " + weekRangeString + "\n1 Month Range: " + monthRangeString + "\n" + stratString + " | " + strattwoString + " | " + stratthreeString + "\n -----------------------------------------------------------")
                     
                  
                  #await self.bot.say(html[:100])
