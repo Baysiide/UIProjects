@@ -40,7 +40,7 @@ class ScrClass:
                 await self.bot.say("Please add post preference variable")
             else:
                 quary = str(ctx.message.content
-                            [len(ctx.prefix+ctx.command.name)+6:].lower())
+                            [len(ctx.prefix+ctx.command.name)+7:].lower())
                 encode = urllib.parse.quote_plus(quary, encoding='utf-8',
                                                  errors='replace')
                 add_stderr_logger()
@@ -55,7 +55,7 @@ class ScrClass:
                 await self.bot.say(encode)
                 url = "https://optionalpha.com/members/watch-list"
                 response = s.get(url)
-                if r.url == "https://optionalpha.com/members":
+                if r.url != "https://optionalpha.com/members":
                      await self.bot.say("Variable not found. Please try again")
                 else:
                     x = 6
