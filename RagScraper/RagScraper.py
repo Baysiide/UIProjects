@@ -96,7 +96,7 @@ class ScrClass:
         
         
         elif search_type[0] == "alpha":
-            url = "https://www.optionalpha.com/members/watch-list"
+            url = "https://www.optionalpha.com/members/"
             response = requests.get(url)
             if response.status_code == 404:
                  await self.bot.say("Site not found. Please try again")
