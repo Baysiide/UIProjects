@@ -12,7 +12,7 @@ class ScraperClass:
     def __init__(self, bot):
         self.bot = bot
         
-       
+    async def proc_mess(self, ctx):   
         
     @commands.command(name="scraper", pass_context=True)
     @commands.cooldown(10, 60, commands.BucketType.user)
