@@ -138,7 +138,11 @@ class ScrClass:
                      ivStart = html.find(">IV Rank:")
                      ivEnd = html.find("<", ivStart)
                      ivString = html[ivStart+1:ivEnd]
-                     await self.bot.say(nameString + "  --  " + symbolString + "\nPrice: " + priceString + "\n" + ivString)
+                        
+                     dayRangeStart = html.find("Range</h4>")
+                     dayRangeEnd = html.find("</h3", dayRangeStart)
+                     dayRangeString = html[dayRangeStart+13:dayRangeEnd]
+                     await self.bot.say(nameString + "  --  " + symbolString + "\nPrice: " + priceString + "\n" + ivString + "\n1 Day Range: " + dayRangeString)
                     
                  
                  #await self.bot.say(html[:100])
