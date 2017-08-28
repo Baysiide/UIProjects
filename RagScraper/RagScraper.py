@@ -102,9 +102,10 @@ class ScrClass:
                  await self.bot.say("Site not found. Please try again")
             else:
                  #x = 6
+                 html = response.text
                  test = "<li class=\"oagrid-item  highiv earnings\">"
                  indexString = html.find(test)
-                 html = response.text
+                 
                  await self.bot.say(html[:100])
                  await self.bot.say(html[indexString:100])
                  #for y in range(0, x):
