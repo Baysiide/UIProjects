@@ -40,7 +40,7 @@ class ScrClass:
                 await self.bot.say("Please add post preference variable")
             else:
                 quary = str(ctx.message.content
-                            [len(ctx.prefix+ctx.command.name)+7:].lower())
+                            [len(ctx.prefix+ctx.command.name)+7:])
                 encode = urllib.parse.quote_plus(quary, encoding='utf-8',
                                                  errors='replace')
                 add_stderr_logger()
