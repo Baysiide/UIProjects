@@ -69,7 +69,7 @@ class ScrClass:
                     nametestStart = testhtml.find("company")
                     nametestEnd = testhtml.find("<", nametestStart)
                     nametestString = testhtml[nametestStart+14:nametestEnd]
-                    if nametestString == "Sample Exchange Traded Fund." or nametestString == "Sample Company Name Inc."
+                    if nametestString == "Sample Exchange Traded Fund." or nametestString == "Sample Company Name Inc.":
                         x = 0
                     else:
                         for y in range(0, x):
