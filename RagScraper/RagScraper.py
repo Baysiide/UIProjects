@@ -69,6 +69,9 @@ class ScrClass:
                     nametestStart = testhtml.find("company")
                     nametestEnd = testhtml.find("<", nametestStart)
                     nametestString = testhtml[nametestStart+14:nametestEnd]
+                    await self.bot.say(encode)
+                    await self.bot.say(html[indexstring:500])
+                    await self.bot.say(nametestString)
                     if nametestString == "Sample Exchange Traded Fund." or nametestString == "Sample Company Name Inc.":
                         x = 0
                         await self.bot.say("Unrecognized preference variable. Please try again.")
