@@ -71,6 +71,7 @@ class ScrClass:
                     nametestString = testhtml[nametestStart+14:nametestEnd]
                     if nametestString == "Sample Exchange Traded Fund." or nametestString == "Sample Company Name Inc.":
                         x = 0
+                        await self.bot.say("Unrecognized preference variable. Please try again.")
                     else:
                         for y in range(0, x):
                             indexString = html.find(test)
