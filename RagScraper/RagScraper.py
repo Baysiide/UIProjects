@@ -176,12 +176,12 @@ class ScrClass:
                 finalString = ""
                 i = 0
                 while i < len(list1):
-                    if i+1 % 5:
+                    if i+1 % 5 == 0:
                         finalString = finalString + list1[i] + "\n"
                     else:
                         finalString = finalString + list1[i] + "\t"
                     i += 1
-                await self.bot.say(finalString)
+                await self.bot.say("```" + finalString + "```")
                     
         else:
             await self.bot.say('Unrecognized command. Please try again')
