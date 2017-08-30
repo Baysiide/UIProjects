@@ -142,14 +142,18 @@ class ScrClass:
                         
                     nameindexStart = html.find("value=")
                     nameindexEnd = html.find(">", nameindexStart)
-                    nameString = html[nameindexStart+7:nameindexEnd]
+                    nameString = html[nameindexStart+7:nameindexEnd-1]
                         
                     gradeindexStart1 = html.find("<td class=")
                     html = html[gradeindexStart1:]
                     gradeindexStart = html.find("value=")
                     gradeindexEnd = html.find(">", gradeindexStart)
                     gradeString = html[gradeindexStart+7:gradeindexEnd-1]
-                    await self.bot.say(nameString + " " + gradeString)
+                    
+                    if int(gradeString) < -69.99:
+                        await self.bot.say(nameString + " " + gradeString)
+                    
+                    
         else:
             await self.bot.say('Unrecognized command. Please try again')
             
