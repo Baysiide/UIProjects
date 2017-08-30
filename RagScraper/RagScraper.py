@@ -171,7 +171,7 @@ class ScrClass:
                         gradeString = str(gradeString)
                         #await self.bot.say(nameString + " " + gradeString + " " + percString + " " + volString + " " + surgeString)
                         list1.append(nameString.ljust(4))
-                        list1.append(gradeString.rjust(10))
+                        list1.append(gradeString.rjust(12))
                         list1.append(percString.rjust(10))
                         list1.append(volString.rjust(12))
                         list1.append(surgeString.rjust(8))
