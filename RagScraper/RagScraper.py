@@ -135,7 +135,7 @@ class ScrClass:
                 html = response.text
                 indexString = html.find("<tr>")
                 html = html[indexString+10:]
-                
+                list1 = []
                 while html.find("<tr>") != -1:
                     indexString = html.find("<tr>")
                     html = html[indexString:]
@@ -167,8 +167,9 @@ class ScrClass:
                     html = html[surgeindexEnd+4:]
                     
                     if float(gradeString) < -69.99:
-                        await self.bot.say(nameString + " " + gradeString + " " + percString + " " + volString + " " + surgeString)
-                    
+                        #await self.bot.say(nameString + " " + gradeString + " " + percString + " " + volString + " " + surgeString)
+                        list1.append[nameString, gradeString, percString, volString, surgeString]
+                    await self.bot.say(list1)
                     
         else:
             await self.bot.say('Unrecognized command. Please try again')
