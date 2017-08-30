@@ -168,8 +168,9 @@ class ScrClass:
                     
                     if float(gradeString) < -69.99:
                         #await self.bot.say(nameString + " " + gradeString + " " + percString + " " + volString + " " + surgeString)
-                        list1.append(nameString)
-                    await self.bot.say(list1)
+                        list1.append(nameString, gradeString, percString, volString, surgeString)
+                    
+                await self.bot.say(list1)
                     
         else:
             await self.bot.say('Unrecognized command. Please try again')
