@@ -168,7 +168,12 @@ class ScrClass:
                     
                     if float(gradeString) < -69.99:
                         #await self.bot.say(nameString + " " + gradeString + " " + percString + " " + volString + " " + surgeString)
-                        list1.append(nameString, gradeString, percString, volString, surgeString)
+                        list1.append(nameString)
+                        list1.append(gradeString)
+                        list1.append(percString)
+                        list1.append(volString)
+                        list1.append(surgeString)
+                        
                     
                 await self.bot.say(list1)
                     
