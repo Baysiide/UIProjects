@@ -128,7 +128,27 @@ class ScrClass:
         elif search_type[0] == "jaybbsqueeze":
             now = datetime.datetime.now()
             url = "https://swingtradebot.com/events/26/equities?selected_date={}%2F{}%2F{}&min_vol=250000&min_price=1&max_price=10&adx_trend=&grade=&include_etfs=0&html_button=as_html".format(now.month, now.day-1, now.year)
-            await self.bot.say(url)
+            response = requests.get(url)
+            if response.status_code == 404:
+                     await self.bot.say("Stock not found. Please try again")
+                else:
+                    html = response.text
+                    indexString = html.find("<tr>")
+                    html = html[indexString+10:]
+                    while html.find("<tr>") != -1:
+                        indexString = html.find("<tr>")
+                        html = html[indexString:]
+                        
+                        nameindexStart = html.find("value=")
+                        nameindexEnd = html.find(">", nameindexStart)
+                        nameString = html[nameindexStart+7:nameindexEnd]
+                        
+                        gradeindexStart = html.find("<td class=")
+                        html = html[gradeindexStart:]
+                        gradeindexStart = html.find("value=")
+                        gradeindexEnd = html.find("\'>", gradeindexStart)
+                        gradeString = html[gradeindexStart+7:gradeindexEnd]
+                        await self.bot.say(nameString + " " + gradeString)
         else:
             await self.bot.say('Unrecognized command. Please try again')
             
