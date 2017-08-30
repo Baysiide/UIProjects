@@ -150,7 +150,7 @@ class ScrClass:
                     gradeindexEnd = html.find(">", gradeindexStart)
                     gradeString = html[gradeindexStart+7:gradeindexEnd-1]
                     
-                    if int(gradeString) < -69.99:
+                    if float(gradeString) < -69.99:
                         await self.bot.say(nameString + " " + gradeString)
                     
                     
