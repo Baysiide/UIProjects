@@ -1,7 +1,7 @@
 from discord.ext import commands
 from random import choice
 from bs4 import BeautifulSoup
-from datetime import datetime
+import datetime
 import requests
 from requests.packages.urllib3 import add_stderr_logger
 import aiohttp
