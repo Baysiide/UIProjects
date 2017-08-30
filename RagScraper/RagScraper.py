@@ -167,7 +167,7 @@ class ScrClass:
                     html = html[surgeindexEnd+4:]
                     
                     if float(gradeString) < -69.99:
-                        await self.bot.say(nameString + " " + abs(gradeString) + " " + percString + " " volString + " " + surgeString)
+                        await self.bot.say(nameString + " " + gradeString + " " + percString + " " volString + " " + surgeString)
                     
                     
         else:
