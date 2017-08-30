@@ -156,8 +156,18 @@ class ScrClass:
                     percString = html[percindexStart+2:percindexEnd]
                     html = html[percindexEnd+4:]
                     
+                    volindexStart = html.find("\'>")
+                    volindexEnd = html.find("<", volindexStart)
+                    volString = html[volindexStart+2:volindexEnd]
+                    html = html[volindexEnd+4:]
+                    
+                    surgeindexStart = html.find("\'>")
+                    surgeindexEnd = html.find("<", surgeindexStart)
+                    surgeString = html[surgeindexStart+2:surgeindexEnd]
+                    html = html[surgeindexEnd+4:]
+                    
                     if float(gradeString) < -69.99:
-                        await self.bot.say(nameString + " " + gradeString + " " + percString)
+                        await self.bot.say(nameString + " " + abs(gradeString) + " " + percString + " " volString + " " + surgeString)
                     
                     
         else:
