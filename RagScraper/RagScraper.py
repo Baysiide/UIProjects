@@ -168,18 +168,18 @@ class ScrClass:
                     
                     if float(gradeString) < -69.99:
                         #await self.bot.say(nameString + " " + gradeString + " " + percString + " " + volString + " " + surgeString)
-                        list1.append(nameString)
-                        list1.append(gradeString)
-                        list1.append(percString)
-                        list1.append(volString)
-                        list1.append(surgeString)
+                        list1.append(nameString.rjust(5))
+                        list1.append(gradeString.rjust(5))
+                        list1.append(percString.rjust(5))
+                        list1.append(volString.rjust(12))
+                        list1.append(surgeString.rjust(5))
                 finalString = ""
                 i = 0
                 while i < len(list1):
                     if i+1 % 5 == 0:
                         finalString = finalString + list1[i] + "\n"
                     else:
-                        finalString = finalString + list1[i] + "\t"
+                        finalString = finalString + list1[i] 
                     i += 1
                 await self.bot.say("```" + finalString + "```")
                     
