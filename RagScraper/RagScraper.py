@@ -173,9 +173,15 @@ class ScrClass:
                         list1.append(percString)
                         list1.append(volString)
                         list1.append(surgeString)
-                        
-                    
-                await self.bot.say(list1)
+                finalString = ""
+                i = 0
+                while i < len(list1):
+                    if i+1 % 5:
+                        finalString = finalString + list1[i] + "\n"
+                    else:
+                        finalString = finalString + list1[i] + "\t"
+                    i += 1
+                await self.bot.say(finalString)
                     
         else:
             await self.bot.say('Unrecognized command. Please try again')
