@@ -176,8 +176,9 @@ class ScrClass:
                 finalString = ""
                 i = 0
                 while i < len(list1):
-                    await self.bot.say(i+1 % 5)
-                    if i+1 % 5 == 0:
+                    q = i+1
+                    await self.bot.say(q%5)
+                    if q%5 == 0:
                         await self.bot.say(list1[i] + "Gotcha")
                         finalString = finalString + list1[i] + "\n"
                     else:
