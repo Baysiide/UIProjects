@@ -167,13 +167,14 @@ class ScrClass:
                     html = html[surgeindexEnd+4:]
                     
                     if float(gradeString) < -69.99:
+                        gradeString = abs(float(gradestring))
                         #await self.bot.say(nameString + " " + gradeString + " " + percString + " " + volString + " " + surgeString)
                         list1.append(nameString.ljust(4))
                         list1.append(gradeString.rjust(10))
                         list1.append(percString.rjust(10))
                         list1.append(volString.rjust(12))
                         list1.append(surgeString.rjust(8))
-                finalString = "Symbol".ljust(4) + "Score(Max 100)".rjust(10) + "% Change".rjust(10) + "Volume".rjust(12) + "Surge VBol".rjust(8) +"\n"
+                finalString = "Symbol".ljust(4) + "Score".rjust(10) + "% Change".rjust(10) + "Volume".rjust(12) + "Surge Vol".rjust(8) +"\n"
                 i = 0
                 while i < len(list1):
                     q = i+1
