@@ -175,7 +175,7 @@ class ScrClass:
                         list1.append(percString.rjust(12))
                         list1.append(volString.rjust(12))
                         list1.append(surgeString.rjust(12))
-                finalString = "Symbol".ljust(4) + "Score".rjust(10) + "% Change".rjust(12) + "Volume".rjust(12) + "Surge Vol".rjust(12) +"\n"
+                finalString = "Data for stocks undergoing Bollinger Band squeezes\n" + "Symbol".ljust(4) + "Score".rjust(10) + "% Change".rjust(12) + "Volume".rjust(12) + "Surge Vol".rjust(12) +"\n"
                 i = 0
                 while i < len(list1):
                     q = i+1
