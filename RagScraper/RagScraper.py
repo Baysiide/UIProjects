@@ -127,9 +127,8 @@ class ScrClass:
         
         elif search_type[0] == "jaybbsqueeze":
             now = datetime.datetime.now()
-            await self.bot.say(str(now.day-1) + " " + str(now.month) + " " + str(now.year))
-            url = "https://swingtradebot.com/events/26/equities?selected_date=08%2F29%2F2017&min_vol=250000&min_price=1&max_price=10&adx_trend=&grade=&include_etfs=0&html_button=as_html"
-        
+            url = "https://swingtradebot.com/events/26/equities?selected_date={}%2F{}%2F{}&min_vol=250000&min_price=1&max_price=10&adx_trend=&grade=&include_etfs=0&html_button=as_html".format(now.month, now.day-1, now.year)
+            await self.bot.say(url)
         else:
             await self.bot.say('Unrecognized command. Please try again')
             
