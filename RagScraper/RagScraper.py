@@ -1,7 +1,7 @@
 from discord.ext import commands
 from random import choice
 from bs4 import BeautifulSoup
-import time
+from datetime import datetime
 import requests
 from requests.packages.urllib3 import add_stderr_logger
 import aiohttp
@@ -126,9 +126,9 @@ class ScrClass:
                                 await self.bot.say("**" + nameString + "**  --  **" + symbolString + "**\nPrice: " + priceString + "\n" + ivString + "\n1 Day Range: " + dayRangeString + "\n1 Week Range: " + weekRangeString + "\n1 Month Range: " + monthRangeString + "\n" + stratString + " | " + strattwoString + " | " + stratthreeString + "\n -----------------------------------------------------------")
         
         elif search_type[0] == "jaybbsqueeze":
-            day = time.strftime(%d)
-            month = time.strftime(%m)
-            year = time.strftime(%Y)
+            day = datetime.now().strftime(%d)
+            month = datetime.now().strftime(%m)
+            year = datetime.now().strftime(%Y)
             await self.bot.say(day + " " + month + " " + year)
             url = "https://swingtradebot.com/events/26/equities?selected_date=08%2F29%2F2017&min_vol=250000&min_price=1&max_price=10&adx_trend=&grade=&include_etfs=0&html_button=as_html"
         
