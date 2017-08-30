@@ -174,8 +174,8 @@ class ScrClass:
                         list1.append(gradeString.rjust(12))
                         list1.append(percString.rjust(10))
                         list1.append(volString.rjust(12))
-                        list1.append(surgeString.rjust(8))
-                finalString = "Symbol".ljust(4) + "Score".rjust(10) + "% Change".rjust(10) + "Volume".rjust(12) + "Surge Vol".rjust(8) +"\n"
+                        list1.append(surgeString.rjust(12))
+                finalString = "Symbol".ljust(4) + "Score".rjust(10) + "% Change".rjust(10) + "Volume".rjust(12) + "Surge Vol".rjust(12) +"\n"
                 i = 0
                 while i < len(list1):
                     q = i+1
