@@ -152,7 +152,7 @@ class ScrClass:
                     html = html[gradeindexEnd+4:]
                     
                     percindexStart = html.find("\'>")
-                    percindexEnd = html.find("<")
+                    percindexEnd = html.find("<", percindexStart)
                     percString = html[percindexStart+2:percindexEnd]
                     html = html[percindexEnd+4:]
                     
