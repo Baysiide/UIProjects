@@ -149,9 +149,15 @@ class ScrClass:
                     gradeindexStart = html.find("value=")
                     gradeindexEnd = html.find(">", gradeindexStart)
                     gradeString = html[gradeindexStart+7:gradeindexEnd-1]
+                    html = html[gradeindexEnd+4:]
+                    
+                    percindexStart = html.find("\'>")
+                    percindexEnd = html.find("<")
+                    percString = html[percindexStart+2:percindexEnd]
+                    html = html[percindexEnd+4:]
                     
                     if float(gradeString) < -69.99:
-                        await self.bot.say(nameString + " " + gradeString)
+                        await self.bot.say(nameString + " " + gradeString + " " + percString)
                     
                     
         else:
