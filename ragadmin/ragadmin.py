@@ -8,7 +8,7 @@ import asyncio
 import logging
 import os
 
-#client = discord.Client()
+client = discord.Client()
 log = logging.getLogger("red.admin")
 
 
@@ -24,7 +24,7 @@ class Admin:
         
    async def proc_mess(self, ctx, message):
         if message.content.startswith('@everyone'):
-            await self.bot.send_message(client.get_channel('311323578626867211'), message)
+            await client.send_message(client.get_channel('311323578626867211'), message)
 
     async def _confirm_invite(self, server, owner, ctx):
         answers = ("yes", "y")
