@@ -16,9 +16,6 @@ class RagnarokClass:
     async def proc_mess(self, ctx):
         global messcount
         messcount = messcount + 1
-        if ctx.message.content.startswith("@everyone"):
-            await self.bot.send_message(discord.Object(id='311323578626867211'), ctx.message)
-
         
         
     @commands.command(name="ragnarok", pass_context=True)
