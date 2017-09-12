@@ -11,10 +11,10 @@ class RagForwardClass:
     def __init__(self, bot):
         self.bot = bot
         
-
+    @commands.command(no_pm=True, pass_context=True)
     async def forward(self, ctx, *, text):
         channel = ctx.message.channel
-        await self.bot.send_message(ctx.channel, text)
+        await self.bot.send_message(channel, text)
         if text.startswith("testing"):
             await self.bot.send_message(channel, text)
         #else:
