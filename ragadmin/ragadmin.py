@@ -8,7 +8,7 @@ import asyncio
 import logging
 import os
 
-client = discord.Client()
+#client = discord.Client()
 log = logging.getLogger("red.admin")
 
 
