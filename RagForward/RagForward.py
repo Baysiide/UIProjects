@@ -13,7 +13,7 @@ class RagForwardClass:
         
 
     
-    async def forward(self, ctx, message):
+    async def forward(self, ctx, *message):
         await self.bot.send_message(ctx.channel, message)
         pop = ctx.message.content
         #if ctx.message.content.startswith("testing"):
