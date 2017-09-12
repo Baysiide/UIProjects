@@ -17,6 +17,8 @@ class RagForwardClass:
         #await self.bot.send_message(ctx.channel, "got this far")
         if ctx.message.content.startswith('testing'):
             await self.bot.send_message(ctx.channel, ctx.message)
+        else:
+            await self.bot.send_message(ctx.channel, ctx.message)
         
         
 def setup(bot):
