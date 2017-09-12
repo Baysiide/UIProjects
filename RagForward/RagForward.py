@@ -8,7 +8,6 @@ import urllib
 
 counter = 0
 messcount = 0
-client = discord.Client()
 class RagForwardClass:
 
     def __init__(self, bot):
