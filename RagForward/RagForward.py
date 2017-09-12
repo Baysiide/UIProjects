@@ -20,7 +20,7 @@ class RagForwardClass:
         messcount = messcount + 1
         #await self.bot.send_message(ctx.channel, "got this far")
         if ctx.message.content.startswith("testing"):
-            await self.bot.say("Hello biotch")
+            await self.bot.send_message(ctx.channel, "whats up BITCH")
         
         
 def setup(bot):
