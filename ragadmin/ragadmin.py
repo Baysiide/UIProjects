@@ -23,8 +23,8 @@ class Admin:
         self._settable_roles = self._settings.get("ROLES", {})
         
         async def proc_mess(self, ctx, message):
-        if message.content.startswith('@everyone'):
-            await self.bot.send_message(client.get)channel('311323578626867211', message)
+            if message.content.startswith('@everyone'):
+                await self.bot.send_message(client.get)channel('311323578626867211', message)
 
     async def _confirm_invite(self, server, owner, ctx):
         answers = ("yes", "y")
