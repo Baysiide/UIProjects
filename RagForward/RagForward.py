@@ -15,11 +15,11 @@ class RagForwardClass:
         
 
     
-    async def forward(self, ctx):
+    async def forward(message):
         global messcount
         messcount = messcount + 1
         test = "testing"
-        if test in ctx.message.content:
+        if message.content.startswith('testing'):
             await self.bot.say("Hello biotch")
         
         
