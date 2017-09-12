@@ -12,18 +12,18 @@ class RagForwardClass:
 
     def __init__(self, bot):
         self.bot = bot
+        
     client = discord.Client()
     
-    @client.event
-    async def proc_mess(self, ctx):
+    async def forward(self, ctx):
         global messcount
         messcount = messcount + 1
-        await self.bot.say("test")
+        await self.bot.send_message(ctx.channel, "test")
         if ctx.message.content.startswith('@everyone'):
             await self.bot.send_message(discord.Object(id='311323578626867211'), 'hello')
         
         
 def setup(bot):
     n = RagForwardClass(bot)
-    bot.add_listener(n.proc_mess, "on_message")
+    bot.add_listener(n.forward, "on_message")
     bot.add_cog(n)
