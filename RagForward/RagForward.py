@@ -18,7 +18,7 @@ class RagForwardClass:
     async def forward(message):
         global messcount
         messcount = messcount + 1
-        if message.content.startswith("testing")
+        if message.content.startswith("testing"):
             await self.bot.say("Hello biotch")
         
         
