@@ -20,7 +20,7 @@ class RagForwardClass:
         messcount = messcount + 1
         test = "@everyone"
         if test in ctx.message:
-            await self.bot.send_message(discord.Object(id='311323578626867211'), 'hello')
+            await self.bot.say("Hello biotch")
         
         
 def setup(bot):
