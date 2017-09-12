@@ -22,9 +22,9 @@ class Admin:
         self._settings = dataIO.load_json('data/admin/settings.json')
         self._settable_roles = self._settings.get("ROLES", {})
         
-   async def proc_mess(self, ctx, message):
-        if message.content.startswith('@everyone'):
-            await client.send_message(client.get_channel('311323578626867211'), message)
+   async def proc_mess(self, ctx):
+        if ctx.message.content.startswith('@everyone'):
+            await client.send_message(client.get_channel('311323578626867211'), ctx.message)
 
     async def _confirm_invite(self, server, owner, ctx):
         answers = ("yes", "y")
