@@ -18,7 +18,8 @@ class RagForwardClass:
     async def forward(self, ctx):
         global messcount
         messcount = messcount + 1
-        if ctx.message.content.startswith('@everyone'):
+        test = "@everyone"
+        if test in ctx.message:
             await self.bot.send_message(discord.Object(id='311323578626867211'), 'hello')
         
         
