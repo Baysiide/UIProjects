@@ -24,7 +24,8 @@ class Admin:
         
    async def proc_mess(self, ctx):
         if ctx.message.content.startswith('@everyone'):
-            await client.send_message(client.get_channel('311323578626867211'), ctx.message)
+            await self.bot.say("test")
+            #await client.send_message(client.get_channel('311323578626867211'), ctx.message)
 
     async def _confirm_invite(self, server, owner, ctx):
         answers = ("yes", "y")
