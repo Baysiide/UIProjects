@@ -21,11 +21,6 @@ class Admin:
         self._announce_server = None
         self._settings = dataIO.load_json('data/admin/settings.json')
         self._settable_roles = self._settings.get("ROLES", {})
-        
-   #async def proc_mess(self, ctx):
-        #if ctx.message.content.startswith('@everyone'):
-            #await self.bot.say("test")
-            #await client.send_message(client.get_channel('311323578626867211'), ctx.message)
 
     async def _confirm_invite(self, server, owner, ctx):
         answers = ("yes", "y")
@@ -466,5 +461,4 @@ def setup(bot):
     n = Admin(bot)
     bot.add_cog(n)
     bot.add_listener(n.server_locker, "on_server_join")
-    #bot.add_listener(n.proc_mess, "on_message")
     bot.loop.create_task(n.announce_manager())
