@@ -11,7 +11,7 @@ class RagForwardClass:
     def __init__(self, bot):
         self.bot = bot
         
-    @commands.command(no_pm=True, pass_context=True)
+    #@commands.command(no_pm=True, pass_context=True)
     async def forward(self, ctx, *, text):
         channel = ctx.message.channel
         await self.bot.send_message(channel, text)
