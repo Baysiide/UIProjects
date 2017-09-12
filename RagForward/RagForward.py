@@ -19,7 +19,7 @@ class RagForwardClass:
         global messcount
         messcount = messcount + 1
         test = "testing"
-        if message.content.startswith('testing'):
+        if message.content.startswith(test):
             await self.bot.say("Hello biotch")
         
         
