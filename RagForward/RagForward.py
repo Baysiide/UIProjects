@@ -8,12 +8,13 @@ import urllib
 
 counter = 0
 messcount = 0
+client = discord.Client()
 class RagForwardClass:
 
     def __init__(self, bot):
         self.bot = bot
         
-    client = discord.Client()
+
     
     async def forward(self, ctx):
         global messcount
