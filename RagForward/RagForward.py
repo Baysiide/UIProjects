@@ -15,7 +15,7 @@ class RagForwardClass:
         
 
     
-    async def forward(message, ctx):
+    async def forward(self, ctx):
         global messcount
         messcount = messcount + 1
         await self.bot.send_message(ctx.channel, "got this far")
