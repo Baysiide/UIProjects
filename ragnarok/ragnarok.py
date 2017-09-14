@@ -21,7 +21,7 @@ class RagnarokClass:
             #await self.bot.send_message(discord.Object(id='311323578626867211'), 'hello')
         
         
-    @commands.command(name="ragnarok", pass_context=True)
+    @commands.command(name="ragnarok", pass_context=True, no_pm=False)
     @commands.cooldown(10, 60, commands.BucketType.user)
     async def _ragnarok(self, ctx, text):
         """Compilation of commands for United Investors. Type '~ragnarok help' for a list"""
